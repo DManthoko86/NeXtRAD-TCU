@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/skippy/Git/Lek/UDP_1GbE_if/UDP_1GbE_if.ncd
+OUTFILE=/home/skippy/Git/Lek/UDP_1GbE_if/UDP_1GbE_if.bit
+FAMILY=Spartan6
+PART=xc6slx150t-2fgg676
+WORKINGDIR=/home/skippy/Git/Lek/UDP_1GbE_if
+LICENSE=ISE
+USER_INFO=178739136_178739138_210598858_422
