@@ -37,6 +37,8 @@ private slots:
     void rhinoChangeSettings(int rhinoNumber, string newIp, int newPort);
     void rhinoTransmitAllParameters(int rhinoNumber);
     void setExperimentInBackend(void);
+    void armTCU(int rhinoNumber);
+    void stopTCU(int rhinoNumber);
 
     void on_actionImport_Header_File_triggered();
     void on_rhino0_clicked();

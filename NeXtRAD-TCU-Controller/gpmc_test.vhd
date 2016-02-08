@@ -157,8 +157,8 @@ architecture rtl of gpmc_test_top is
 	-- Ethernet
 	signal sys_rst_i		:	std_logic := '0';
 	signal send_packet	:	std_logic := '0';
---	signal REX_status			:	std_logic_vector(15 downto 0) := x"0000";
---	signal REX_status_confirmed : std_logic := '0';
+	signal REX_status			:	std_logic_vector(15 downto 0) := x"0000";
+	signal REX_status_confirmed : std_logic := '0';
 	
 	-- Transmit settings to REX = 00;
 	-- Ask REX for status msg	 = 01;
@@ -214,7 +214,7 @@ architecture rtl of gpmc_test_top is
 	signal udp_tx_rdy			: std_logic;
 			
 	signal udp_rx_pkt_data  : std_logic_vector(8 * UDP_RX_DATA_BYTE_LENGTH - 1 downto 0);
---	signal udp_rx_pkt_data_r: std_logic_vector(8 * UDP_RX_DATA_BYTE_LENGTH - 1 downto 0);
+	signal udp_rx_pkt_data_r: std_logic_vector(8 * UDP_RX_DATA_BYTE_LENGTH - 1 downto 0);
 	signal udp_rx_pkt_req   : std_logic;
    signal udp_rx_rdy			: std_logic;
 	signal udp_rx_rdy_r  	: std_logic;
@@ -222,17 +222,17 @@ architecture rtl of gpmc_test_top is
 	
 	signal dst_mac_addr     : std_logic_vector(47 downto 0);
 --	signal tx_state			: std_logic_vector(2 downto 0) := "000";
---	signal rx_state			: std_logic_vector(2 downto 0) := "000";
+	signal rx_state			: std_logic_vector(1 downto 0) := "00";
 	signal locked				: std_logic;
 	signal mac_init_done		: std_logic;
 	signal GIGE_GTX_CLK_r   : std_logic;
 	signal GIGE_MDC_r			: std_logic;
 	
-	signal tx_delay_cnt		: integer := 0;
+	signal tx_delay_cnt		: integer := 0; 
 	
 	signal udp_send_packet	: std_logic;
 	signal udp_send_flag		: std_logic;
---	signal udp_receive_packet: std_logic_vector(1 downto 0) := "00";
+	signal udp_receive_packet: std_logic_vector(1 downto 0) := "00";
 --	signal udp_receive_flag	: std_logic  := '0';
 	signal udp_packet			: std_logic_vector (8 * UDP_TX_DATA_BYTE_LENGTH - 1 downto 0);
 	signal rex_set				: std_logic;
@@ -730,24 +730,24 @@ begin
 --				udp_send_packet <= '0';
 --				rex_set <= '0';
 --			end if;
-			
+--			
 			
 			
 		---- Retrieves status of the REX over ethernet
 		-- 1) sets eth_msg_type to '01' which is to send a 'retrieve status' frame.
 		--		sets REX_status_confirmed to '1' indicating that REX_status(0) has been acknowledged
 		-- 2) 
---		elsif(triggers(1) = '1' and udp_receive_packet = "00") then
---			eth_msg_type <= "01";
---			udp_send_packet <= '1';
---			REX_status_confirmed <= '1';
---			
---		elsif(udp_receive_packet = "11") then
---			REX_status_confirmed <= '0';
---		
---		elsif(triggers(1) = '1') then
---			udp_send_packet <= '0';
---			
+		elsif(triggers(1) = '1' and udp_receive_packet = "00") then
+			eth_msg_type <= "01";
+			udp_send_packet <= '1';
+			REX_status_confirmed <= '1';
+			
+		elsif(udp_receive_packet = "11") then
+			REX_status_confirmed <= '0';
+		
+		elsif(triggers(1) = '1') then
+			udp_send_packet <= '0';
+			
 		
 		else
 			udp_send_packet <= '0';
@@ -825,30 +825,25 @@ udp_tx_pkt_vld <= udp_tx_pkt_vld_r;
 --	if(rising_edge(sys_clk_100mhz)) then
 --	
 --		if(triggers(1) = '0') then
---			udp_receive_packet <= "00";
---		
---		elsif(triggers(1) = '1' and udp_receive_packet = "00") then
---			udp_receive_packet <= "01";
---			
---		elsif(triggers(1) = '1' and udp_receive_packet = "01") then
---			--		
+--			rx_state <= "00";
+--		else
+--
 --			case rx_state is
---				when "000" =>
+--				when "00" =>
 --					udp_rx_pkt_req <= '1';
 --					udp_rx_rdy_r <= udp_rx_rdy;
---					rx_state <= "001";	
---				when "001" =>
+--					rx_state <= "01";	
+--				when "01" =>
 --					if(udp_rx_rdy = '1') then
 --						udp_rx_pkt_data_r <= udp_rx_pkt_data;
 ----						status_reg(15 downto 1) <= udp_rx_pkt_data(94 downto 80);
 --						udp_rx_rdy_r <= udp_rx_rdy;
---						rx_state <= "010";	
+--						rx_state <= "10";	
 --					end if;
---				when "010" =>						
+--				when "10" =>						
 --					udp_rx_pkt_data_r <= (others => '0');
---					rx_state <= "000";	
+--					rx_state <= "11";	
 --					udp_rx_rdy_r <= udp_rx_rdy;
---					udp_receive_packet <= "10";
 --				when others =>
 --					null;
 --			end case;
@@ -857,16 +852,12 @@ udp_tx_pkt_vld <= udp_tx_pkt_vld_r;
 --					--comment this out					 64	
 ----					udp_rx_pkt_data_r <= x"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff";
 --			
---			
---			led_reg(2) <= '1';
---
---			
 --		end if;
 --			
 --		
 --	end if;
---	
---	
+----	
+----	
 --end process;
 --status_reg(15 downto 1) <= "111111111111111";
 
@@ -893,7 +884,7 @@ udp_tx_pkt_vld <= udp_tx_pkt_vld_r;
 --			udp_rx_pkt_data_r <= udp_rx_pkt_data;
 --		
 --		end if;
---	end if;
+--	end if; 
 
 
 	  

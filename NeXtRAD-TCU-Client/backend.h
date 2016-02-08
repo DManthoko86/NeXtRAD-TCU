@@ -39,7 +39,8 @@ public:
     int importNetworkSettings(string fileName);
     int importExperiment(string fileName);
     void rhinoTransmitParameters(int rhinoNumber);
-
+    void rhinoArmTCU(int rhinoNumber);
+    void rhinoStopTCU(int rhinoNumber);
 
 private:
 

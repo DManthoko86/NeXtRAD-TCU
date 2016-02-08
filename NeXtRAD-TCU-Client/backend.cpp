@@ -139,13 +139,13 @@ void backend::rhinoTransmitParameters(int rhinoNumber)
         pulseno = pulsechar;
 
         line[14+i*12] = ((getPulse(i).mb) >> 8) & 0xFF;
-        line[15+i*12] = (getPulse(i).mb+1) & 0xFF;
+        line[15+i*12] = (getPulse(i).mb) & 0xFF;
 
         line[16+i*12] = ((getPulse(i).dig) >> 8) & 0xFF;
-        line[17+i*12] = (getPulse(i).dig+1) & 0xFF;
+        line[17+i*12] = (getPulse(i).dig) & 0xFF;
 
         line[18+i*12] = (getPulse(i).pri >> 8) & 0xFF;
-        line[19+i*12] = (getPulse(i).pri+1) & 0xFF;
+        line[19+i*12] = (getPulse(i).pri) & 0xFF;
 
         // Nybbles are swapped for frequency
         // TODO frequency must have +256. Everything else +1. Figure out why.
@@ -161,4 +161,19 @@ void backend::rhinoTransmitParameters(int rhinoNumber)
     }
 
     rhino[rhinoNumber].transmitMessage(line);
+}
+
+// Arm the TCU to wait for the start pulse
+void backend::rhinoArmTCU(int rhinoNumber)
+{
+    char line[410] = "B";
+    rhino[rhinoNumber].armTCU();
+}
+
+// Stops the TCU
+// TCU must NOT wait for the start pulse
+void backend::rhinoStopTCU(int rhinoNumber)
+{
+    //char line[2] = "C";
+    //rhino[rhinoNumber].transmitMessage(line);
 }

@@ -47,6 +47,9 @@ void MainWindow::openRhinoSettings(int rhinoNumber)
     // Signals - Slots
     connect(r, SIGNAL(acceptedRhinoChanges(int,string,int)), this, SLOT(rhinoChangeSettings(int,string,int)));
     connect(r, SIGNAL(transmitAllParameters(int)), this, SLOT(rhinoTransmitAllParameters(int)));
+    connect(r, SIGNAL(armTCU(int)), this, SLOT(armTCU(int)));
+    connect(r, SIGNAL(stopTCU(int)), this, SLOT(stopTCU(int)));
+
 
     r->exec();
 }
@@ -94,6 +97,18 @@ void MainWindow::setExperimentInBackend()
     Backend.m = experiment->m;
     Backend.startTime = experiment->startTime;
     Backend.endTime = experiment->endTime;
+}
+
+// Slot to arm the TCU
+void MainWindow::armTCU(int rhinoNumber)
+{
+    Backend.rhino[rhinoNumber].armTCU();
+}
+
+// Slot to stop the TCU
+void MainWindow::stopTCU(int rhinoNumber)
+{
+    Backend.rhino[rhinoNumber].stopTCU();
 }
 
 

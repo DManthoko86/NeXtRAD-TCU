@@ -50,6 +50,54 @@ int Rhino::connect(void)
     return 0;
 }
 
+int Rhino::armTCU(void)
+{
+    char line[128];
+    TCPConnector* connector = new TCPConnector();
+    TCPStream* stream = connector->connect(ip.c_str(), port);
+    string message;
+    int len;
+
+    if (stream) {
+        message = "B  ";
+        stream->send(message.c_str(), message.size());
+        printf("sent - %s\n", message.c_str());
+        len = stream->receive(line, sizeof(line));
+        line[len] = 0;
+        printf("received - %s\n", line);
+
+        delete stream;
+
+        return 1;
+    }
+
+    return 0;
+}
+
+int Rhino::stopTCU(void)
+{
+    char line[128];
+    TCPConnector* connector = new TCPConnector();
+    TCPStream* stream = connector->connect(ip.c_str(), port);
+    string message;
+    int len;
+
+    if (stream) {
+        message = "C  ";
+        stream->send(message.c_str(), message.size());
+        printf("sent - %s\n", message.c_str());
+        len = stream->receive(line, sizeof(line));
+        line[len] = 0;
+        printf("received - %s\n", line);
+
+        delete stream;
+
+        return 1;
+    }
+
+    return 0;
+}
+
 int Rhino::retrieveN(void)
 {
     char line[128];

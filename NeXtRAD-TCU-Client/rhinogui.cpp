@@ -39,7 +39,7 @@ void rhinoGui::setOnlineStatus(int status)
         {
             ui->labelStatus->setText("Rhino is online and not waiting for a trigger.");
         }
-        else if(status == 2)
+        else if(status == 4)
         {
             ui->labelStatus->setText("Rhino is online and the experiment is over.");
         }
@@ -47,6 +47,7 @@ void rhinoGui::setOnlineStatus(int status)
         {
             ui->labelStatus->setText("Rhino is online and waiting for a trigger.");
         }
+
     }
     else
     {
@@ -74,4 +75,16 @@ void rhinoGui::on_pushButtonRefresh_clicked()
 void rhinoGui::on_pushButtonSend_clicked()
 {
     emit transmitAllParameters(rhinoNumber);
+}
+
+void rhinoGui::on_pushButtonArm_clicked()
+{
+    emit armTCU(rhinoNumber);
+    emit acceptedRhinoChanges(rhinoNumber, ui->lineEditIp->text().toStdString(), ui->lineEditPort->text().toInt());
+}
+
+void rhinoGui::on_pushButtonStop_clicked()
+{
+    emit stopTCU(rhinoNumber);
+    emit acceptedRhinoChanges(rhinoNumber, ui->lineEditIp->text().toStdString(), ui->lineEditPort->text().toInt());
 }

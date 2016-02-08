@@ -97,7 +97,13 @@ int main(int argc, char** argv)
                     // return all the parameters
                     else if(line[0] == 'B')
                     {
-                        getAllParam(line);
+                        startExperiment();
+                        stream->send("TCU armed.", 32);
+                    }
+                    else if(line[0] == 'C')
+                    {
+                        stopExperiment();
+                        stream->send("TCU stopped.", 32);
                     }
                     else if(line[0] == 'S')
                     {

@@ -36,6 +36,9 @@ public:
     // Remote connection functions
     // Note that 'retrieve' refers to getting the parameters from the Rhino
     int connect(void);
+    int armTCU(void);
+    int stopTCU(void);
+
     int retrieveN(void);
     int retrieveM(void);
     void retrieveAllParameters(void);

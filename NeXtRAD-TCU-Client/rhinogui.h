@@ -29,11 +29,15 @@ private:
 signals:
     void acceptedRhinoChanges(int rhinoNumber, string newIp, int newPort);
     void transmitAllParameters(int rhinoNumber);
+    void armTCU(int rhinoNumber);
+    void stopTCU(int rhinoNumber);
 
 private slots:
     void on_buttonBox_accepted();
     void on_pushButtonRefresh_clicked();
     void on_pushButtonSend_clicked();
+    void on_pushButtonArm_clicked();
+    void on_pushButtonStop_clicked();
 };
 
 #endif // RHINOGUI_H

@@ -60,3 +60,4 @@ unsigned int getStatus(void);
 struct prf getPRF(int n);
 
 unsigned int startExperiment(void);
+unsigned int stopExperiment(void);

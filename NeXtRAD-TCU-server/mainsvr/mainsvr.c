@@ -30,8 +30,8 @@ unsigned int setM(unsigned int value)
 	//puts float in buffer (char*) for fprintf
 	buffer[0] = (M & 0xFF);
 	buffer[1] = (M >> 8 & 0xFF);
-	buffer[2] = (M & 0xFF);
-	buffer[3] = (M >> 8 & 0xFF);
+	buffer[2] = (M >> 16 & 0xFF);
+	buffer[3] = (M >> 24 & 0xFF);
 	
 	fwrite(buffer, sizeof(char), 16, fp);
 	fclose(fp);
@@ -75,6 +75,36 @@ unsigned int startExperiment(void)
 	FILE *fp;
 	unsigned char buffer[9];
 	
+	unsigned int turnon = 1;
+	unsigned int turnoff = 0;
+	
+	stopExperiment();
+	
+	/*	Write to N register	*/
+	sprintf(file_dir, "/proc/%i/hw/ioreg/reg_led", pid);
+	fp = fopen(file_dir, "w");
+	
+	//turns on led 1 (start experiment)
+	buffer[0] = ((unsigned int)turnon & 0xFF);
+	buffer[1] = ((unsigned int)turnon >> 8 & 0xFF);
+	buffer[2] = ((unsigned int)turnon >> 16 & 0xFF);
+	buffer[3] = ((unsigned int)turnon >> 24 & 0xFF);
+	fwrite(buffer, sizeof(char), 16, fp);
+	
+	fclose(fp);
+	
+	return 1;
+}
+
+
+// Tells the Rhino that it cant wait for a trigger
+unsigned int stopExperiment(void)
+{
+	
+	char file_dir[30];
+	FILE *fp;
+	unsigned char buffer[9];
+	
 	/*	Write to N register	*/
 	sprintf(file_dir, "/proc/%i/hw/ioreg/reg_led", pid);
 	fp = fopen(file_dir, "w");
@@ -82,13 +112,6 @@ unsigned int startExperiment(void)
 	//turns off led register
 	buffer[0] = 0;
 	buffer[1] = 0;
-	buffer[2] = 0;
-	buffer[3] = 0;
-	fwrite(buffer, sizeof(char), 16, fp);
-	
-	//turns on led 1 (start experiment)
-	buffer[0] = 0;
-	buffer[1] = 1;
 	buffer[2] = 0;
 	buffer[3] = 0;
 	fwrite(buffer, sizeof(char), 16, fp);
@@ -211,6 +234,7 @@ struct prf getPRF(int n)
 unsigned int getStatus(void)
 {
     FILE *fp;
+    FILE *fq;
 	char file_dir[30];
 	unsigned char isStart, status;
 
@@ -222,18 +246,19 @@ unsigned int getStatus(void)
 	status	=	fgetc(fp);
 	if(status != 0) status = 1;
 	
+	fclose(fp);
 	
 	
 	// retrieves from led_reg whether the Rhino is waiting for the 'start' pulse
-	/*
-	sprintf(file_dir, "/proc/%i/hw/ioreg/led_reg", pid);
-	fp = fopen(file_dir, "r");
-	isStart = fgetc(fp);
-	if(isStart == 1) status = status + 2;
-	*/
+	sprintf(file_dir, "/proc/%i/hw/ioreg/reg_led", pid);
+	fq = fopen(file_dir, "r");
+	isStart = fgetc(fq);
+	if(isStart == 1) 
+	{
+	    status = status + 2;
+	}
 	
-	fclose(fp);
-	
+	fclose(fq);
 	return status;
 }
 
