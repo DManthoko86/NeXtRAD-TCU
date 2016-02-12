@@ -12,6 +12,17 @@
 // parameters are often "pointed" by a char. value is in order starting from BCD at 0 and not including suffix
 // so for example: BCD is at 0, band is at 1 etc..
 // PARAMETER_BITS constant must be 8xthe number of parameters
+
+//#include <stdint.h>
+#include <inttypes.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <assert.h>
+#include <dirent.h> 
+#include <stdbool.h>
+
 #define PARAMETER_BITS = 24
 
 struct prf{
@@ -25,6 +36,8 @@ struct prf{
 
 unsigned int M = 0;
 unsigned int N = 0;
+char armed;         // is 1 when Rhino is ready waiting for start bit
+char finished;      // us 1 when experiment is over
 struct prf reg_prf[32];
 
 // PID of the .bof process. retrieved with getPID()
@@ -43,6 +56,8 @@ unsigned int uploadPRF(void);
 
 unsigned int getM(void);
 unsigned int getN(void);
+unsigned int getStatus(void);
 struct prf getPRF(int n);
 
 unsigned int startExperiment(void);
+unsigned int stopExperiment(void);

@@ -1,5 +1,5 @@
 /*
-	Once completed, this program will act as a backend server
+	Once completed, this program will include functions
 	with the following aims
 
 	1) communicate with a user logged on a terminal
@@ -8,21 +8,13 @@
 	3) send and receive data from the Spartan 6
 
 */
-//#include <stdint.h>
-#include <inttypes.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <assert.h>
-#include <dirent.h> 
-#include <stdbool.h>
+
 
 
 // contains variables and function declarations
 #include "mainsvr.h"
 
-
+// Changes the number of repeats
 unsigned int setM(unsigned int value)
 {
 	M = value;
@@ -32,20 +24,23 @@ unsigned int setM(unsigned int value)
 	unsigned char buffer[9];
 	
 	/*	Write to M register	*/
-	sprintf(file_dir, "/proc/%i/hw/ioreg/reg_M", pid);
+	sprintf(file_dir, "/proc/%i/hw/ioreg/m", pid);
 	fp = fopen(file_dir, "w");
 	
 	//puts float in buffer (char*) for fprintf
 	buffer[0] = (M & 0xFF);
 	buffer[1] = (M >> 8 & 0xFF);
-	buffer[2] = (M & 0xFF);
-	buffer[3] = (M >> 8 & 0xFF);
+	buffer[2] = (M >> 16 & 0xFF);
+	buffer[3] = (M >> 24 & 0xFF);
 	
 	fwrite(buffer, sizeof(char), 16, fp);
 	fclose(fp);
 	/*	Done writing to M	*/
+	
+	return 1;
 }
 
+// Changes the number of pulses stored in the Rhino
 unsigned int setN(unsigned int value)
 {
 	
@@ -56,7 +51,7 @@ unsigned int setN(unsigned int value)
 	unsigned char buffer[9];
 	
 	/*	Write to N register	*/
-	sprintf(file_dir, "/proc/%i/hw/ioreg/reg_N", pid);
+	sprintf(file_dir, "/proc/%i/hw/ioreg/n", pid);
 	fp = fopen(file_dir, "w");
 	
 	//puts float in buffer (char*) for fprintf
@@ -68,9 +63,42 @@ unsigned int setN(unsigned int value)
 	fwrite(buffer, sizeof(char), 16, fp);
 	fclose(fp);
 	/*	Done writing to N	*/
+	
+	return 1;
 }
 
+// Tells the Rhino that it can wait for a trigger
 unsigned int startExperiment(void)
+{
+	
+	char file_dir[30];
+	FILE *fp;
+	unsigned char buffer[9];
+	
+	unsigned int turnon = 1;
+	unsigned int turnoff = 0;
+	
+	stopExperiment();
+	
+	/*	Write to N register	*/
+	sprintf(file_dir, "/proc/%i/hw/ioreg/reg_led", pid);
+	fp = fopen(file_dir, "w");
+	
+	//turns on led 1 (start experiment)
+	buffer[0] = ((unsigned int)turnon & 0xFF);
+	buffer[1] = ((unsigned int)turnon >> 8 & 0xFF);
+	buffer[2] = ((unsigned int)turnon >> 16 & 0xFF);
+	buffer[3] = ((unsigned int)turnon >> 24 & 0xFF);
+	fwrite(buffer, sizeof(char), 16, fp);
+	
+	fclose(fp);
+	
+	return 1;
+}
+
+
+// Tells the Rhino that it cant wait for a trigger
+unsigned int stopExperiment(void)
 {
 	
 	char file_dir[30];
@@ -88,14 +116,9 @@ unsigned int startExperiment(void)
 	buffer[3] = 0;
 	fwrite(buffer, sizeof(char), 16, fp);
 	
-	//turns on led 1 (start experiment)
-	buffer[0] = 0;
-	buffer[1] = 1;
-	buffer[2] = 0;
-	buffer[3] = 0;
-	fwrite(buffer, sizeof(char), 16, fp);
-	
 	fclose(fp);
+	
+	return 1;
 }
 
 /*
@@ -129,7 +152,7 @@ unsigned int uploadPRF(void)
 	}
 	
 	/*	Write from reg_PRF variable to reg_PRF register on FPGA	*/
-	sprintf(file_dir, "/proc/%i/hw/ioreg/reg_PRF", pid);
+	sprintf(file_dir, "/proc/%i/hw/ioreg/reg_pulses", pid);
 	fp = fopen(file_dir, "w");
 	
 	//if file doesn't exist, return 0
@@ -142,7 +165,7 @@ unsigned int uploadPRF(void)
 	//otherwise, write message to file
 	fclose(fp);
 	
-	return 0;
+	return 1;
 }
 
 // Sets the n'th pulse with the parameters pass
@@ -156,58 +179,23 @@ unsigned int setPRF(int n, uint16_t set_mb, uint16_t set_dig, uint16_t set_pri, 
 	reg_prf[n].frequency = set_frequency;
 	reg_prf[n].mode 	= set_mode;
 	reg_prf[n].notused 	= set_notused;
+	
+	return 1;
 }
 
 // setPRF passing the entire struct
 unsigned int setPRFs(int n, struct prf pulse)
 {
 	reg_prf[n] = pulse;
+	
+	return 1;
 }
-
-
-
-/*
-
-//retrieves parameters from FPGA and places them in variables with suffix _S.
-void download(void)
-{
-	FILE *fp;
-	char file_dir[30];
-	char ch; // character retrieved from file (len_file in /proc)
-
-	// Retrieve LED parameter
-	sprintf(file_dir, "/proc/%i/hw/ioreg/reg_led", pid);
-	fp = fopen(file_dir, "r");
-	
-	LED_S	=	fgetc(fp);	// retrieves first character and places in LED_S. there is another 8 bit register, not sure what it is for so it is ignored.
-	
-	fclose(fp);
-	// Done with LED
-	
-	// Retrieve other parameters
-	sprintf(file_dir, "/proc/%i/hw/ioreg/reg_file", pid);
-	fp = fopen(file_dir, "r");
-	
-	//retrieves two bytes per parameter, even if the parameter doesn't need all of the bits.
-	BCD_S	=	fgetc(fp)|fgetc(fp)<<8;
-	band_S	=	fgetc(fp)|fgetc(fp)<<8;
-	
-	fclose(fp);
-	
-	// Done with other parameters
-}
-
-*/
-
-
-
 
 // Retrieves M (number of repeats) from FPGA register and assigns it to M. Same value is also returned from this function
 unsigned int getM(void)
 {
 	FILE *fp;
 	char file_dir[30];
-	char ch; // character retrieved from file (len_file in /proc)
 
 	/*	Retrieve M	*/
 	sprintf(file_dir, "/proc/%i/hw/ioreg/reg_M", pid);
@@ -223,7 +211,6 @@ unsigned int getN(void)
 {
 	FILE *fp;
 	char file_dir[30];
-	char ch; // character retrieved from file (len_file in /proc)
 
 	/*	Retrieve M	*/
 	sprintf(file_dir, "/proc/%i/hw/ioreg/reg_N", pid);
@@ -236,9 +223,43 @@ unsigned int getN(void)
 
 // returns the pulse parameters as a prf structure
 // note that this fn doesn't return the parameters from the FPGA, but rather the parameters in RAM
+// status = 1 : end of experiment
+// status = 2 : Rhino waiting for 'start' pulse
+// status = 3 : Both of the above
 struct prf getPRF(int n)
 {
 	return reg_prf[n];
+}
+
+unsigned int getStatus(void)
+{
+    FILE *fp;
+    FILE *fq;
+	char file_dir[30];
+	unsigned char isStart, status;
+
+	/*	Retrieve status register	*/
+	sprintf(file_dir, "/proc/%i/hw/ioreg/status", pid);
+	fp = fopen(file_dir, "r");
+	
+	// retrieves status register which indicates if it is at the end of an experiment
+	status	=	fgetc(fp);
+	if(status != 0) status = 1;
+	
+	fclose(fp);
+	
+	
+	// retrieves from led_reg whether the Rhino is waiting for the 'start' pulse
+	sprintf(file_dir, "/proc/%i/hw/ioreg/reg_led", pid);
+	fq = fopen(file_dir, "r");
+	isStart = fgetc(fq);
+	if(isStart == 1) 
+	{
+	    status = status + 2;
+	}
+	
+	fclose(fq);
+	return status;
 }
 
 
@@ -255,7 +276,7 @@ int getPID(char *processName)
 	char * line;       //reading the file, important
 	size_t len = 0;    //for reading the file. find out if necessary
 	ssize_t read;      //also for reading the file. find out if necessary
-	int size_of_line = 0;
+//	int size_of_line = 0;
 
 	d = opendir("/proc/");
 
