@@ -144,7 +144,7 @@ void backend::rhinoTransmitParameters(int rhinoNumber)
         line[16+i*12] = ((getPulse(i).dig) >> 8) & 0xFF;
         line[17+i*12] = (getPulse(i).dig) & 0xFF;
 
-        line[18+i*12] = (getPulse(i).pri >> 8) & 0xFF;
+        line[18+i*12] = ((getPulse(i).pri) >> 8) & 0xFF;
         line[19+i*12] = (getPulse(i).pri) & 0xFF;
 
         // Nybbles are swapped for frequency
@@ -153,7 +153,7 @@ void backend::rhinoTransmitParameters(int rhinoNumber)
         line[20+i*12] = (getPulse(i).frequency) & 0xFF;
         line[21+i*12] = ((getPulse(i).frequency+256) >> 8) & 0xFF;
 
-//        line[22+i*12] = (getPulse(i).mode >> 8) & 0xFF;
+        line[22+i*12] = (getPulse(i).mode) & 0xFF;
         line[23+i*12] = (getPulse(i).mode+1) & 0xFF;
 
         line[24+i*12] = (getPulse(i).notused >> 8) & 0xFF;

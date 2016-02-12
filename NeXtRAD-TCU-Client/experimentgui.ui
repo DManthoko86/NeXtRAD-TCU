@@ -88,7 +88,7 @@
     </rect>
    </property>
    <property name="suffix">
-    <string> μs</string>
+    <string> ns</string>
    </property>
    <property name="minimum">
     <number>10</number>
@@ -110,7 +110,7 @@
     </rect>
    </property>
    <property name="suffix">
-    <string> μs</string>
+    <string> ns</string>
    </property>
    <property name="minimum">
     <number>10</number>
@@ -132,7 +132,7 @@
     </rect>
    </property>
    <property name="suffix">
-    <string> μs</string>
+    <string> ns</string>
    </property>
    <property name="minimum">
     <number>10</number>

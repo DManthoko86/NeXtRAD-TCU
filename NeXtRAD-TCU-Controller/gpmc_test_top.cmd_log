@@ -1,0 +1,87 @@
+xst -intstyle ise -ifn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.xst" -ofn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd pcores/rtl/spartan6 -nt timestamp -uc pcores/rtl/ip/UDP_1GbE_if.ucf -p xc6slx150t-fgg676-2 gpmc_test_top.ngc gpmc_test_top.ngd  
+map -intstyle ise -p xc6slx150t-fgg676-2 -w -logic_opt off -ol high -xe n -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr b -lc off -power off -o gpmc_test_top_map.ncd gpmc_test_top.ngd gpmc_test_top.pcf 
+par -w -intstyle ise -ol high -xe n -mt off gpmc_test_top_map.ncd gpmc_test_top.ncd gpmc_test_top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml gpmc_test_top.twx gpmc_test_top.ncd -o gpmc_test_top.twr gpmc_test_top.pcf 
+bitgen -intstyle ise -f gpmc_test_top.ut gpmc_test_top.ncd 
+xst -intstyle ise -ifn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.xst" -ofn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd pcores/rtl/spartan6 -nt timestamp -uc pcores/rtl/ip/UDP_1GbE_if.ucf -p xc6slx150t-fgg676-2 gpmc_test_top.ngc gpmc_test_top.ngd  
+map -intstyle ise -p xc6slx150t-fgg676-2 -w -logic_opt off -ol high -xe n -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr b -lc off -power off -o gpmc_test_top_map.ncd gpmc_test_top.ngd gpmc_test_top.pcf 
+par -w -intstyle ise -ol high -xe n -mt off gpmc_test_top_map.ncd gpmc_test_top.ncd gpmc_test_top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml gpmc_test_top.twx gpmc_test_top.ncd -o gpmc_test_top.twr gpmc_test_top.pcf 
+bitgen -intstyle ise -f gpmc_test_top.ut gpmc_test_top.ncd 
+xst -intstyle ise -ifn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.xst" -ofn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd pcores/rtl/spartan6 -nt timestamp -uc pcores/rtl/ip/UDP_1GbE_if.ucf -p xc6slx150t-fgg676-2 gpmc_test_top.ngc gpmc_test_top.ngd  
+map -intstyle ise -p xc6slx150t-fgg676-2 -w -logic_opt off -ol high -xe n -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr b -lc off -power off -o gpmc_test_top_map.ncd gpmc_test_top.ngd gpmc_test_top.pcf 
+par -w -intstyle ise -ol high -xe n -mt off gpmc_test_top_map.ncd gpmc_test_top.ncd gpmc_test_top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml gpmc_test_top.twx gpmc_test_top.ncd -o gpmc_test_top.twr gpmc_test_top.pcf 
+bitgen -intstyle ise -f gpmc_test_top.ut gpmc_test_top.ncd 
+xst -intstyle ise -ifn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.xst" -ofn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd pcores/rtl/spartan6 -nt timestamp -uc pcores/rtl/ip/UDP_1GbE_if.ucf -p xc6slx150t-fgg676-2 gpmc_test_top.ngc gpmc_test_top.ngd  
+map -intstyle ise -p xc6slx150t-fgg676-2 -w -logic_opt off -ol high -xe n -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr b -lc off -power off -o gpmc_test_top_map.ncd gpmc_test_top.ngd gpmc_test_top.pcf 
+par -w -intstyle ise -ol high -xe n -mt off gpmc_test_top_map.ncd gpmc_test_top.ncd gpmc_test_top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml gpmc_test_top.twx gpmc_test_top.ncd -o gpmc_test_top.twr gpmc_test_top.pcf 
+bitgen -intstyle ise -f gpmc_test_top.ut gpmc_test_top.ncd 
+xst -intstyle ise -ifn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.xst" -ofn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.syr" 
+xst -intstyle ise -ifn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.xst" -ofn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd pcores/rtl/spartan6 -nt timestamp -uc pcores/rtl/ip/UDP_1GbE_if.ucf -p xc6slx150t-fgg676-2 gpmc_test_top.ngc gpmc_test_top.ngd  
+map -intstyle ise -p xc6slx150t-fgg676-2 -w -logic_opt off -ol high -xe n -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr b -lc off -power off -o gpmc_test_top_map.ncd gpmc_test_top.ngd gpmc_test_top.pcf 
+par -w -intstyle ise -ol high -xe n -mt off gpmc_test_top_map.ncd gpmc_test_top.ncd gpmc_test_top.pcf 
+xst -intstyle ise -ifn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.xst" -ofn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.syr" 
+xst -intstyle ise -ifn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.xst" -ofn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.syr" 
+xst -intstyle ise -ifn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.xst" -ofn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd pcores/rtl/spartan6 -nt timestamp -uc pcores/rtl/ip/UDP_1GbE_if.ucf -p xc6slx150t-fgg676-2 gpmc_test_top.ngc gpmc_test_top.ngd  
+map -intstyle ise -p xc6slx150t-fgg676-2 -w -logic_opt off -ol high -xe n -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr b -lc off -power off -o gpmc_test_top_map.ncd gpmc_test_top.ngd gpmc_test_top.pcf 
+par -w -intstyle ise -ol high -xe n -mt off gpmc_test_top_map.ncd gpmc_test_top.ncd gpmc_test_top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml gpmc_test_top.twx gpmc_test_top.ncd -o gpmc_test_top.twr gpmc_test_top.pcf 
+bitgen -intstyle ise -f gpmc_test_top.ut gpmc_test_top.ncd 
+ngdbuild -intstyle ise -dd _ngo -sd pcores/rtl/spartan6 -nt timestamp -uc pcores/rtl/ip/UDP_1GbE_if.ucf -p xc6slx150t-fgg676-2 gpmc_test_top.ngc gpmc_test_top.ngd  
+map -intstyle ise -p xc6slx150t-fgg676-2 -w -logic_opt off -ol high -xe n -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr b -lc off -power off -o gpmc_test_top_map.ncd gpmc_test_top.ngd gpmc_test_top.pcf 
+ngdbuild -intstyle ise -dd _ngo -sd pcores/rtl/spartan6 -nt timestamp -uc pcores/rtl/ip/UDP_1GbE_if.ucf -p xc6slx150t-fgg676-2 gpmc_test_top.ngc gpmc_test_top.ngd  
+map -intstyle ise -p xc6slx150t-fgg676-2 -w -logic_opt off -ol high -xe n -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr b -lc off -power off -o gpmc_test_top_map.ncd gpmc_test_top.ngd gpmc_test_top.pcf 
+par -w -intstyle ise -ol high -xe n -mt off gpmc_test_top_map.ncd gpmc_test_top.ncd gpmc_test_top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml gpmc_test_top.twx gpmc_test_top.ncd -o gpmc_test_top.twr gpmc_test_top.pcf 
+bitgen -intstyle ise -f gpmc_test_top.ut gpmc_test_top.ncd 
+xst -intstyle ise -ifn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.xst" -ofn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd pcores/rtl/spartan6 -nt timestamp -uc pcores/rtl/ip/UDP_1GbE_if.ucf -p xc6slx150t-fgg676-2 gpmc_test_top.ngc gpmc_test_top.ngd  
+map -intstyle ise -p xc6slx150t-fgg676-2 -w -logic_opt off -ol high -xe n -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr b -lc off -power off -o gpmc_test_top_map.ncd gpmc_test_top.ngd gpmc_test_top.pcf 
+par -w -intstyle ise -ol high -xe n -mt off gpmc_test_top_map.ncd gpmc_test_top.ncd gpmc_test_top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml gpmc_test_top.twx gpmc_test_top.ncd -o gpmc_test_top.twr gpmc_test_top.pcf 
+bitgen -intstyle ise -f gpmc_test_top.ut gpmc_test_top.ncd 
+xst -intstyle ise -ifn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.xst" -ofn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd pcores/rtl/spartan6 -nt timestamp -uc pcores/rtl/ip/UDP_1GbE_if.ucf -p xc6slx150t-fgg676-2 gpmc_test_top.ngc gpmc_test_top.ngd  
+map -intstyle ise -p xc6slx150t-fgg676-2 -w -logic_opt off -ol high -xe n -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr b -lc off -power off -o gpmc_test_top_map.ncd gpmc_test_top.ngd gpmc_test_top.pcf 
+par -w -intstyle ise -ol high -xe n -mt off gpmc_test_top_map.ncd gpmc_test_top.ncd gpmc_test_top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml gpmc_test_top.twx gpmc_test_top.ncd -o gpmc_test_top.twr gpmc_test_top.pcf 
+bitgen -intstyle ise -f gpmc_test_top.ut gpmc_test_top.ncd 
+xst -intstyle ise -ifn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.xst" -ofn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd pcores/rtl/spartan6 -nt timestamp -uc pcores/rtl/ip/UDP_1GbE_if.ucf -p xc6slx150t-fgg676-2 gpmc_test_top.ngc gpmc_test_top.ngd  
+map -intstyle ise -p xc6slx150t-fgg676-2 -w -logic_opt off -ol high -xe n -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr b -lc off -power off -o gpmc_test_top_map.ncd gpmc_test_top.ngd gpmc_test_top.pcf 
+par -w -intstyle ise -ol high -xe n -mt off gpmc_test_top_map.ncd gpmc_test_top.ncd gpmc_test_top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml gpmc_test_top.twx gpmc_test_top.ncd -o gpmc_test_top.twr gpmc_test_top.pcf 
+bitgen -intstyle ise -f gpmc_test_top.ut gpmc_test_top.ncd 
+xst -intstyle ise -ifn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.xst" -ofn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd pcores/rtl/spartan6 -nt timestamp -uc pcores/rtl/ip/UDP_1GbE_if.ucf -p xc6slx150t-fgg676-2 gpmc_test_top.ngc gpmc_test_top.ngd  
+map -intstyle ise -p xc6slx150t-fgg676-2 -w -logic_opt off -ol high -xe n -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr b -lc off -power off -o gpmc_test_top_map.ncd gpmc_test_top.ngd gpmc_test_top.pcf 
+par -w -intstyle ise -ol high -xe n -mt off gpmc_test_top_map.ncd gpmc_test_top.ncd gpmc_test_top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml gpmc_test_top.twx gpmc_test_top.ncd -o gpmc_test_top.twr gpmc_test_top.pcf 
+bitgen -intstyle ise -f gpmc_test_top.ut gpmc_test_top.ncd 
+xst -intstyle ise -ifn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.xst" -ofn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.syr" 
+xst -intstyle ise -ifn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.xst" -ofn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd pcores/rtl/spartan6 -nt timestamp -uc pcores/rtl/ip/UDP_1GbE_if.ucf -p xc6slx150t-fgg676-2 gpmc_test_top.ngc gpmc_test_top.ngd  
+map -intstyle ise -p xc6slx150t-fgg676-2 -w -logic_opt off -ol high -xe n -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr b -lc off -power off -o gpmc_test_top_map.ncd gpmc_test_top.ngd gpmc_test_top.pcf 
+par -w -intstyle ise -ol high -xe n -mt off gpmc_test_top_map.ncd gpmc_test_top.ncd gpmc_test_top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml gpmc_test_top.twx gpmc_test_top.ncd -o gpmc_test_top.twr gpmc_test_top.pcf 
+bitgen -intstyle ise -f gpmc_test_top.ut gpmc_test_top.ncd 
+xst -intstyle ise -ifn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.xst" -ofn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd pcores/rtl/spartan6 -nt timestamp -uc pcores/rtl/ip/UDP_1GbE_if.ucf -p xc6slx150t-fgg676-2 gpmc_test_top.ngc gpmc_test_top.ngd  
+map -intstyle ise -p xc6slx150t-fgg676-2 -w -logic_opt off -ol high -xe n -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr b -lc off -power off -o gpmc_test_top_map.ncd gpmc_test_top.ngd gpmc_test_top.pcf 
+par -w -intstyle ise -ol high -xe n -mt off gpmc_test_top_map.ncd gpmc_test_top.ncd gpmc_test_top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml gpmc_test_top.twx gpmc_test_top.ncd -o gpmc_test_top.twr gpmc_test_top.pcf 
+bitgen -intstyle ise -f gpmc_test_top.ut gpmc_test_top.ncd 
+xst -intstyle ise -ifn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.xst" -ofn "/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd pcores/rtl/spartan6 -nt timestamp -uc pcores/rtl/ip/UDP_1GbE_if.ucf -p xc6slx150t-fgg676-2 gpmc_test_top.ngc gpmc_test_top.ngd  
+map -intstyle ise -p xc6slx150t-fgg676-2 -w -logic_opt off -ol high -xe n -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr b -lc off -power off -o gpmc_test_top_map.ncd gpmc_test_top.ngd gpmc_test_top.pcf 
+par -w -intstyle ise -ol high -xe n -mt off gpmc_test_top_map.ncd gpmc_test_top.ncd gpmc_test_top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml gpmc_test_top.twx gpmc_test_top.ncd -o gpmc_test_top.twr gpmc_test_top.pcf 
+bitgen -intstyle ise -f gpmc_test_top.ut gpmc_test_top.ncd 

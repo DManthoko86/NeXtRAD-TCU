@@ -1,0 +1,1123 @@
+Release 14.7 Map P.20131013 (lin64)
+Xilinx Mapping Report File for Design 'gpmc_test_top'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc6slx150t-fgg676-2 -w -logic_opt off -ol
+high -xe n -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir
+off -pr b -lc off -power off -o gpmc_test_top_map.ncd gpmc_test_top.ngd
+gpmc_test_top.pcf 
+Target Device  : xc6slx150t
+Target Package : fgg676
+Target Speed   : -2
+Mapper Version : spartan6 -- $Revision: 1.55 $
+Mapped Date    : Thu Feb 11 15:59:26 2016
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:   19
+Slice Logic Utilization:
+  Number of Slice Registers:                 3,176 out of 184,304    1%
+    Number used as Flip Flops:               3,174
+    Number used as Latches:                      2
+    Number used as Latch-thrus:                  0
+    Number used as AND/OR logics:                0
+  Number of Slice LUTs:                      3,042 out of  92,152    3%
+    Number used as logic:                    2,114 out of  92,152    2%
+      Number using O6 output only:           1,680
+      Number using O5 output only:             104
+      Number using O5 and O6:                  330
+      Number used as ROM:                        0
+    Number used as Memory:                     695 out of  21,680    3%
+      Number used as Dual Port RAM:            280
+        Number using O6 output only:           280
+        Number using O5 output only:             0
+        Number using O5 and O6:                  0
+      Number used as Single Port RAM:            0
+      Number used as Shift Register:           415
+        Number using O6 output only:           384
+        Number using O5 output only:             0
+        Number using O5 and O6:                 31
+    Number used exclusively as route-thrus:    233
+      Number with same-slice register load:     84
+      Number with same-slice carry load:       149
+      Number with other load:                    0
+
+Slice Logic Distribution:
+  Number of occupied Slices:                 1,419 out of  23,038    6%
+  Number of MUXCYs used:                       648 out of  46,076    1%
+  Number of LUT Flip Flop pairs used:        4,113
+    Number with an unused Flip Flop:         1,185 out of   4,113   28%
+    Number with an unused LUT:               1,071 out of   4,113   26%
+    Number of fully used LUT-FF pairs:       1,857 out of   4,113   45%
+    Number of unique control sets:             172
+    Number of slice register sites lost
+      to control set restrictions:             746 out of 184,304    1%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                       127 out of     396   32%
+    Number of LOCed IOBs:                      118 out of     127   92%
+    IOB Flip Flops:                             89
+
+Specific Feature Utilization:
+  Number of RAMB16BWERs:                        82 out of     268   30%
+  Number of RAMB8BWERs:                          3 out of     536    1%
+  Number of BUFIO2/BUFIO2_2CLKs:                 0 out of      32    0%
+  Number of BUFIO2FB/BUFIO2FB_2CLKs:             0 out of      32    0%
+  Number of BUFG/BUFGMUXs:                       7 out of      16   43%
+    Number used as BUFGs:                        5
+    Number used as BUFGMUX:                      2
+  Number of DCM/DCM_CLKGENs:                     0 out of      12    0%
+  Number of ILOGIC2/ISERDES2s:                  31 out of     586    5%
+    Number used as ILOGIC2s:                    31
+    Number used as ISERDES2s:                    0
+  Number of IODELAY2/IODRP2/IODRP2_MCBs:         0 out of     586    0%
+  Number of OLOGIC2/OSERDES2s:                  57 out of     586    9%
+    Number used as OLOGIC2s:                    57
+    Number used as OSERDES2s:                    0
+  Number of BSCANs:                              1 out of       4   25%
+  Number of BUFHs:                               0 out of     384    0%
+  Number of BUFPLLs:                             0 out of       8    0%
+  Number of BUFPLL_MCBs:                         0 out of       4    0%
+  Number of DSP48A1s:                            0 out of     180    0%
+  Number of GTPA1_DUALs:                         0 out of       4    0%
+  Number of ICAPs:                               0 out of       1    0%
+  Number of MCBs:                                0 out of       4    0%
+  Number of PCIE_A1s:                            0 out of       1    0%
+  Number of PCILOGICSEs:                         0 out of       2    0%
+  Number of PLL_ADVs:                            1 out of       6   16%
+  Number of PMVs:                                0 out of       1    0%
+  Number of STARTUPs:                            0 out of       1    0%
+  Number of SUSPEND_SYNCs:                       0 out of       1    0%
+
+Average Fanout of Non-Clock Nets:                3.97
+
+Peak Memory Usage:  1063 MB
+Total REAL time to MAP completion:  1 mins 12 secs 
+Total CPU time to MAP completion:   1 mins 8 secs 
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Timing Report
+Section 11 - Configuration String Information
+Section 12 - Control Set Information
+Section 13 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:LIT:714 - ODDR2 symbol "UDP_1GbE_inst/MDC_ODDR2_inst" (output
+   signal=GIGE_MDC_OBUF) INIT value should be 1 when set pin is used.
+WARNING:Place:837 - Partially locked IO Bus is found. 
+    Following components of the bus are not locked: 
+   	 Comp: bcd<31>
+   	 Comp: bcd<30>
+   	 Comp: bcd<29>
+   	 Comp: bcd<28>
+   	 Comp: bcd<27>
+   	 Comp: bcd<26>
+   	 Comp: bcd<25>
+   	 Comp: bcd<24>
+
+WARNING:PhysDesignRules:372 - Gated clock. Clock net UDP_1GbE_inst/CONTROL1<13>
+   is sourced by a combinatorial pin. This is not good design practice. Use the
+   CE pin to control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net UDP_1GbE_inst/CONTROL0<13>
+   is sourced by a combinatorial pin. This is not good design practice. Use the
+   CE pin to control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   UDP_1GbE_inst/Ethernet_MAC_top/U_eth_miim/clkgen/Mdc is sourced by a
+   combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:367 - The signal
+   <UDP_1GbE_inst/Ethernet_MAC_top/GND_11_o_GND_11_o_sub_2_OUT<2>> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <UDP_1GbE_inst/Ethernet_MAC_top/Msub_GND_11_o_GND_11_o_sub_2_OUT_cy<14>> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <UDP_1GbE_inst/Rx_mac_BE<0>> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <UDP_1GbE_inst/Rx_mac_BE<1>> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <UDP_1GbE_inst/vio_inst/U0/I_VIO/UPDATE<4>> is incomplete. The signal does
+   not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <UDP_1GbE_inst/vio_inst/U0/I_VIO/UPDATE<5>> is incomplete. The signal does
+   not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <UDP_1GbE_inst/vio_inst/U0/I_VIO/UPDATE<6>> is incomplete. The signal does
+   not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <UDP_1GbE_inst/vio_inst/U0/I_VIO/UPDATE<7>> is incomplete. The signal does
+   not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <UDP_1GbE_inst/vio_inst/U0/I_VIO/UPDATE<0>> is incomplete. The signal does
+   not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <UDP_1GbE_inst/vio_inst/U0/I_VIO/UPDATE<1>> is incomplete. The signal does
+   not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <UDP_1GbE_inst/vio_inst/U0/I_VIO/UPDATE<2>> is incomplete. The signal does
+   not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <UDP_1GbE_inst/vio_inst/U0/I_VIO/UPDATE<3>> is incomplete. The signal does
+   not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <UDP_1GbE_inst/vio_inst/U0/I_VIO/reset_f_edge/iDOUT<1>> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:2410 - This design is using one or more 9K Block RAMs
+   (RAMB8BWER).  9K Block RAM initialization data, both user defined and
+   default, may be incorrect and should not be used.  For more information,
+   please reference Xilinx Answer Record 39999.
+
+Section 3 - Informational
+-------------------------
+INFO:LIT:243 - Logical network UDP_1GbE_inst/CONTROL0<7> has no load.
+INFO:LIT:395 - The above info message is repeated 103 more times for the
+   following (max. 5 shown):
+   UDP_1GbE_inst/CONTROL0<10>,
+   UDP_1GbE_inst/CONTROL0<11>,
+   UDP_1GbE_inst/CONTROL0<15>,
+   UDP_1GbE_inst/CONTROL0<16>,
+   UDP_1GbE_inst/CONTROL0<17>
+   To see the details of these info messages, please use the -detail switch.
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:Pack:1716 - Initializing temperature to 85.000 Celsius. (default - Range:
+   0.000 to 85.000 Celsius)
+INFO:Pack:1720 - Initializing voltage to 1.140 Volts. (default - Range: 1.140 to
+   1.260 Volts)
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+INFO:Place:834 - Only a subset of IOs are locked. Out of 127 IOs, 118 are locked
+   and 9 are not locked. If you would like to print the names of these IOs,
+   please set the environment variable XIL_PAR_DESIGN_CHECK_VERBOSE to 1. 
+INFO:Pack:1650 - Map created a placed design.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+ 157 block(s) removed
+ 380 block(s) optimized away
+ 139 signal(s) removed
+
+Section 5 - Removed Logic
+-------------------------
+
+The trimmed logic report below shows the logic removed from your design due to
+sourceless or loadless signals, and VCC or ground connections.  If the removal
+of a signal or symbol results in the subsequent removal of an additional signal
+or symbol, the message explaining that second removal will be indented.  This
+indentation will be repeated as a chain of related logic is removed.
+
+To quickly locate the original cause for the removal of a chain of logic, look
+above the place where that logic is listed in the trimming report, then locate
+the lines that are least indented (begin at the leftmost edge).
+
+Loadless block
+"UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/U_duram/U_RAMB16_S36_S36"
+(RAMB16BWER) removed.
+ The signal "UDP_1GbE_inst/Ethernet_MAC_top/rx_pkg_lgth_fifo_wr" is loadless and
+has been removed.
+  Loadless block "UDP_1GbE_inst/Ethernet_MAC_top/rx_pkg_lgth_fifo_wr" (FF)
+removed.
+   The signal
+"UDP_1GbE_inst/Ethernet_MAC_top/rx_pkg_lgth_fifo_wr_tmp_rx_pkg_lgth_fifo_wr_tmp_
+pl1_AND_158_o" is loadless and has been removed.
+    Loadless block
+"UDP_1GbE_inst/Ethernet_MAC_top/rx_pkg_lgth_fifo_wr_tmp_rx_pkg_lgth_fifo_wr_tmp_
+pl1_AND_158_o1" (ROM) removed.
+     The signal "UDP_1GbE_inst/Ethernet_MAC_top/rx_pkg_lgth_fifo_wr_tmp_pl1" is
+loadless and has been removed.
+      Loadless block "UDP_1GbE_inst/Ethernet_MAC_top/rx_pkg_lgth_fifo_wr_tmp_pl1" (FF)
+removed.
+       The signal "UDP_1GbE_inst/Ethernet_MAC_top/rx_pkg_lgth_fifo_wr_tmp" is loadless
+and has been removed.
+        Loadless block "UDP_1GbE_inst/Ethernet_MAC_top/rx_pkg_lgth_fifo_wr_tmp" (FF)
+removed.
+         The signal
+"UDP_1GbE_inst/Ethernet_MAC_top/Rx_apply_rmon_Rx_pkt_err_type_rmon[2]_AND_157_o"
+is loadless and has been removed.
+          Loadless block
+"UDP_1GbE_inst/Ethernet_MAC_top/Rx_apply_rmon_Rx_pkt_err_type_rmon[2]_AND_157_o1
+" (ROM) removed.
+ The signal "UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/wr_count<7>" is
+loadless and has been removed.
+  Loadless block "UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/Add_wr_7" (FF)
+removed.
+   The signal
+"UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/wr_en_full_AND_160_o" is
+loadless and has been removed.
+    Loadless block
+"UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/wr_en_full_AND_160_o1" (ROM)
+removed.
+     The signal "UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/full" is loadless
+and has been removed.
+      Loadless block "UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/full" (FF)
+removed.
+       The signal "UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/full_rstpot" is
+loadless and has been removed.
+        Loadless block "UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/full_rstpot"
+(MUX) removed.
+         The signal "N802" is loadless and has been removed.
+          Loadless block "UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/full_rstpot_F"
+(ROM) removed.
+           The signal "UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/wr_count<5>" is
+loadless and has been removed.
+            Loadless block "UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/Add_wr_5" (FF)
+removed.
+             The signal "UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/Add_wr_pluse<5>"
+is loadless and has been removed.
+              Loadless block
+"UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/Add_wr_pluse<5>1" (ROM)
+removed.
+               The signal "UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/wr_count<0>" is
+loadless and has been removed.
+                Loadless block "UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/Add_wr_0" (FF)
+removed.
+                 The signal "UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/Add_wr_pluse<0>"
+is loadless and has been removed.
+                  Loadless block
+"UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/Madd_Add_wr_pluse_xor<0>11_IN
+V_0" (BUF) removed.
+               The signal "UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/wr_count<1>" is
+loadless and has been removed.
+                Loadless block "UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/Add_wr_1" (FF)
+removed.
+                 The signal "UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/Add_wr_pluse<1>"
+is loadless and has been removed.
+                  Loadless block
+"UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/Add_wr_pluse<1>1" (ROM)
+removed.
+               The signal "UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/wr_count<2>" is
+loadless and has been removed.
+                Loadless block "UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/Add_wr_2" (FF)
+removed.
+                 The signal "UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/Add_wr_pluse<2>"
+is loadless and has been removed.
+                  Loadless block
+"UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/Add_wr_pluse<2>1" (ROM)
+removed.
+               The signal "UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/wr_count<3>" is
+loadless and has been removed.
+                Loadless block "UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/Add_wr_3" (FF)
+removed.
+                 The signal "UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/Add_wr_pluse<3>"
+is loadless and has been removed.
+                  Loadless block
+"UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/Add_wr_pluse<3>1" (ROM)
+removed.
+               The signal "UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/wr_count<4>" is
+loadless and has been removed.
+                Loadless block "UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/Add_wr_4" (FF)
+removed.
+                 The signal "UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/Add_wr_pluse<4>"
+is loadless and has been removed.
+                  Loadless block
+"UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/Add_wr_pluse<4>1" (ROM)
+removed.
+           The signal "N198" is loadless and has been removed.
+            Loadless block
+"UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/_n0103_inv_SW0" (ROM)
+removed.
+             The signal "UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/wr_count<6>" is
+loadless and has been removed.
+              Loadless block "UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/Add_wr_6" (FF)
+removed.
+               The signal "UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/Add_wr_pluse<6>"
+is loadless and has been removed.
+                Loadless block
+"UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/Add_wr_pluse<6>" (ROM)
+removed.
+                 The signal "N196" is loadless and has been removed.
+                  Loadless block
+"UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/Add_wr_pluse<6>_SW0" (ROM)
+removed.
+         The signal "N803" is loadless and has been removed.
+          Loadless block "UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/full_rstpot_G"
+(ROM) removed.
+           The signal "N194" is loadless and has been removed.
+            Loadless block
+"UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/full_PWR_30_o_MUX_288_o1_SW0"
+(ROM) removed.
+   The signal "UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/Add_wr_pluse<7>"
+is loadless and has been removed.
+    Loadless block
+"UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/Add_wr_pluse<7>" (ROM)
+removed.
+     The signal "N192" is loadless and has been removed.
+      Loadless block
+"UDP_1GbE_inst/Ethernet_MAC_top/U_rx_pkg_lgth_fifo/Add_wr_pluse<7>_SW0" (ROM)
+removed.
+ The signal "UDP_1GbE_inst/Ethernet_MAC_top/GND_11_o_GND_11_o_sub_2_OUT<15>" is
+loadless and has been removed.
+  Loadless block
+"UDP_1GbE_inst/Ethernet_MAC_top/Msub_GND_11_o_GND_11_o_sub_2_OUT_xor<15>" (XOR)
+removed.
+   The signal
+"UDP_1GbE_inst/Ethernet_MAC_top/Msub_GND_11_o_GND_11_o_sub_2_OUT_lut<15>" is
+loadless and has been removed.
+    Loadless block
+"UDP_1GbE_inst/Ethernet_MAC_top/Msub_GND_11_o_GND_11_o_sub_2_OUT_lut<15>_INV_0"
+(BUF) removed.
+ The signal "UDP_1GbE_inst/Ethernet_MAC_top/GND_11_o_GND_11_o_sub_2_OUT<14>" is
+loadless and has been removed.
+  Loadless block
+"UDP_1GbE_inst/Ethernet_MAC_top/Msub_GND_11_o_GND_11_o_sub_2_OUT_xor<14>" (XOR)
+removed.
+ The signal "UDP_1GbE_inst/Ethernet_MAC_top/GND_11_o_GND_11_o_sub_2_OUT<13>" is
+loadless and has been removed.
+  Loadless block
+"UDP_1GbE_inst/Ethernet_MAC_top/Msub_GND_11_o_GND_11_o_sub_2_OUT_xor<13>" (XOR)
+removed.
+ The signal "UDP_1GbE_inst/Ethernet_MAC_top/GND_11_o_GND_11_o_sub_2_OUT<12>" is
+loadless and has been removed.
+  Loadless block
+"UDP_1GbE_inst/Ethernet_MAC_top/Msub_GND_11_o_GND_11_o_sub_2_OUT_xor<12>" (XOR)
+removed.
+ The signal "UDP_1GbE_inst/Ethernet_MAC_top/GND_11_o_GND_11_o_sub_2_OUT<11>" is
+loadless and has been removed.
+  Loadless block
+"UDP_1GbE_inst/Ethernet_MAC_top/Msub_GND_11_o_GND_11_o_sub_2_OUT_xor<11>" (XOR)
+removed.
+ The signal "UDP_1GbE_inst/Ethernet_MAC_top/GND_11_o_GND_11_o_sub_2_OUT<10>" is
+loadless and has been removed.
+  Loadless block
+"UDP_1GbE_inst/Ethernet_MAC_top/Msub_GND_11_o_GND_11_o_sub_2_OUT_xor<10>" (XOR)
+removed.
+ The signal "UDP_1GbE_inst/Ethernet_MAC_top/GND_11_o_GND_11_o_sub_2_OUT<9>" is
+loadless and has been removed.
+  Loadless block
+"UDP_1GbE_inst/Ethernet_MAC_top/Msub_GND_11_o_GND_11_o_sub_2_OUT_xor<9>" (XOR)
+removed.
+ The signal "UDP_1GbE_inst/Ethernet_MAC_top/GND_11_o_GND_11_o_sub_2_OUT<8>" is
+loadless and has been removed.
+  Loadless block
+"UDP_1GbE_inst/Ethernet_MAC_top/Msub_GND_11_o_GND_11_o_sub_2_OUT_xor<8>" (XOR)
+removed.
+ The signal "UDP_1GbE_inst/Ethernet_MAC_top/GND_11_o_GND_11_o_sub_2_OUT<7>" is
+loadless and has been removed.
+  Loadless block
+"UDP_1GbE_inst/Ethernet_MAC_top/Msub_GND_11_o_GND_11_o_sub_2_OUT_xor<7>" (XOR)
+removed.
+ The signal "UDP_1GbE_inst/Ethernet_MAC_top/GND_11_o_GND_11_o_sub_2_OUT<6>" is
+loadless and has been removed.
+  Loadless block
+"UDP_1GbE_inst/Ethernet_MAC_top/Msub_GND_11_o_GND_11_o_sub_2_OUT_xor<6>" (XOR)
+removed.
+ The signal "UDP_1GbE_inst/Ethernet_MAC_top/GND_11_o_GND_11_o_sub_2_OUT<5>" is
+loadless and has been removed.
+  Loadless block
+"UDP_1GbE_inst/Ethernet_MAC_top/Msub_GND_11_o_GND_11_o_sub_2_OUT_xor<5>" (XOR)
+removed.
+ The signal "UDP_1GbE_inst/Ethernet_MAC_top/GND_11_o_GND_11_o_sub_2_OUT<4>" is
+loadless and has been removed.
+  Loadless block
+"UDP_1GbE_inst/Ethernet_MAC_top/Msub_GND_11_o_GND_11_o_sub_2_OUT_xor<4>" (XOR)
+removed.
+ The signal "UDP_1GbE_inst/Ethernet_MAC_top/GND_11_o_GND_11_o_sub_2_OUT<3>" is
+loadless and has been removed.
+  Loadless block
+"UDP_1GbE_inst/Ethernet_MAC_top/Msub_GND_11_o_GND_11_o_sub_2_OUT_xor<3>" (XOR)
+removed.
+Loadless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[10].U_LUT" (ROM)
+removed.
+Loadless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[11].U_LUT" (ROM)
+removed.
+Loadless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[12].U_LUT" (ROM)
+removed.
+Loadless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[13].U_LUT" (ROM)
+removed.
+Loadless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[14].U_LUT" (ROM)
+removed.
+Loadless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[3].U_LUT" (ROM)
+removed.
+Loadless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[4].U_LUT" (ROM)
+removed.
+Loadless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[5].U_LUT" (ROM)
+removed.
+Loadless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[6].U_LUT" (ROM)
+removed.
+Loadless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[7].U_LUT" (ROM)
+removed.
+Loadless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[8].U_LUT" (ROM)
+removed.
+Loadless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[9].U_LUT" (ROM)
+removed.
+Loadless block "UDP_1GbE_inst/ila0_inst/U0/I_YES_D.U_ILA/U_STAT/U_DSR" (ROM)
+removed.
+Loadless block
+"UDP_1GbE_inst/ila0_inst/U0/I_YES_D.U_ILA/U_TRIG/U_TC/I_STORAGE_QUAL.U_CAP_B"
+(ROM) removed.
+Loadless block "UDP_1GbE_inst/ila1_inst/U0/I_YES_D.U_ILA/U_STAT/U_DSR" (ROM)
+removed.
+Loadless block
+"UDP_1GbE_inst/ila1_inst/U0/I_YES_D.U_ILA/U_TRIG/U_TC/I_STORAGE_QUAL.U_CAP_B"
+(ROM) removed.
+Loadless block "UDP_1GbE_inst/vio_inst/U0/I_VIO/reset_f_edge/I_H2L.U_DOUT" (SFF)
+removed.
+Loadless block "clk_manager_inst/dcm_inst/clkout3_buf" (CKBUF) removed.
+ The signal "clk_manager_inst/dcm_inst/clkout2" is loadless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL2<8>" is sourceless and has been removed.
+ Sourceless block
+"UDP_1GbE_inst/vio_inst/U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O26"
+(ROM) removed.
+  The signal
+"UDP_1GbE_inst/vio_inst/U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O25"
+is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL2<9>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL2<10>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL2<11>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL2<12>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL2<13>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL2<14>" is sourceless and has been removed.
+ Sourceless block
+"UDP_1GbE_inst/vio_inst/U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O23"
+(ROM) removed.
+  The signal
+"UDP_1GbE_inst/vio_inst/U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O22"
+is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL2<15>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL2<16>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL2<17>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL2<18>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL2<19>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL2<20>" is sourceless and has been removed.
+ Sourceless block
+"UDP_1GbE_inst/vio_inst/U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O24"
+(ROM) removed.
+  The signal
+"UDP_1GbE_inst/vio_inst/U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O23"
+is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL2<21>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL2<22>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL2<23>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL2<24>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL2<25>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL2<26>" is sourceless and has been removed.
+ Sourceless block
+"UDP_1GbE_inst/vio_inst/U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O27"
+(ROM) removed.
+  The signal
+"UDP_1GbE_inst/vio_inst/U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O26"
+is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL2<27>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL2<28>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL2<29>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL2<30>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL2<31>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL2<32>" is sourceless and has been removed.
+ Sourceless block
+"UDP_1GbE_inst/vio_inst/U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O28"
+(ROM) removed.
+  The signal
+"UDP_1GbE_inst/vio_inst/U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O27"
+is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL2<33>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL2<34>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL2<35>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL0<7>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL0<10>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL0<11>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL0<15>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL0<16>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL0<17>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL0<18>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL0<19>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL0<21>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL0<22>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL0<23>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL0<24>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL0<25>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL0<26>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL0<27>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL0<28>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL0<29>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL0<30>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL0<31>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL0<32>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL0<33>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL0<34>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL0<35>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL1<7>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL1<10>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL1<11>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL1<15>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL1<16>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL1<17>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL1<18>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL1<19>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL1<21>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL1<22>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL1<23>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL1<24>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL1<25>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL1<26>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL1<27>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL1<28>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL1<29>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL1<30>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL1<31>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL1<32>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL1<33>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL1<34>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/CONTROL1<35>" is sourceless and has been removed.
+The signal "UDP_1GbE_inst/icon_inst/U0/U_ICON/iCOMMAND_SEL<15>" is sourceless
+and has been removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[15].U_HCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[15].U_LCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[15].U_HCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[15].U_LCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[2].F_CMD[15].U_HCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[2].F_CMD[15].U_LCE" (ROM)
+removed.
+The signal "UDP_1GbE_inst/icon_inst/U0/U_ICON/iCOMMAND_SEL<14>" is sourceless
+and has been removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[14].U_HCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[14].U_LCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[14].U_HCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[14].U_LCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[2].F_CMD[14].U_HCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[2].F_CMD[14].U_LCE" (ROM)
+removed.
+The signal "UDP_1GbE_inst/icon_inst/U0/U_ICON/iCOMMAND_SEL<13>" is sourceless
+and has been removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[13].U_HCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[13].U_LCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[13].U_HCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[13].U_LCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[2].F_CMD[13].U_HCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[2].F_CMD[13].U_LCE" (ROM)
+removed.
+The signal "UDP_1GbE_inst/icon_inst/U0/U_ICON/iCOMMAND_SEL<12>" is sourceless
+and has been removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[12].U_HCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[12].U_LCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[12].U_HCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[12].U_LCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[2].F_CMD[12].U_HCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[2].F_CMD[12].U_LCE" (ROM)
+removed.
+The signal "UDP_1GbE_inst/icon_inst/U0/U_ICON/iCOMMAND_SEL<11>" is sourceless
+and has been removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[11].U_HCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[11].U_LCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[11].U_HCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[11].U_LCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[2].F_CMD[11].U_HCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[2].F_CMD[11].U_LCE" (ROM)
+removed.
+The signal "UDP_1GbE_inst/icon_inst/U0/U_ICON/iCOMMAND_SEL<7>" is sourceless and
+has been removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[7].U_HCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[7].U_LCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[7].U_HCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[7].U_LCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[2].F_CMD[7].U_HCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[2].F_CMD[7].U_LCE" (ROM)
+removed.
+The signal "UDP_1GbE_inst/icon_inst/U0/U_ICON/iCOMMAND_SEL<6>" is sourceless and
+has been removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[6].U_HCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[6].U_LCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[6].U_HCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[6].U_LCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[2].F_CMD[6].U_HCE" (ROM)
+removed.
+ Sourceless block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[2].F_CMD[6].U_LCE" (ROM)
+removed.
+The signal "UDP_1GbE_inst/vio_inst/ASYNC_OUT<7>" is sourceless and has been
+removed.
+The signal "UDP_1GbE_inst/vio_inst/ASYNC_OUT<6>" is sourceless and has been
+removed.
+The signal "UDP_1GbE_inst/vio_inst/ASYNC_OUT<5>" is sourceless and has been
+removed.
+The signal "UDP_1GbE_inst/vio_inst/ASYNC_OUT<4>" is sourceless and has been
+removed.
+The signal "UDP_1GbE_inst/vio_inst/ASYNC_OUT<3>" is sourceless and has been
+removed.
+The signal "UDP_1GbE_inst/vio_inst/ASYNC_OUT<2>" is sourceless and has been
+removed.
+The signal "UDP_1GbE_inst/vio_inst/ASYNC_OUT<1>" is sourceless and has been
+removed.
+The signal "UDP_1GbE_inst/vio_inst/ASYNC_OUT<0>" is sourceless and has been
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CMD/U_COMMAND_SEL/I4.FI[11].U_LUT" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CMD/U_COMMAND_SEL/I4.FI[12].U_LUT" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CMD/U_COMMAND_SEL/I4.FI[13].U_LUT" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CMD/U_COMMAND_SEL/I4.FI[14].U_LUT" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CMD/U_COMMAND_SEL/I4.FI[15].U_LUT" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CMD/U_COMMAND_SEL/I4.FI[6].U_LUT" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CMD/U_COMMAND_SEL/I4.FI[7].U_LUT" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[10].U_HCE" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[1].U_HCE" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[2].U_HCE" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[3].U_HCE" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[3].U_LCE" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[4].U_HCE" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[5].U_HCE" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[8].U_HCE" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[9].U_HCE" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[10].U_HCE" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[1].U_HCE" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[2].U_HCE" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[3].U_HCE" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[3].U_LCE" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[4].U_HCE" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[5].U_HCE" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[8].U_HCE" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[9].U_HCE" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[2].F_CMD[0].U_HCE" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[2].F_CMD[10].U_HCE" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[2].F_CMD[10].U_LCE" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[2].F_CMD[1].U_HCE" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[2].F_CMD[2].U_HCE" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[2].F_CMD[3].U_HCE" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[2].F_CMD[4].U_HCE" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[2].F_CMD[4].U_LCE" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[2].F_CMD[5].U_HCE" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[2].F_CMD[5].U_LCE" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[2].F_CMD[8].U_HCE" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[2].F_CMD[8].U_LCE" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[2].F_CMD[9].U_HCE" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[2].F_CMD[9].U_LCE" (ROM)
+removed.
+Unused block
+"UDP_1GbE_inst/vio_inst/U0/I_VIO/GEN_ASYNC_OUT[0].ASYNC_OUT_CELL/USER_REG" (FF)
+removed.
+Unused block
+"UDP_1GbE_inst/vio_inst/U0/I_VIO/GEN_ASYNC_OUT[1].ASYNC_OUT_CELL/USER_REG" (FF)
+removed.
+Unused block
+"UDP_1GbE_inst/vio_inst/U0/I_VIO/GEN_ASYNC_OUT[2].ASYNC_OUT_CELL/USER_REG" (FF)
+removed.
+Unused block
+"UDP_1GbE_inst/vio_inst/U0/I_VIO/GEN_ASYNC_OUT[3].ASYNC_OUT_CELL/USER_REG" (FF)
+removed.
+Unused block
+"UDP_1GbE_inst/vio_inst/U0/I_VIO/GEN_ASYNC_OUT[4].ASYNC_OUT_CELL/USER_REG" (FF)
+removed.
+Unused block
+"UDP_1GbE_inst/vio_inst/U0/I_VIO/GEN_ASYNC_OUT[5].ASYNC_OUT_CELL/USER_REG" (FF)
+removed.
+Unused block
+"UDP_1GbE_inst/vio_inst/U0/I_VIO/GEN_ASYNC_OUT[6].ASYNC_OUT_CELL/USER_REG" (FF)
+removed.
+Unused block
+"UDP_1GbE_inst/vio_inst/U0/I_VIO/GEN_ASYNC_OUT[7].ASYNC_OUT_CELL/USER_REG" (FF)
+removed.
+
+Optimized Block(s):
+TYPE 		BLOCK
+GND 		UDP_1GbE_inst/icon_inst/XST_GND
+VCC 		UDP_1GbE_inst/icon_inst/XST_VCC
+LUT4 		UDP_1GbE_inst/ila0_inst/U0/I_YES_D.U_ILA/U_STAT/F_SSTAT[6].I_STAT.U_STAT
+   optimized to 0
+GND 		UDP_1GbE_inst/ila0_inst/XST_GND
+VCC 		UDP_1GbE_inst/ila0_inst/XST_VCC
+LUT4 		UDP_1GbE_inst/ila1_inst/U0/I_YES_D.U_ILA/U_STAT/F_SSTAT[6].I_STAT.U_STAT
+   optimized to 0
+GND 		UDP_1GbE_inst/ila1_inst/XST_GND
+VCC 		UDP_1GbE_inst/ila1_inst/XST_VCC
+FDE 		UDP_1GbE_inst/vio_inst/U0/I_VIO/U_DATA_OUT
+   optimized to 0
+LUT4 		UDP_1GbE_inst/vio_inst/U0/I_VIO/U_STATUS/F_STAT[4].I_STAT.U_STAT
+   optimized to 0
+LUT4 		UDP_1GbE_inst/vio_inst/U0/I_VIO/U_STATUS/F_STAT[6].I_STAT.U_STAT
+   optimized to 0
+LUT4 		UDP_1GbE_inst/vio_inst/U0/I_VIO/U_STATUS/F_STAT[7].I_STAT.U_STAT
+   optimized to 0
+LUT6
+		UDP_1GbE_inst/vio_inst/U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O25
+   optimized to 1
+LUT6
+		UDP_1GbE_inst/vio_inst/U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O29
+   optimized to 1
+GND 		UDP_1GbE_inst/vio_inst/XST_GND
+VCC 		UDP_1GbE_inst/vio_inst/XST_VCC
+
+To enable printing of redundant blocks removed and signals merged, set the
+detailed map report option and rerun map.
+
+Section 6 - IOB Properties
+--------------------------
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
+|                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| GIGE_COL                           | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| GIGE_CRS                           | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| GIGE_GTX_CLK                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | FAST | ODDR         |          |          |
+| GIGE_MDC                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | ODDR         |          |          |
+| GIGE_MDIO                          | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
+|                                    |                  |           |                      |       |          |      | TFF          |          |          |
+| GIGE_RXD<0>                        | IOB              | INPUT     | LVCMOS25             |       |          |      | IFF          |          |          |
+| GIGE_RXD<1>                        | IOB              | INPUT     | LVCMOS25             |       |          |      | IFF          |          |          |
+| GIGE_RXD<2>                        | IOB              | INPUT     | LVCMOS25             |       |          |      | IFF          |          |          |
+| GIGE_RXD<3>                        | IOB              | INPUT     | LVCMOS25             |       |          |      | IFF          |          |          |
+| GIGE_RXD<4>                        | IOB              | INPUT     | LVCMOS25             |       |          |      | IFF          |          |          |
+| GIGE_RXD<5>                        | IOB              | INPUT     | LVCMOS25             |       |          |      | IFF          |          |          |
+| GIGE_RXD<6>                        | IOB              | INPUT     | LVCMOS25             |       |          |      | IFF          |          |          |
+| GIGE_RXD<7>                        | IOB              | INPUT     | LVCMOS25             |       |          |      | IFF          |          |          |
+| GIGE_RX_CLK                        | IOB              | INPUT     | LVCMOS25             |       |          |      | IFF          |          |          |
+| GIGE_RX_DV                         | IOB              | INPUT     | LVCMOS25             |       |          |      | IFF          |          |          |
+| GIGE_RX_ER                         | IOB              | INPUT     | LVCMOS25             |       |          |      | IFF          |          |          |
+| GIGE_TXD<0>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | FAST | OFF          |          |          |
+| GIGE_TXD<1>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | FAST | OFF          |          |          |
+| GIGE_TXD<2>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | FAST | OFF          |          |          |
+| GIGE_TXD<3>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | FAST | OFF          |          |          |
+| GIGE_TXD<4>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | FAST | OFF          |          |          |
+| GIGE_TXD<5>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | FAST | OFF          |          |          |
+| GIGE_TXD<6>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | FAST | OFF          |          |          |
+| GIGE_TXD<7>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | FAST | OFF          |          |          |
+| GIGE_TX_CLK                        | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| GIGE_TX_EN                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | FAST | OFF          |          |          |
+| GIGE_TX_ER                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | FAST |              |          |          |
+| GIGE_nRESET                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| bcd<0>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| bcd<1>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| bcd<2>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| bcd<3>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| bcd<4>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| bcd<5>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| bcd<6>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| bcd<7>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| bcd<8>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| bcd<9>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| bcd<10>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
+| bcd<11>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
+| bcd<12>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
+| bcd<13>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
+| bcd<14>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
+| bcd<15>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
+| bcd<16>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
+| bcd<17>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
+| bcd<18>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
+| bcd<19>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
+| bcd<20>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
+| bcd<21>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
+| bcd<22>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
+| bcd<23>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
+| bcd<24>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
+| bcd<25>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
+| bcd<26>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
+| bcd<27>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
+| bcd<28>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
+| bcd<29>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
+| bcd<30>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
+| bcd<31>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
+| gpio<2>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | FAST |              |          |          |
+| gpio<3>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | FAST |              |          |          |
+| gpio<4>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| gpio<5>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| gpio<6>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| gpio<7>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| gpio<8>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
+| gpio<9>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
+| gpio<10>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
+| gpio<11>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| gpio<12>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
+| gpio<13>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
+| gpio<14>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
+| gpio<15>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
+| gpioIn<0>                          | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| gpioIn<1>                          | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| gpmc_a<1>                          | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| gpmc_a<2>                          | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| gpmc_a<3>                          | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| gpmc_a<4>                          | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| gpmc_a<5>                          | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| gpmc_a<6>                          | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| gpmc_a<7>                          | IOB              | INPUT     | LVCMOS33             |       |          |      | IFF          |          |          |
+| gpmc_a<8>                          | IOB              | INPUT     | LVCMOS33             |       |          |      | IFF          |          |          |
+| gpmc_a<9>                          | IOB              | INPUT     | LVCMOS33             |       |          |      | IFF          |          |          |
+| gpmc_a<10>                         | IOB              | INPUT     | LVCMOS33             |       |          |      | IFF          |          |          |
+| gpmc_busy_0                        | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| gpmc_busy_1                        | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| gpmc_clk_i                         | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| gpmc_d<0>                          | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW | IFF          |          |          |
+|                                    |                  |           |                      |       |          |      | OFF          |          |          |
+| gpmc_d<1>                          | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW | IFF          |          |          |
+|                                    |                  |           |                      |       |          |      | OFF          |          |          |
+| gpmc_d<2>                          | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW | IFF          |          |          |
+|                                    |                  |           |                      |       |          |      | OFF          |          |          |
+| gpmc_d<3>                          | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW | IFF          |          |          |
+|                                    |                  |           |                      |       |          |      | OFF          |          |          |
+| gpmc_d<4>                          | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW | IFF          |          |          |
+|                                    |                  |           |                      |       |          |      | OFF          |          |          |
+| gpmc_d<5>                          | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW | IFF          |          |          |
+|                                    |                  |           |                      |       |          |      | OFF          |          |          |
+| gpmc_d<6>                          | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW | IFF          |          |          |
+|                                    |                  |           |                      |       |          |      | OFF          |          |          |
+| gpmc_d<7>                          | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW | IFF          |          |          |
+|                                    |                  |           |                      |       |          |      | OFF          |          |          |
+| gpmc_d<8>                          | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW | IFF          |          |          |
+|                                    |                  |           |                      |       |          |      | OFF          |          |          |
+| gpmc_d<9>                          | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW | IFF          |          |          |
+|                                    |                  |           |                      |       |          |      | OFF          |          |          |
+| gpmc_d<10>                         | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW | IFF          |          |          |
+|                                    |                  |           |                      |       |          |      | OFF          |          |          |
+| gpmc_d<11>                         | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW | IFF          |          |          |
+|                                    |                  |           |                      |       |          |      | OFF          |          |          |
+| gpmc_d<12>                         | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW | IFF          |          |          |
+|                                    |                  |           |                      |       |          |      | OFF          |          |          |
+| gpmc_d<13>                         | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW | IFF          |          |          |
+|                                    |                  |           |                      |       |          |      | OFF          |          |          |
+| gpmc_d<14>                         | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW | IFF          |          |          |
+|                                    |                  |           |                      |       |          |      | OFF          |          |          |
+| gpmc_d<15>                         | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW | IFF          |          |          |
+|                                    |                  |           |                      |       |          |      | OFF          |          |          |
+| gpmc_n_adv_ale                     | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| gpmc_n_cs<0>                       | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| gpmc_n_cs<1>                       | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| gpmc_n_cs<2>                       | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| gpmc_n_cs<3>                       | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| gpmc_n_cs<4>                       | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| gpmc_n_cs<5>                       | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| gpmc_n_cs<6>                       | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| gpmc_n_oe                          | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| gpmc_n_we                          | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| gpmc_n_wp                          | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| led<0>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| led<1>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| led<2>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| led<3>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| led<4>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| led<5>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| led<6>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| led<7>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| sys_clk_N                          | IOB              | INPUT     | LVDS_25              | TRUE  |          |      |              |          |          |
+| sys_clk_P                          | IOB              | INPUT     | LVDS_25              | TRUE  |          |      |              |          |          |
+| sys_clk_ext                        | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Timing Report
+--------------------------
+A logic-level (pre-route) timing report can be generated by using Xilinx static
+timing analysis tools, Timing Analyzer (GUI) or TRCE (command line), with the
+mapped NCD and PCF files. Please note that this timing report will be generated
+using estimated delay information. For accurate numbers, please generate a
+timing report with the post Place and Route NCD file.
+
+For more information about the Timing Analyzer, consult the Xilinx Timing
+Analyzer Reference Manual; for more information about TRCE, consult the Xilinx
+Command Line Tools User Guide "TRACE" chapter.
+
+Section 11 - Configuration String Details
+-----------------------------------------
+Use the "-detail" map option to print out Configuration Strings
+
+Section 12 - Control Set Information
+------------------------------------
+Use the "-detail" map option to print out Control Set Information.
+
+Section 13 - Utilization by Hierarchy
+-------------------------------------
+Use the "-detail" map option to print out the Utilization by Hierarchy section.

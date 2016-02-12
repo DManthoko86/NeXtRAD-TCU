@@ -1,0 +1,60 @@
+Release 14.7 Drc P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Thu Feb 11 16:17:16 2016
+
+drc -z gpmc_test_top.ncd gpmc_test_top.pcf
+
+WARNING:PhysDesignRules:372 - Gated clock. Clock net UDP_1GbE_inst/CONTROL1<13>
+   is sourced by a combinatorial pin. This is not good design practice. Use the
+   CE pin to control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net UDP_1GbE_inst/CONTROL0<13>
+   is sourced by a combinatorial pin. This is not good design practice. Use the
+   CE pin to control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   UDP_1GbE_inst/Ethernet_MAC_top/U_eth_miim/clkgen/Mdc is sourced by a
+   combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:367 - The signal
+   <UDP_1GbE_inst/Ethernet_MAC_top/GND_11_o_GND_11_o_sub_2_OUT<2>> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <UDP_1GbE_inst/Ethernet_MAC_top/Msub_GND_11_o_GND_11_o_sub_2_OUT_cy<14>> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <UDP_1GbE_inst/Rx_mac_BE<0>> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <UDP_1GbE_inst/Rx_mac_BE<1>> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <UDP_1GbE_inst/vio_inst/U0/I_VIO/UPDATE<4>> is incomplete. The signal does
+   not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <UDP_1GbE_inst/vio_inst/U0/I_VIO/UPDATE<5>> is incomplete. The signal does
+   not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <UDP_1GbE_inst/vio_inst/U0/I_VIO/UPDATE<6>> is incomplete. The signal does
+   not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <UDP_1GbE_inst/vio_inst/U0/I_VIO/UPDATE<7>> is incomplete. The signal does
+   not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <UDP_1GbE_inst/vio_inst/U0/I_VIO/UPDATE<0>> is incomplete. The signal does
+   not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <UDP_1GbE_inst/vio_inst/U0/I_VIO/UPDATE<1>> is incomplete. The signal does
+   not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <UDP_1GbE_inst/vio_inst/U0/I_VIO/UPDATE<2>> is incomplete. The signal does
+   not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <UDP_1GbE_inst/vio_inst/U0/I_VIO/UPDATE<3>> is incomplete. The signal does
+   not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <UDP_1GbE_inst/vio_inst/U0/I_VIO/reset_f_edge/iDOUT<1>> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:2410 - This design is using one or more 9K Block RAMs
+   (RAMB8BWER).  9K Block RAM initialization data, both user defined and
+   default, may be incorrect and should not be used.  For more information,
+   please reference Xilinx Answer Record 39999.
+DRC detected 0 errors and 17 warnings.  Please see the previously displayed
+individual error or warning messages for more details.

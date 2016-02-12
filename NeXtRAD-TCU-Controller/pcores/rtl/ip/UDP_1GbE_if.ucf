@@ -305,6 +305,39 @@ NET "led[6]" LOC = U2;
 NET "led[7]" LOC = U1;
 
 
+# Set location of BCD pins. These go to the FMC105 via FMC 0.
+
+NET "bcd[0]" LOC = Y21;
+NET "bcd[1]" LOC = AA22;
+NET "bcd[2]" LOC = W20;
+NET "bcd[3]" LOC = Y20;
+
+NET "bcd[4]" LOC = AB22;
+NET "bcd[5]" LOC = AC22;
+NET "bcd[6]" LOC = V18;
+NET "bcd[7]" LOC = W19;
+
+NET "bcd[8]" LOC = W17;
+NET "bcd[9]" LOC = W18;
+NET "bcd[10]" LOC = AA21;
+NET "bcd[11]" LOC = AB21;
+
+NET "bcd[12]" LOC = AA18;
+NET "bcd[13]" LOC = AB17;
+NET "bcd[14]" LOC = Y15;
+NET "bcd[15]" LOC = AA16;
+
+NET "bcd[16]" LOC = V14;
+NET "bcd[17]" LOC = V15;
+NET "bcd[18]" LOC = U13;
+NET "bcd[19]" LOC = V13;
+
+NET "bcd[20]" LOC = AA15;
+NET "bcd[21]" LOC = AB15;
+NET "bcd[22]" LOC = AE13;
+NET "bcd[23]" LOC = AF13;
+
+
 # Set ethernet pins
 
 NET "GIGE_COL"     LOC = AC2 | IOSTANDARD = LVCMOS25;

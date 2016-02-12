@@ -1,0 +1,34 @@
+Release 14.7 - par P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Thu Feb 11 16:16:59 2016
+
+All signals are completely routed.
+
+WARNING:ParHelpers:361 - There are 22 loadless signals in this design. This design will cause Bitgen to issue DRC
+   warnings.
+
+   GIGE_COL_IBUF
+   GIGE_CRS_IBUF
+   UDP_1GbE_inst/Ethernet_MAC_top/GND_11_o_GND_11_o_sub_2_OUT<2>
+   UDP_1GbE_inst/Ethernet_MAC_top/Msub_GND_11_o_GND_11_o_sub_2_OUT_cy<14>
+   UDP_1GbE_inst/Rx_mac_BE<0>
+   UDP_1GbE_inst/Rx_mac_BE<1>
+   UDP_1GbE_inst/vio_inst/U0/I_VIO/UPDATE<0>
+   UDP_1GbE_inst/vio_inst/U0/I_VIO/UPDATE<1>
+   UDP_1GbE_inst/vio_inst/U0/I_VIO/UPDATE<2>
+   UDP_1GbE_inst/vio_inst/U0/I_VIO/UPDATE<3>
+   UDP_1GbE_inst/vio_inst/U0/I_VIO/UPDATE<4>
+   UDP_1GbE_inst/vio_inst/U0/I_VIO/UPDATE<5>
+   UDP_1GbE_inst/vio_inst/U0/I_VIO/UPDATE<6>
+   UDP_1GbE_inst/vio_inst/U0/I_VIO/UPDATE<7>
+   UDP_1GbE_inst/vio_inst/U0/I_VIO/reset_f_edge/iDOUT<1>
+   gpmc_a<1>_IBUF
+   gpmc_a<2>_IBUF
+   gpmc_a<3>_IBUF
+   gpmc_a<4>_IBUF
+   gpmc_a<5>_IBUF
+   gpmc_a<6>_IBUF
+   gpmc_n_wp_IBUF
+
+

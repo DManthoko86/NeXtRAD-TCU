@@ -19,6 +19,8 @@
          <ClosedNode>/gpmc_test_top - rtl |home|skippy|Desktop|backup1|Lek|UDP_1GbE_if|gpmc_test.vhd/UDP_1GbE_inst - UDP_1GbE - arc</ClosedNode>
          <ClosedNode>/gpmc_test_top - rtl |home|skippy|Desktop|backup1|Lek|UDP_1GbE_if|gpmc_test.vhd/clk_manager_inst - clk_manager - RTL</ClosedNode>
          <ClosedNode>/gpmc_test_top - rtl |home|skippy|Git|NeXtRAD-TCU|NeXtRAD-TCU-Controller|gpmc_test.vhd</ClosedNode>
+         <ClosedNode>/gpmc_test_top - rtl |home|skippy|Git|NeXtRAD-TCU|NeXtRAD-TCU-Controller|gpmc_test.vhd/UDP_1GbE_inst - UDP_1GbE - arc</ClosedNode>
+         <ClosedNode>/gpmc_test_top - rtl |home|skippy|Git|NeXtRAD-TCU|NeXtRAD-TCU-Controller|gpmc_test.vhd/clk_manager_inst - clk_manager - RTL</ClosedNode>
          <ClosedNode>/gpmc_test_top - rtl |home|skippy|Git|NeXtRAD-TCU|gpmc_test.vhd/UDP_1GbE_inst - UDP_1GbE - arc</ClosedNode>
          <ClosedNode>/gpmc_test_top - rtl |home|skippy|Git|NeXtRAD-TCU|gpmc_test.vhd/clk_manager_inst - clk_manager - RTL</ClosedNode>
       </ClosedNodes>

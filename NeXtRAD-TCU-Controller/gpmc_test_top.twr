@@ -1,0 +1,2342 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 2 -n
+3 -fastpaths -xml gpmc_test_top.twx gpmc_test_top.ncd -o gpmc_test_top.twr
+gpmc_test_top.pcf
+
+Design file:              gpmc_test_top.ncd
+Physical constraint file: gpmc_test_top.pcf
+Device,package,speed:     xc6slx150t,fgg676,C,-2 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_GIGE_RX_CLK = PERIOD TIMEGRP "GIGE_RX_CLK" 8 ns HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 4834 paths analyzed, 1082 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   7.644ns.
+--------------------------------------------------------------------------------
+
+Paths for end point UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD_7 (SLICE_X1Y47.CE), 3 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.356ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl1 (FF)
+  Destination:          UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD_7 (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      5.315ns (Levels of Logic = 1)
+  Clock Path Skew:      -2.294ns (0.342 - 2.636)
+  Source Clock:         UDP_1GbE_inst/Rx_clk rising at 0.000ns
+  Destination Clock:    UDP_1GbE_inst/Rx_clk rising at 8.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl1 to UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    ILOGIC_X0Y24.Q4      Tickq                 1.778   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl1
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl1
+    SLICE_X1Y41.A4       net (fanout=2)        1.927   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl1
+    SLICE_X1Y41.A        Tilo                  0.259   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl2
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/_n0061_inv1
+    SLICE_X1Y47.CE       net (fanout=2)        0.946   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/_n0061_inv
+    SLICE_X1Y47.CLK      Tceck                 0.405   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD<6>
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD_7
+    -------------------------------------------------  ---------------------------
+    Total                                      5.315ns (2.442ns logic, 2.873ns route)
+                                                       (45.9% logic, 54.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     4.521ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl2 (FF)
+  Destination:          UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD_7 (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      2.948ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.496ns (0.342 - 0.838)
+  Source Clock:         UDP_1GbE_inst/Rx_clk rising at 0.000ns
+  Destination Clock:    UDP_1GbE_inst/Rx_clk rising at 8.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl2 to UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X1Y41.AQ       Tcko                  0.430   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl2
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl2
+    SLICE_X1Y41.A5       net (fanout=4)        0.908   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl2
+    SLICE_X1Y41.A        Tilo                  0.259   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl2
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/_n0061_inv1
+    SLICE_X1Y47.CE       net (fanout=2)        0.946   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/_n0061_inv
+    SLICE_X1Y47.CLK      Tceck                 0.405   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD<6>
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD_7
+    -------------------------------------------------  ---------------------------
+    Total                                      2.948ns (1.094ns logic, 1.854ns route)
+                                                       (37.1% logic, 62.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     4.800ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_odd_data_ptr (FF)
+  Destination:          UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD_7 (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      2.669ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.496ns (0.342 - 0.838)
+  Source Clock:         UDP_1GbE_inst/Rx_clk rising at 0.000ns
+  Destination Clock:    UDP_1GbE_inst/Rx_clk rising at 8.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_odd_data_ptr to UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X1Y41.AMUX     Tshcko                0.518   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl2
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_odd_data_ptr
+    SLICE_X1Y41.A2       net (fanout=1)        0.541   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_odd_data_ptr
+    SLICE_X1Y41.A        Tilo                  0.259   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl2
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/_n0061_inv1
+    SLICE_X1Y47.CE       net (fanout=2)        0.946   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/_n0061_inv
+    SLICE_X1Y47.CLK      Tceck                 0.405   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD<6>
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD_7
+    -------------------------------------------------  ---------------------------
+    Total                                      2.669ns (1.182ns logic, 1.487ns route)
+                                                       (44.3% logic, 55.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD_5 (SLICE_X1Y47.CE), 3 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.358ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl1 (FF)
+  Destination:          UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD_5 (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      5.313ns (Levels of Logic = 1)
+  Clock Path Skew:      -2.294ns (0.342 - 2.636)
+  Source Clock:         UDP_1GbE_inst/Rx_clk rising at 0.000ns
+  Destination Clock:    UDP_1GbE_inst/Rx_clk rising at 8.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl1 to UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD_5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    ILOGIC_X0Y24.Q4      Tickq                 1.778   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl1
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl1
+    SLICE_X1Y41.A4       net (fanout=2)        1.927   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl1
+    SLICE_X1Y41.A        Tilo                  0.259   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl2
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/_n0061_inv1
+    SLICE_X1Y47.CE       net (fanout=2)        0.946   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/_n0061_inv
+    SLICE_X1Y47.CLK      Tceck                 0.403   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD<6>
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD_5
+    -------------------------------------------------  ---------------------------
+    Total                                      5.313ns (2.440ns logic, 2.873ns route)
+                                                       (45.9% logic, 54.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     4.523ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl2 (FF)
+  Destination:          UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD_5 (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      2.946ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.496ns (0.342 - 0.838)
+  Source Clock:         UDP_1GbE_inst/Rx_clk rising at 0.000ns
+  Destination Clock:    UDP_1GbE_inst/Rx_clk rising at 8.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl2 to UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD_5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X1Y41.AQ       Tcko                  0.430   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl2
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl2
+    SLICE_X1Y41.A5       net (fanout=4)        0.908   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl2
+    SLICE_X1Y41.A        Tilo                  0.259   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl2
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/_n0061_inv1
+    SLICE_X1Y47.CE       net (fanout=2)        0.946   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/_n0061_inv
+    SLICE_X1Y47.CLK      Tceck                 0.403   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD<6>
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD_5
+    -------------------------------------------------  ---------------------------
+    Total                                      2.946ns (1.092ns logic, 1.854ns route)
+                                                       (37.1% logic, 62.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     4.802ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_odd_data_ptr (FF)
+  Destination:          UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD_5 (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      2.667ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.496ns (0.342 - 0.838)
+  Source Clock:         UDP_1GbE_inst/Rx_clk rising at 0.000ns
+  Destination Clock:    UDP_1GbE_inst/Rx_clk rising at 8.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_odd_data_ptr to UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD_5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X1Y41.AMUX     Tshcko                0.518   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl2
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_odd_data_ptr
+    SLICE_X1Y41.A2       net (fanout=1)        0.541   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_odd_data_ptr
+    SLICE_X1Y41.A        Tilo                  0.259   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl2
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/_n0061_inv1
+    SLICE_X1Y47.CE       net (fanout=2)        0.946   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/_n0061_inv
+    SLICE_X1Y47.CLK      Tceck                 0.403   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD<6>
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD_5
+    -------------------------------------------------  ---------------------------
+    Total                                      2.667ns (1.180ns logic, 1.487ns route)
+                                                       (44.2% logic, 55.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD_6 (SLICE_X1Y47.CE), 3 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.371ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl1 (FF)
+  Destination:          UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD_6 (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      5.300ns (Levels of Logic = 1)
+  Clock Path Skew:      -2.294ns (0.342 - 2.636)
+  Source Clock:         UDP_1GbE_inst/Rx_clk rising at 0.000ns
+  Destination Clock:    UDP_1GbE_inst/Rx_clk rising at 8.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl1 to UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    ILOGIC_X0Y24.Q4      Tickq                 1.778   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl1
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl1
+    SLICE_X1Y41.A4       net (fanout=2)        1.927   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl1
+    SLICE_X1Y41.A        Tilo                  0.259   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl2
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/_n0061_inv1
+    SLICE_X1Y47.CE       net (fanout=2)        0.946   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/_n0061_inv
+    SLICE_X1Y47.CLK      Tceck                 0.390   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD<6>
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD_6
+    -------------------------------------------------  ---------------------------
+    Total                                      5.300ns (2.427ns logic, 2.873ns route)
+                                                       (45.8% logic, 54.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     4.536ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl2 (FF)
+  Destination:          UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD_6 (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      2.933ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.496ns (0.342 - 0.838)
+  Source Clock:         UDP_1GbE_inst/Rx_clk rising at 0.000ns
+  Destination Clock:    UDP_1GbE_inst/Rx_clk rising at 8.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl2 to UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X1Y41.AQ       Tcko                  0.430   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl2
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl2
+    SLICE_X1Y41.A5       net (fanout=4)        0.908   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl2
+    SLICE_X1Y41.A        Tilo                  0.259   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl2
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/_n0061_inv1
+    SLICE_X1Y47.CE       net (fanout=2)        0.946   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/_n0061_inv
+    SLICE_X1Y47.CLK      Tceck                 0.390   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD<6>
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD_6
+    -------------------------------------------------  ---------------------------
+    Total                                      2.933ns (1.079ns logic, 1.854ns route)
+                                                       (36.8% logic, 63.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     4.815ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_odd_data_ptr (FF)
+  Destination:          UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD_6 (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      2.654ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.496ns (0.342 - 0.838)
+  Source Clock:         UDP_1GbE_inst/Rx_clk rising at 0.000ns
+  Destination Clock:    UDP_1GbE_inst/Rx_clk rising at 8.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_odd_data_ptr to UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X1Y41.AMUX     Tshcko                0.518   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl2
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_odd_data_ptr
+    SLICE_X1Y41.A2       net (fanout=1)        0.541   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_odd_data_ptr
+    SLICE_X1Y41.A        Tilo                  0.259   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_dv_dl2
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/_n0061_inv1
+    SLICE_X1Y47.CE       net (fanout=2)        0.946   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/_n0061_inv
+    SLICE_X1Y47.CLK      Tceck                 0.390   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD<6>
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/MRxD_6
+    -------------------------------------------------  ---------------------------
+    Total                                      2.654ns (1.167ns logic, 1.487ns route)
+                                                       (44.0% logic, 56.0% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_GIGE_RX_CLK = PERIOD TIMEGRP "GIGE_RX_CLK" 8 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_rx/U_MAC_rx_ctrl/RxErr (SLICE_X0Y47.AX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.268ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_er_dl1 (FF)
+  Destination:          UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_rx/U_MAC_rx_ctrl/RxErr (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      1.382ns (Levels of Logic = 0)
+  Clock Path Skew:      1.079ns (3.549 - 2.470)
+  Source Clock:         UDP_1GbE_inst/Rx_clk rising at 8.000ns
+  Destination Clock:    UDP_1GbE_inst/Ethernet_MAC_top/MAC_rx_clk_div rising at 8.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Minimum Data Path at Fast Process Corner: UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_er_dl1 to UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_rx/U_MAC_rx_ctrl/RxErr
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    ILOGIC_X0Y39.Q4      Tickq                 0.656   GIGE_RX_ER_IBUF
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_er_dl1
+    SLICE_X0Y47.AX       net (fanout=1)        0.678   UDP_1GbE_inst/Ethernet_MAC_top/U_Phy_int/Rx_er_dl1
+    SLICE_X0Y47.CLK      Tckdi       (-Th)    -0.048   UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_rx/U_MAC_rx_ctrl/RxErr
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_rx/U_MAC_rx_ctrl/RxErr
+    -------------------------------------------------  ---------------------------
+    Total                                      1.382ns (0.704ns logic, 0.678ns route)
+                                                       (50.9% logic, 49.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_rx/U_MAC_rx_ctrl/RxD_dl1_2 (SLICE_X0Y46.CX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.388ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_rx/U_MAC_rx_ctrl/RxD_2 (FF)
+  Destination:          UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_rx/U_MAC_rx_ctrl/RxD_dl1_2 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.390ns (Levels of Logic = 0)
+  Clock Path Skew:      0.002ns (0.044 - 0.042)
+  Source Clock:         UDP_1GbE_inst/Ethernet_MAC_top/MAC_rx_clk_div rising at 8.000ns
+  Destination Clock:    UDP_1GbE_inst/Ethernet_MAC_top/MAC_rx_clk_div rising at 8.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_rx/U_MAC_rx_ctrl/RxD_2 to UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_rx/U_MAC_rx_ctrl/RxD_dl1_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X1Y46.CQ       Tcko                  0.198   UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_rx/U_MAC_rx_ctrl/RxD<3>
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_rx/U_MAC_rx_ctrl/RxD_2
+    SLICE_X0Y46.CX       net (fanout=2)        0.144   UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_rx/U_MAC_rx_ctrl/RxD<2>
+    SLICE_X0Y46.CLK      Tckdi       (-Th)    -0.048   UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_rx/U_MAC_rx_ctrl/RxD_dl1<3>
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_rx/U_MAC_rx_ctrl/RxD_dl1_2
+    -------------------------------------------------  ---------------------------
+    Total                                      0.390ns (0.246ns logic, 0.144ns route)
+                                                       (63.1% logic, 36.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_rx/U_MAC_rx_ctrl/pause_quanta_10 (SLICE_X13Y41.CX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.401ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_rx/U_MAC_rx_ctrl/pause_quanta_h_2 (FF)
+  Destination:          UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_rx/U_MAC_rx_ctrl/pause_quanta_10 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.403ns (Levels of Logic = 0)
+  Clock Path Skew:      0.002ns (0.034 - 0.032)
+  Source Clock:         UDP_1GbE_inst/Ethernet_MAC_top/MAC_rx_clk_div rising at 8.000ns
+  Destination Clock:    UDP_1GbE_inst/Ethernet_MAC_top/MAC_rx_clk_div rising at 8.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_rx/U_MAC_rx_ctrl/pause_quanta_h_2 to UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_rx/U_MAC_rx_ctrl/pause_quanta_10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y41.CQ      Tcko                  0.200   UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_rx/U_MAC_rx_ctrl/pause_quanta_h<3>
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_rx/U_MAC_rx_ctrl/pause_quanta_h_2
+    SLICE_X13Y41.CX      net (fanout=1)        0.144   UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_rx/U_MAC_rx_ctrl/pause_quanta_h<2>
+    SLICE_X13Y41.CLK     Tckdi       (-Th)    -0.059   UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_rx/U_MAC_rx_ctrl/pause_quanta<11>
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_rx/U_MAC_rx_ctrl/pause_quanta_10
+    -------------------------------------------------  ---------------------------
+    Total                                      0.403ns (0.259ns logic, 0.144ns route)
+                                                       (64.3% logic, 35.7% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_GIGE_RX_CLK = PERIOD TIMEGRP "GIGE_RX_CLK" 8 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 4.430ns (period - min period limit)
+  Period: 8.000ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKA(Fmax))
+  Physical resource: UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_rx/U_MAC_rx_FF/U_duram/U_RAMB16_S36_S36/CLKA
+  Logical resource: UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_rx/U_MAC_rx_FF/U_duram/U_RAMB16_S36_S36/CLKA
+  Location pin: RAMB16_X2Y32.CLKA
+  Clock network: UDP_1GbE_inst/Ethernet_MAC_top/MAC_rx_clk_div
+--------------------------------------------------------------------------------
+Slack: 5.334ns (period - min period limit)
+  Period: 8.000ns
+  Min period limit: 2.666ns (375.094MHz) (Tbcper_I)
+  Physical resource: UDP_1GbE_inst/Ethernet_MAC_top/U_Clk_ctrl/U_0_CLK_SWITCH/U_BUFGMUX/I0
+  Logical resource: UDP_1GbE_inst/Ethernet_MAC_top/U_Clk_ctrl/U_0_CLK_SWITCH/U_BUFGMUX/I0
+  Location pin: BUFGMUX_X2Y12.I0
+  Clock network: UDP_1GbE_inst/Ethernet_MAC_top/U_Clk_ctrl/U_0_CLK_DIV2/OUT
+--------------------------------------------------------------------------------
+Slack: 5.334ns (period - min period limit)
+  Period: 8.000ns
+  Min period limit: 2.666ns (375.094MHz) (Tbcper_I)
+  Physical resource: UDP_1GbE_inst/Ethernet_MAC_top/U_Clk_ctrl/U_0_CLK_SWITCH/U_BUFGMUX/I1
+  Logical resource: UDP_1GbE_inst/Ethernet_MAC_top/U_Clk_ctrl/U_0_CLK_SWITCH/U_BUFGMUX/I1
+  Location pin: BUFGMUX_X2Y12.I1
+  Clock network: UDP_1GbE_inst/Rx_clk
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_GIGE_MDC = PERIOD TIMEGRP "GIGE_MDC" 2.5 MHz HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 0 paths analyzed, 0 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 component switching limit errors)
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_sys_clk = PERIOD TIMEGRP "TM_sys_clk" 10 ns HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 2971 paths analyzed, 209 endpoints analyzed, 8 failing endpoints
+ 8 timing errors detected. (0 setup errors, 8 hold errors, 0 component switching limit errors)
+ Minimum period is   9.540ns.
+--------------------------------------------------------------------------------
+
+Paths for end point tx_delay_cnt_16 (SLICE_X64Y93.CE), 3 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.460ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               udp_send_flag (FF)
+  Destination:          tx_delay_cnt_16 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      7.871ns (Levels of Logic = 1)
+  Clock Path Skew:      -1.634ns (0.520 - 2.154)
+  Source Clock:         sys_clk_100MHz rising at 0.000ns
+  Destination Clock:    sys_clk_100MHz rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: udp_send_flag to tx_delay_cnt_16
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X64Y83.CMUX    Tshcko                0.576   udp_tx_pkt_vld_r
+                                                       udp_send_flag
+    SLICE_X65Y89.B1      net (fanout=2)        1.026   udp_send_flag
+    SLICE_X65Y89.B       Tilo                  0.259   Mmux_GND_7_o_GND_7_o_MUX_3975_o11
+                                                       Mmux_GND_7_o_GND_7_o_MUX_3975_o111
+    SLICE_X64Y93.CE      net (fanout=8)        5.697   Mmux_GND_7_o_GND_7_o_MUX_3975_o11
+    SLICE_X64Y93.CLK     Tceck                 0.313   tx_delay_cnt<19>
+                                                       tx_delay_cnt_16
+    -------------------------------------------------  ---------------------------
+    Total                                      7.871ns (1.148ns logic, 6.723ns route)
+                                                       (14.6% logic, 85.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     3.443ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_FF/Tx_mac_wa (FF)
+  Destination:          tx_delay_cnt_16 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      10.974ns (Levels of Logic = 1)
+  Clock Path Skew:      4.729ns (8.209 - 3.480)
+  Source Clock:         clk_100mhz rising at 0.000ns
+  Destination Clock:    sys_clk_100MHz rising at 10.000ns
+  Clock Uncertainty:    0.312ns
+
+  Clock Uncertainty:          0.312ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.180ns
+    Phase Error (PE):           0.215ns
+
+  Maximum Data Path at Slow Process Corner: UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_FF/Tx_mac_wa to tx_delay_cnt_16
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X56Y58.CQ      Tcko                  0.525   UDP_1GbE_inst/Tx_mac_wa
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_FF/Tx_mac_wa
+    SLICE_X65Y89.B5      net (fanout=10)       4.180   UDP_1GbE_inst/Tx_mac_wa
+    SLICE_X65Y89.B       Tilo                  0.259   Mmux_GND_7_o_GND_7_o_MUX_3975_o11
+                                                       Mmux_GND_7_o_GND_7_o_MUX_3975_o111
+    SLICE_X64Y93.CE      net (fanout=8)        5.697   Mmux_GND_7_o_GND_7_o_MUX_3975_o11
+    SLICE_X64Y93.CLK     Tceck                 0.313   tx_delay_cnt<19>
+                                                       tx_delay_cnt_16
+    -------------------------------------------------  ---------------------------
+    Total                                     10.974ns (1.097ns logic, 9.877ns route)
+                                                       (10.0% logic, 90.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     6.547ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UDP_1GbE_inst/state_ethernet_FSM_FFd2 (FF)
+  Destination:          tx_delay_cnt_16 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      7.733ns (Levels of Logic = 1)
+  Clock Path Skew:      4.592ns (8.209 - 3.617)
+  Source Clock:         clk_100mhz rising at 0.000ns
+  Destination Clock:    sys_clk_100MHz rising at 10.000ns
+  Clock Uncertainty:    0.312ns
+
+  Clock Uncertainty:          0.312ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.180ns
+    Phase Error (PE):           0.215ns
+
+  Maximum Data Path at Slow Process Corner: UDP_1GbE_inst/state_ethernet_FSM_FFd2 to tx_delay_cnt_16
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X65Y84.BQ      Tcko                  0.430   UDP_1GbE_inst/state_ethernet_FSM_FFd2
+                                                       UDP_1GbE_inst/state_ethernet_FSM_FFd2
+    SLICE_X65Y89.B4      net (fanout=8)        1.034   UDP_1GbE_inst/state_ethernet_FSM_FFd2
+    SLICE_X65Y89.B       Tilo                  0.259   Mmux_GND_7_o_GND_7_o_MUX_3975_o11
+                                                       Mmux_GND_7_o_GND_7_o_MUX_3975_o111
+    SLICE_X64Y93.CE      net (fanout=8)        5.697   Mmux_GND_7_o_GND_7_o_MUX_3975_o11
+    SLICE_X64Y93.CLK     Tceck                 0.313   tx_delay_cnt<19>
+                                                       tx_delay_cnt_16
+    -------------------------------------------------  ---------------------------
+    Total                                      7.733ns (1.002ns logic, 6.731ns route)
+                                                       (13.0% logic, 87.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point tx_delay_cnt_19 (SLICE_X64Y93.SR), 35 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.460ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               udp_send_flag (FF)
+  Destination:          tx_delay_cnt_19 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      7.871ns (Levels of Logic = 2)
+  Clock Path Skew:      -1.634ns (0.520 - 2.154)
+  Source Clock:         sys_clk_100MHz rising at 0.000ns
+  Destination Clock:    sys_clk_100MHz rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: udp_send_flag to tx_delay_cnt_19
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X64Y83.CMUX    Tshcko                0.576   udp_tx_pkt_vld_r
+                                                       udp_send_flag
+    SLICE_X65Y89.B1      net (fanout=2)        1.026   udp_send_flag
+    SLICE_X65Y89.BMUX    Tilo                  0.337   Mmux_GND_7_o_GND_7_o_MUX_3975_o11
+                                                       GND_7_o_GND_7_o_MUX_3975_o5
+    SLICE_X64Y83.B3      net (fanout=1)        0.868   GND_7_o_GND_7_o_MUX_3975_o5
+    SLICE_X64Y83.B       Tilo                  0.254   udp_tx_pkt_vld_r
+                                                       GND_7_o_GND_7_o_MUX_3975_o7
+    SLICE_X64Y93.SR      net (fanout=20)       4.340   GND_7_o_GND_7_o_MUX_3975_o
+    SLICE_X64Y93.CLK     Tsrck                 0.470   tx_delay_cnt<19>
+                                                       tx_delay_cnt_19
+    -------------------------------------------------  ---------------------------
+    Total                                      7.871ns (1.637ns logic, 6.234ns route)
+                                                       (20.8% logic, 79.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.681ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tx_delay_cnt_20 (FF)
+  Destination:          tx_delay_cnt_19 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      9.024ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.260ns (0.520 - 0.780)
+  Source Clock:         sys_clk_100MHz rising at 0.000ns
+  Destination Clock:    sys_clk_100MHz rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: tx_delay_cnt_20 to tx_delay_cnt_19
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X64Y94.AQ      Tcko                  0.525   tx_delay_cnt<23>
+                                                       tx_delay_cnt_20
+    SLICE_X65Y94.A1      net (fanout=2)        1.205   tx_delay_cnt<20>
+    SLICE_X65Y94.A       Tilo                  0.259   GND_7_o_GND_7_o_MUX_3975_o4
+                                                       GND_7_o_GND_7_o_MUX_3975_o4
+    SLICE_X64Y83.B2      net (fanout=1)        1.971   GND_7_o_GND_7_o_MUX_3975_o4
+    SLICE_X64Y83.B       Tilo                  0.254   udp_tx_pkt_vld_r
+                                                       GND_7_o_GND_7_o_MUX_3975_o7
+    SLICE_X64Y93.SR      net (fanout=20)       4.340   GND_7_o_GND_7_o_MUX_3975_o
+    SLICE_X64Y93.CLK     Tsrck                 0.470   tx_delay_cnt<19>
+                                                       tx_delay_cnt_19
+    -------------------------------------------------  ---------------------------
+    Total                                      9.024ns (1.508ns logic, 7.516ns route)
+                                                       (16.7% logic, 83.3% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.867ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tx_delay_cnt_0 (FF)
+  Destination:          tx_delay_cnt_19 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      8.199ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.899ns (0.520 - 1.419)
+  Source Clock:         sys_clk_100MHz rising at 0.000ns
+  Destination Clock:    sys_clk_100MHz rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: tx_delay_cnt_0 to tx_delay_cnt_19
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X64Y89.AQ      Tcko                  0.525   tx_delay_cnt<3>
+                                                       tx_delay_cnt_0
+    SLICE_X65Y89.A5      net (fanout=2)        0.896   tx_delay_cnt<0>
+    SLICE_X65Y89.A       Tilo                  0.259   Mmux_GND_7_o_GND_7_o_MUX_3975_o11
+                                                       GND_7_o_GND_7_o_MUX_3975_o1
+    SLICE_X64Y83.B1      net (fanout=1)        1.455   GND_7_o_GND_7_o_MUX_3975_o1
+    SLICE_X64Y83.B       Tilo                  0.254   udp_tx_pkt_vld_r
+                                                       GND_7_o_GND_7_o_MUX_3975_o7
+    SLICE_X64Y93.SR      net (fanout=20)       4.340   GND_7_o_GND_7_o_MUX_3975_o
+    SLICE_X64Y93.CLK     Tsrck                 0.470   tx_delay_cnt<19>
+                                                       tx_delay_cnt_19
+    -------------------------------------------------  ---------------------------
+    Total                                      8.199ns (1.508ns logic, 6.691ns route)
+                                                       (18.4% logic, 81.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point tx_delay_cnt_20 (SLICE_X64Y94.CE), 3 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.461ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               udp_send_flag (FF)
+  Destination:          tx_delay_cnt_20 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      8.110ns (Levels of Logic = 1)
+  Clock Path Skew:      -1.394ns (0.337 - 1.731)
+  Source Clock:         sys_clk_100MHz rising at 0.000ns
+  Destination Clock:    sys_clk_100MHz rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: udp_send_flag to tx_delay_cnt_20
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X64Y83.CMUX    Tshcko                0.576   udp_tx_pkt_vld_r
+                                                       udp_send_flag
+    SLICE_X65Y89.B1      net (fanout=2)        1.026   udp_send_flag
+    SLICE_X65Y89.B       Tilo                  0.259   Mmux_GND_7_o_GND_7_o_MUX_3975_o11
+                                                       Mmux_GND_7_o_GND_7_o_MUX_3975_o111
+    SLICE_X64Y94.CE      net (fanout=8)        5.936   Mmux_GND_7_o_GND_7_o_MUX_3975_o11
+    SLICE_X64Y94.CLK     Tceck                 0.313   tx_delay_cnt<23>
+                                                       tx_delay_cnt_20
+    -------------------------------------------------  ---------------------------
+    Total                                      8.110ns (1.148ns logic, 6.962ns route)
+                                                       (14.2% logic, 85.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     3.424ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_FF/Tx_mac_wa (FF)
+  Destination:          tx_delay_cnt_20 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      11.213ns (Levels of Logic = 1)
+  Clock Path Skew:      4.949ns (8.429 - 3.480)
+  Source Clock:         clk_100mhz rising at 0.000ns
+  Destination Clock:    sys_clk_100MHz rising at 10.000ns
+  Clock Uncertainty:    0.312ns
+
+  Clock Uncertainty:          0.312ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.180ns
+    Phase Error (PE):           0.215ns
+
+  Maximum Data Path at Slow Process Corner: UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_FF/Tx_mac_wa to tx_delay_cnt_20
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X56Y58.CQ      Tcko                  0.525   UDP_1GbE_inst/Tx_mac_wa
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_FF/Tx_mac_wa
+    SLICE_X65Y89.B5      net (fanout=10)       4.180   UDP_1GbE_inst/Tx_mac_wa
+    SLICE_X65Y89.B       Tilo                  0.259   Mmux_GND_7_o_GND_7_o_MUX_3975_o11
+                                                       Mmux_GND_7_o_GND_7_o_MUX_3975_o111
+    SLICE_X64Y94.CE      net (fanout=8)        5.936   Mmux_GND_7_o_GND_7_o_MUX_3975_o11
+    SLICE_X64Y94.CLK     Tceck                 0.313   tx_delay_cnt<23>
+                                                       tx_delay_cnt_20
+    -------------------------------------------------  ---------------------------
+    Total                                     11.213ns (1.097ns logic, 10.116ns route)
+                                                       (9.8% logic, 90.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     6.528ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UDP_1GbE_inst/state_ethernet_FSM_FFd2 (FF)
+  Destination:          tx_delay_cnt_20 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      7.972ns (Levels of Logic = 1)
+  Clock Path Skew:      4.812ns (8.429 - 3.617)
+  Source Clock:         clk_100mhz rising at 0.000ns
+  Destination Clock:    sys_clk_100MHz rising at 10.000ns
+  Clock Uncertainty:    0.312ns
+
+  Clock Uncertainty:          0.312ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.180ns
+    Phase Error (PE):           0.215ns
+
+  Maximum Data Path at Slow Process Corner: UDP_1GbE_inst/state_ethernet_FSM_FFd2 to tx_delay_cnt_20
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X65Y84.BQ      Tcko                  0.430   UDP_1GbE_inst/state_ethernet_FSM_FFd2
+                                                       UDP_1GbE_inst/state_ethernet_FSM_FFd2
+    SLICE_X65Y89.B4      net (fanout=8)        1.034   UDP_1GbE_inst/state_ethernet_FSM_FFd2
+    SLICE_X65Y89.B       Tilo                  0.259   Mmux_GND_7_o_GND_7_o_MUX_3975_o11
+                                                       Mmux_GND_7_o_GND_7_o_MUX_3975_o111
+    SLICE_X64Y94.CE      net (fanout=8)        5.936   Mmux_GND_7_o_GND_7_o_MUX_3975_o11
+    SLICE_X64Y94.CLK     Tceck                 0.313   tx_delay_cnt<23>
+                                                       tx_delay_cnt_20
+    -------------------------------------------------  ---------------------------
+    Total                                      7.972ns (1.002ns logic, 6.970ns route)
+                                                       (12.6% logic, 87.4% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_sys_clk = PERIOD TIMEGRP "TM_sys_clk" 10 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point tx_delay_cnt_25 (SLICE_X64Y95.CE), 3 paths
+--------------------------------------------------------------------------------
+Slack (hold path):      -3.120ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               UDP_1GbE_inst/state_ethernet_FSM_FFd2 (FF)
+  Destination:          tx_delay_cnt_25 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      2.605ns (Levels of Logic = 1)
+  Clock Path Skew:      5.413ns (8.480 - 3.067)
+  Source Clock:         clk_100mhz rising at 10.000ns
+  Destination Clock:    sys_clk_100MHz rising at 10.000ns
+  Clock Uncertainty:    0.312ns
+
+  Clock Uncertainty:          0.312ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.180ns
+    Phase Error (PE):           0.215ns
+
+  Minimum Data Path at Slow Process Corner: UDP_1GbE_inst/state_ethernet_FSM_FFd2 to tx_delay_cnt_25
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X65Y84.BQ      Tcko                  0.405   UDP_1GbE_inst/state_ethernet_FSM_FFd2
+                                                       UDP_1GbE_inst/state_ethernet_FSM_FFd2
+    SLICE_X65Y89.B4      net (fanout=8)        0.978   UDP_1GbE_inst/state_ethernet_FSM_FFd2
+    SLICE_X65Y89.B       Tilo                  0.244   Mmux_GND_7_o_GND_7_o_MUX_3975_o11
+                                                       Mmux_GND_7_o_GND_7_o_MUX_3975_o111
+    SLICE_X64Y95.CE      net (fanout=8)        1.370   Mmux_GND_7_o_GND_7_o_MUX_3975_o11
+    SLICE_X64Y95.CLK     Tckce       (-Th)     0.392   tx_delay_cnt<27>
+                                                       tx_delay_cnt_25
+    -------------------------------------------------  ---------------------------
+    Total                                      2.605ns (0.257ns logic, 2.348ns route)
+                                                       (9.9% logic, 90.1% route)
+
+--------------------------------------------------------------------------------
+Slack (hold path):      -0.328ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_FF/Tx_mac_wa (FF)
+  Destination:          tx_delay_cnt_25 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      3.395ns (Levels of Logic = 1)
+  Clock Path Skew:      3.411ns (4.733 - 1.322)
+  Source Clock:         clk_100mhz rising at 10.000ns
+  Destination Clock:    sys_clk_100MHz rising at 10.000ns
+  Clock Uncertainty:    0.312ns
+
+  Clock Uncertainty:          0.312ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.180ns
+    Phase Error (PE):           0.215ns
+
+  Minimum Data Path at Fast Process Corner: UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_FF/Tx_mac_wa to tx_delay_cnt_25
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X56Y58.CQ      Tcko                  0.234   UDP_1GbE_inst/Tx_mac_wa
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_FF/Tx_mac_wa
+    SLICE_X65Y89.B5      net (fanout=10)       2.398   UDP_1GbE_inst/Tx_mac_wa
+    SLICE_X65Y89.B       Tilo                  0.156   Mmux_GND_7_o_GND_7_o_MUX_3975_o11
+                                                       Mmux_GND_7_o_GND_7_o_MUX_3975_o111
+    SLICE_X64Y95.CE      net (fanout=8)        0.709   Mmux_GND_7_o_GND_7_o_MUX_3975_o11
+    SLICE_X64Y95.CLK     Tckce       (-Th)     0.102   tx_delay_cnt<27>
+                                                       tx_delay_cnt_25
+    -------------------------------------------------  ---------------------------
+    Total                                      3.395ns (0.288ns logic, 3.107ns route)
+                                                       (8.5% logic, 91.5% route)
+
+--------------------------------------------------------------------------------
+Slack (hold path):      2.591ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               udp_send_flag (FF)
+  Destination:          tx_delay_cnt_25 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      1.562ns (Levels of Logic = 1)
+  Clock Path Skew:      -1.029ns (0.001 - 1.030)
+  Source Clock:         sys_clk_100MHz rising at 10.000ns
+  Destination Clock:    sys_clk_100MHz rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: udp_send_flag to tx_delay_cnt_25
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X64Y83.CMUX    Tshcko                0.266   udp_tx_pkt_vld_r
+                                                       udp_send_flag
+    SLICE_X65Y89.B1      net (fanout=2)        0.533   udp_send_flag
+    SLICE_X65Y89.B       Tilo                  0.156   Mmux_GND_7_o_GND_7_o_MUX_3975_o11
+                                                       Mmux_GND_7_o_GND_7_o_MUX_3975_o111
+    SLICE_X64Y95.CE      net (fanout=8)        0.709   Mmux_GND_7_o_GND_7_o_MUX_3975_o11
+    SLICE_X64Y95.CLK     Tckce       (-Th)     0.102   tx_delay_cnt<27>
+                                                       tx_delay_cnt_25
+    -------------------------------------------------  ---------------------------
+    Total                                      1.562ns (0.320ns logic, 1.242ns route)
+                                                       (20.5% logic, 79.5% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point tx_delay_cnt_27 (SLICE_X64Y95.CE), 3 paths
+--------------------------------------------------------------------------------
+Slack (hold path):      -3.108ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               UDP_1GbE_inst/state_ethernet_FSM_FFd2 (FF)
+  Destination:          tx_delay_cnt_27 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      2.617ns (Levels of Logic = 1)
+  Clock Path Skew:      5.413ns (8.480 - 3.067)
+  Source Clock:         clk_100mhz rising at 10.000ns
+  Destination Clock:    sys_clk_100MHz rising at 10.000ns
+  Clock Uncertainty:    0.312ns
+
+  Clock Uncertainty:          0.312ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.180ns
+    Phase Error (PE):           0.215ns
+
+  Minimum Data Path at Slow Process Corner: UDP_1GbE_inst/state_ethernet_FSM_FFd2 to tx_delay_cnt_27
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X65Y84.BQ      Tcko                  0.405   UDP_1GbE_inst/state_ethernet_FSM_FFd2
+                                                       UDP_1GbE_inst/state_ethernet_FSM_FFd2
+    SLICE_X65Y89.B4      net (fanout=8)        0.978   UDP_1GbE_inst/state_ethernet_FSM_FFd2
+    SLICE_X65Y89.B       Tilo                  0.244   Mmux_GND_7_o_GND_7_o_MUX_3975_o11
+                                                       Mmux_GND_7_o_GND_7_o_MUX_3975_o111
+    SLICE_X64Y95.CE      net (fanout=8)        1.370   Mmux_GND_7_o_GND_7_o_MUX_3975_o11
+    SLICE_X64Y95.CLK     Tckce       (-Th)     0.380   tx_delay_cnt<27>
+                                                       tx_delay_cnt_27
+    -------------------------------------------------  ---------------------------
+    Total                                      2.617ns (0.269ns logic, 2.348ns route)
+                                                       (10.3% logic, 89.7% route)
+
+--------------------------------------------------------------------------------
+Slack (hold path):      -0.334ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_FF/Tx_mac_wa (FF)
+  Destination:          tx_delay_cnt_27 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      3.389ns (Levels of Logic = 1)
+  Clock Path Skew:      3.411ns (4.733 - 1.322)
+  Source Clock:         clk_100mhz rising at 10.000ns
+  Destination Clock:    sys_clk_100MHz rising at 10.000ns
+  Clock Uncertainty:    0.312ns
+
+  Clock Uncertainty:          0.312ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.180ns
+    Phase Error (PE):           0.215ns
+
+  Minimum Data Path at Fast Process Corner: UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_FF/Tx_mac_wa to tx_delay_cnt_27
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X56Y58.CQ      Tcko                  0.234   UDP_1GbE_inst/Tx_mac_wa
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_FF/Tx_mac_wa
+    SLICE_X65Y89.B5      net (fanout=10)       2.398   UDP_1GbE_inst/Tx_mac_wa
+    SLICE_X65Y89.B       Tilo                  0.156   Mmux_GND_7_o_GND_7_o_MUX_3975_o11
+                                                       Mmux_GND_7_o_GND_7_o_MUX_3975_o111
+    SLICE_X64Y95.CE      net (fanout=8)        0.709   Mmux_GND_7_o_GND_7_o_MUX_3975_o11
+    SLICE_X64Y95.CLK     Tckce       (-Th)     0.108   tx_delay_cnt<27>
+                                                       tx_delay_cnt_27
+    -------------------------------------------------  ---------------------------
+    Total                                      3.389ns (0.282ns logic, 3.107ns route)
+                                                       (8.3% logic, 91.7% route)
+
+--------------------------------------------------------------------------------
+Slack (hold path):      2.585ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               udp_send_flag (FF)
+  Destination:          tx_delay_cnt_27 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      1.556ns (Levels of Logic = 1)
+  Clock Path Skew:      -1.029ns (0.001 - 1.030)
+  Source Clock:         sys_clk_100MHz rising at 10.000ns
+  Destination Clock:    sys_clk_100MHz rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: udp_send_flag to tx_delay_cnt_27
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X64Y83.CMUX    Tshcko                0.266   udp_tx_pkt_vld_r
+                                                       udp_send_flag
+    SLICE_X65Y89.B1      net (fanout=2)        0.533   udp_send_flag
+    SLICE_X65Y89.B       Tilo                  0.156   Mmux_GND_7_o_GND_7_o_MUX_3975_o11
+                                                       Mmux_GND_7_o_GND_7_o_MUX_3975_o111
+    SLICE_X64Y95.CE      net (fanout=8)        0.709   Mmux_GND_7_o_GND_7_o_MUX_3975_o11
+    SLICE_X64Y95.CLK     Tckce       (-Th)     0.108   tx_delay_cnt<27>
+                                                       tx_delay_cnt_27
+    -------------------------------------------------  ---------------------------
+    Total                                      1.556ns (0.314ns logic, 1.242ns route)
+                                                       (20.2% logic, 79.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point tx_delay_cnt_26 (SLICE_X64Y95.CE), 3 paths
+--------------------------------------------------------------------------------
+Slack (hold path):      -3.105ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               UDP_1GbE_inst/state_ethernet_FSM_FFd2 (FF)
+  Destination:          tx_delay_cnt_26 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      2.620ns (Levels of Logic = 1)
+  Clock Path Skew:      5.413ns (8.480 - 3.067)
+  Source Clock:         clk_100mhz rising at 10.000ns
+  Destination Clock:    sys_clk_100MHz rising at 10.000ns
+  Clock Uncertainty:    0.312ns
+
+  Clock Uncertainty:          0.312ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.180ns
+    Phase Error (PE):           0.215ns
+
+  Minimum Data Path at Slow Process Corner: UDP_1GbE_inst/state_ethernet_FSM_FFd2 to tx_delay_cnt_26
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X65Y84.BQ      Tcko                  0.405   UDP_1GbE_inst/state_ethernet_FSM_FFd2
+                                                       UDP_1GbE_inst/state_ethernet_FSM_FFd2
+    SLICE_X65Y89.B4      net (fanout=8)        0.978   UDP_1GbE_inst/state_ethernet_FSM_FFd2
+    SLICE_X65Y89.B       Tilo                  0.244   Mmux_GND_7_o_GND_7_o_MUX_3975_o11
+                                                       Mmux_GND_7_o_GND_7_o_MUX_3975_o111
+    SLICE_X64Y95.CE      net (fanout=8)        1.370   Mmux_GND_7_o_GND_7_o_MUX_3975_o11
+    SLICE_X64Y95.CLK     Tckce       (-Th)     0.377   tx_delay_cnt<27>
+                                                       tx_delay_cnt_26
+    -------------------------------------------------  ---------------------------
+    Total                                      2.620ns (0.272ns logic, 2.348ns route)
+                                                       (10.4% logic, 89.6% route)
+
+--------------------------------------------------------------------------------
+Slack (hold path):      -0.330ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_FF/Tx_mac_wa (FF)
+  Destination:          tx_delay_cnt_26 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      3.393ns (Levels of Logic = 1)
+  Clock Path Skew:      3.411ns (4.733 - 1.322)
+  Source Clock:         clk_100mhz rising at 10.000ns
+  Destination Clock:    sys_clk_100MHz rising at 10.000ns
+  Clock Uncertainty:    0.312ns
+
+  Clock Uncertainty:          0.312ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.180ns
+    Phase Error (PE):           0.215ns
+
+  Minimum Data Path at Fast Process Corner: UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_FF/Tx_mac_wa to tx_delay_cnt_26
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X56Y58.CQ      Tcko                  0.234   UDP_1GbE_inst/Tx_mac_wa
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_FF/Tx_mac_wa
+    SLICE_X65Y89.B5      net (fanout=10)       2.398   UDP_1GbE_inst/Tx_mac_wa
+    SLICE_X65Y89.B       Tilo                  0.156   Mmux_GND_7_o_GND_7_o_MUX_3975_o11
+                                                       Mmux_GND_7_o_GND_7_o_MUX_3975_o111
+    SLICE_X64Y95.CE      net (fanout=8)        0.709   Mmux_GND_7_o_GND_7_o_MUX_3975_o11
+    SLICE_X64Y95.CLK     Tckce       (-Th)     0.104   tx_delay_cnt<27>
+                                                       tx_delay_cnt_26
+    -------------------------------------------------  ---------------------------
+    Total                                      3.393ns (0.286ns logic, 3.107ns route)
+                                                       (8.4% logic, 91.6% route)
+
+--------------------------------------------------------------------------------
+Slack (hold path):      2.589ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               udp_send_flag (FF)
+  Destination:          tx_delay_cnt_26 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      1.560ns (Levels of Logic = 1)
+  Clock Path Skew:      -1.029ns (0.001 - 1.030)
+  Source Clock:         sys_clk_100MHz rising at 10.000ns
+  Destination Clock:    sys_clk_100MHz rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: udp_send_flag to tx_delay_cnt_26
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X64Y83.CMUX    Tshcko                0.266   udp_tx_pkt_vld_r
+                                                       udp_send_flag
+    SLICE_X65Y89.B1      net (fanout=2)        0.533   udp_send_flag
+    SLICE_X65Y89.B       Tilo                  0.156   Mmux_GND_7_o_GND_7_o_MUX_3975_o11
+                                                       Mmux_GND_7_o_GND_7_o_MUX_3975_o111
+    SLICE_X64Y95.CE      net (fanout=8)        0.709   Mmux_GND_7_o_GND_7_o_MUX_3975_o11
+    SLICE_X64Y95.CLK     Tckce       (-Th)     0.104   tx_delay_cnt<27>
+                                                       tx_delay_cnt_26
+    -------------------------------------------------  ---------------------------
+    Total                                      1.560ns (0.318ns logic, 1.242ns route)
+                                                       (20.4% logic, 79.6% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_sys_clk = PERIOD TIMEGRP "TM_sys_clk" 10 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 6.666ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 10.000ns
+  Low pulse: 5.000ns
+  Low pulse limit: 1.667ns (Tdcmpw_CLKIN_100_150)
+  Physical resource: clk_manager_inst/dcm_inst/pll_base_inst/PLL_ADV/CLKIN1
+  Logical resource: clk_manager_inst/dcm_inst/pll_base_inst/PLL_ADV/CLKIN1
+  Location pin: PLL_ADV_X0Y2.CLKIN2
+  Clock network: clk_manager_inst/dcm_inst/clkin1
+--------------------------------------------------------------------------------
+Slack: 6.666ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 10.000ns
+  High pulse: 5.000ns
+  High pulse limit: 1.667ns (Tdcmpw_CLKIN_100_150)
+  Physical resource: clk_manager_inst/dcm_inst/pll_base_inst/PLL_ADV/CLKIN1
+  Logical resource: clk_manager_inst/dcm_inst/pll_base_inst/PLL_ADV/CLKIN1
+  Location pin: PLL_ADV_X0Y2.CLKIN2
+  Clock network: clk_manager_inst/dcm_inst/clkin1
+--------------------------------------------------------------------------------
+Slack: 6.948ns (period - min period limit)
+  Period: 8.000ns
+  Min period limit: 1.052ns (950.570MHz) (Tpllper_CLKOUT(Foutmax))
+  Physical resource: clk_manager_inst/dcm_inst/pll_base_inst/PLL_ADV/CLKOUT0
+  Logical resource: clk_manager_inst/dcm_inst/pll_base_inst/PLL_ADV/CLKOUT0
+  Location pin: PLL_ADV_X0Y2.CLKOUT0
+  Clock network: clk_manager_inst/dcm_inst/clkout0
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_sys_clk_ext = PERIOD TIMEGRP "TM_sys_clk_ext" 10 ns HIGH 
+50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 14294 paths analyzed, 692 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   9.085ns.
+--------------------------------------------------------------------------------
+
+Paths for end point PC_4 (SLICE_X69Y94.SR), 168 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.915ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MBsig_1 (FF)
+  Destination:          PC_4 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      5.950ns (Levels of Logic = 3)
+  Clock Path Skew:      -3.100ns (1.317 - 4.417)
+  Source Clock:         sys_clk_100MHz_ext rising at 0.000ns
+  Destination Clock:    sys_clk_100MHz_ext rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: MBsig_1 to PC_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X43Y111.AQ     Tcko                  0.430   MBsig_1
+                                                       MBsig_1
+    SLICE_X43Y105.A5     net (fanout=11)       0.926   MBsig_1
+    SLICE_X43Y105.AMUX   Tilo                  0.337   led_5_OBUF
+                                                       _n0482312
+    SLICE_X69Y100.B6     net (fanout=1)        1.983   _n0482311
+    SLICE_X69Y100.B      Tilo                  0.259   _n0712_inv
+                                                       _n0482336
+    SLICE_X71Y94.B5      net (fanout=2)        0.951   _n0482_bdd01
+    SLICE_X71Y94.B       Tilo                  0.259   _n0482
+                                                       _n04821
+    SLICE_X69Y94.SR      net (fanout=4)        0.362   _n0482
+    SLICE_X69Y94.CLK     Tsrck                 0.443   PC[7]_GND_7_o_add_75_OUT<4>
+                                                       PC_4
+    -------------------------------------------------  ---------------------------
+    Total                                      5.950ns (1.728ns logic, 4.222ns route)
+                                                       (29.0% logic, 71.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     1.574ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               status_reg_0 (FF)
+  Destination:          PC_4 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      7.891ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.500ns (0.307 - 0.807)
+  Source Clock:         sys_clk_100MHz_ext rising at 0.000ns
+  Destination Clock:    sys_clk_100MHz_ext rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: status_reg_0 to PC_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X69Y100.CMUX   Tshcko                0.518   _n0712_inv
+                                                       status_reg_0
+    SLICE_X43Y105.A3     net (fanout=11)       2.779   status_reg_0
+    SLICE_X43Y105.AMUX   Tilo                  0.337   led_5_OBUF
+                                                       _n0482312
+    SLICE_X69Y100.B6     net (fanout=1)        1.983   _n0482311
+    SLICE_X69Y100.B      Tilo                  0.259   _n0712_inv
+                                                       _n0482336
+    SLICE_X71Y94.B5      net (fanout=2)        0.951   _n0482_bdd01
+    SLICE_X71Y94.B       Tilo                  0.259   _n0482
+                                                       _n04821
+    SLICE_X69Y94.SR      net (fanout=4)        0.362   _n0482
+    SLICE_X69Y94.CLK     Tsrck                 0.443   PC[7]_GND_7_o_add_75_OUT<4>
+                                                       PC_4
+    -------------------------------------------------  ---------------------------
+    Total                                      7.891ns (1.816ns logic, 6.075ns route)
+                                                       (23.0% logic, 77.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     1.607ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Dsig_1 (FF)
+  Destination:          PC_4 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      5.921ns (Levels of Logic = 3)
+  Clock Path Skew:      -2.437ns (1.317 - 3.754)
+  Source Clock:         sys_clk_100MHz_ext rising at 0.000ns
+  Destination Clock:    sys_clk_100MHz_ext rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: Dsig_1 to PC_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X36Y107.DQ     Tcko                  0.525   Dsig_1
+                                                       Dsig_1
+    SLICE_X43Y105.A4     net (fanout=10)       0.802   Dsig_1
+    SLICE_X43Y105.AMUX   Tilo                  0.337   led_5_OBUF
+                                                       _n0482312
+    SLICE_X69Y100.B6     net (fanout=1)        1.983   _n0482311
+    SLICE_X69Y100.B      Tilo                  0.259   _n0712_inv
+                                                       _n0482336
+    SLICE_X71Y94.B5      net (fanout=2)        0.951   _n0482_bdd01
+    SLICE_X71Y94.B       Tilo                  0.259   _n0482
+                                                       _n04821
+    SLICE_X69Y94.SR      net (fanout=4)        0.362   _n0482
+    SLICE_X69Y94.CLK     Tsrck                 0.443   PC[7]_GND_7_o_add_75_OUT<4>
+                                                       PC_4
+    -------------------------------------------------  ---------------------------
+    Total                                      5.921ns (1.823ns logic, 4.098ns route)
+                                                       (30.8% logic, 69.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point PC_5 (SLICE_X71Y93.SR), 168 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.942ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MBsig_1 (FF)
+  Destination:          PC_5 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      5.941ns (Levels of Logic = 3)
+  Clock Path Skew:      -3.082ns (1.335 - 4.417)
+  Source Clock:         sys_clk_100MHz_ext rising at 0.000ns
+  Destination Clock:    sys_clk_100MHz_ext rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: MBsig_1 to PC_5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X43Y111.AQ     Tcko                  0.430   MBsig_1
+                                                       MBsig_1
+    SLICE_X43Y105.A5     net (fanout=11)       0.926   MBsig_1
+    SLICE_X43Y105.AMUX   Tilo                  0.337   led_5_OBUF
+                                                       _n0482312
+    SLICE_X69Y100.B6     net (fanout=1)        1.983   _n0482311
+    SLICE_X69Y100.B      Tilo                  0.259   _n0712_inv
+                                                       _n0482336
+    SLICE_X71Y94.B5      net (fanout=2)        0.951   _n0482_bdd01
+    SLICE_X71Y94.B       Tilo                  0.259   _n0482
+                                                       _n04821
+    SLICE_X71Y93.SR      net (fanout=4)        0.353   _n0482
+    SLICE_X71Y93.CLK     Tsrck                 0.443   PC[7]_GND_7_o_add_75_OUT<5>
+                                                       PC_5
+    -------------------------------------------------  ---------------------------
+    Total                                      5.941ns (1.728ns logic, 4.213ns route)
+                                                       (29.1% logic, 70.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     1.589ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               status_reg_0 (FF)
+  Destination:          PC_5 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      7.882ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.494ns (0.534 - 1.028)
+  Source Clock:         sys_clk_100MHz_ext rising at 0.000ns
+  Destination Clock:    sys_clk_100MHz_ext rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: status_reg_0 to PC_5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X69Y100.CMUX   Tshcko                0.518   _n0712_inv
+                                                       status_reg_0
+    SLICE_X43Y105.A3     net (fanout=11)       2.779   status_reg_0
+    SLICE_X43Y105.AMUX   Tilo                  0.337   led_5_OBUF
+                                                       _n0482312
+    SLICE_X69Y100.B6     net (fanout=1)        1.983   _n0482311
+    SLICE_X69Y100.B      Tilo                  0.259   _n0712_inv
+                                                       _n0482336
+    SLICE_X71Y94.B5      net (fanout=2)        0.951   _n0482_bdd01
+    SLICE_X71Y94.B       Tilo                  0.259   _n0482
+                                                       _n04821
+    SLICE_X71Y93.SR      net (fanout=4)        0.353   _n0482
+    SLICE_X71Y93.CLK     Tsrck                 0.443   PC[7]_GND_7_o_add_75_OUT<5>
+                                                       PC_5
+    -------------------------------------------------  ---------------------------
+    Total                                      7.882ns (1.816ns logic, 6.066ns route)
+                                                       (23.0% logic, 77.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     1.634ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Dsig_1 (FF)
+  Destination:          PC_5 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      5.912ns (Levels of Logic = 3)
+  Clock Path Skew:      -2.419ns (1.335 - 3.754)
+  Source Clock:         sys_clk_100MHz_ext rising at 0.000ns
+  Destination Clock:    sys_clk_100MHz_ext rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: Dsig_1 to PC_5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X36Y107.DQ     Tcko                  0.525   Dsig_1
+                                                       Dsig_1
+    SLICE_X43Y105.A4     net (fanout=10)       0.802   Dsig_1
+    SLICE_X43Y105.AMUX   Tilo                  0.337   led_5_OBUF
+                                                       _n0482312
+    SLICE_X69Y100.B6     net (fanout=1)        1.983   _n0482311
+    SLICE_X69Y100.B      Tilo                  0.259   _n0712_inv
+                                                       _n0482336
+    SLICE_X71Y94.B5      net (fanout=2)        0.951   _n0482_bdd01
+    SLICE_X71Y94.B       Tilo                  0.259   _n0482
+                                                       _n04821
+    SLICE_X71Y93.SR      net (fanout=4)        0.353   _n0482
+    SLICE_X71Y93.CLK     Tsrck                 0.443   PC[7]_GND_7_o_add_75_OUT<5>
+                                                       PC_5
+    -------------------------------------------------  ---------------------------
+    Total                                      5.912ns (1.823ns logic, 4.089ns route)
+                                                       (30.8% logic, 69.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point PC_2 (SLICE_X70Y93.SR), 168 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.956ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MBsig_1 (FF)
+  Destination:          PC_2 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      5.927ns (Levels of Logic = 3)
+  Clock Path Skew:      -3.082ns (1.335 - 4.417)
+  Source Clock:         sys_clk_100MHz_ext rising at 0.000ns
+  Destination Clock:    sys_clk_100MHz_ext rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: MBsig_1 to PC_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X43Y111.AQ     Tcko                  0.430   MBsig_1
+                                                       MBsig_1
+    SLICE_X43Y105.A5     net (fanout=11)       0.926   MBsig_1
+    SLICE_X43Y105.AMUX   Tilo                  0.337   led_5_OBUF
+                                                       _n0482312
+    SLICE_X69Y100.B6     net (fanout=1)        1.983   _n0482311
+    SLICE_X69Y100.B      Tilo                  0.259   _n0712_inv
+                                                       _n0482336
+    SLICE_X71Y94.B5      net (fanout=2)        0.951   _n0482_bdd01
+    SLICE_X71Y94.B       Tilo                  0.259   _n0482
+                                                       _n04821
+    SLICE_X70Y93.SR      net (fanout=4)        0.353   _n0482
+    SLICE_X70Y93.CLK     Tsrck                 0.429   PC<7>
+                                                       PC_2
+    -------------------------------------------------  ---------------------------
+    Total                                      5.927ns (1.714ns logic, 4.213ns route)
+                                                       (28.9% logic, 71.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     1.603ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               status_reg_0 (FF)
+  Destination:          PC_2 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      7.868ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.494ns (0.534 - 1.028)
+  Source Clock:         sys_clk_100MHz_ext rising at 0.000ns
+  Destination Clock:    sys_clk_100MHz_ext rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: status_reg_0 to PC_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X69Y100.CMUX   Tshcko                0.518   _n0712_inv
+                                                       status_reg_0
+    SLICE_X43Y105.A3     net (fanout=11)       2.779   status_reg_0
+    SLICE_X43Y105.AMUX   Tilo                  0.337   led_5_OBUF
+                                                       _n0482312
+    SLICE_X69Y100.B6     net (fanout=1)        1.983   _n0482311
+    SLICE_X69Y100.B      Tilo                  0.259   _n0712_inv
+                                                       _n0482336
+    SLICE_X71Y94.B5      net (fanout=2)        0.951   _n0482_bdd01
+    SLICE_X71Y94.B       Tilo                  0.259   _n0482
+                                                       _n04821
+    SLICE_X70Y93.SR      net (fanout=4)        0.353   _n0482
+    SLICE_X70Y93.CLK     Tsrck                 0.429   PC<7>
+                                                       PC_2
+    -------------------------------------------------  ---------------------------
+    Total                                      7.868ns (1.802ns logic, 6.066ns route)
+                                                       (22.9% logic, 77.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     1.648ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Dsig_1 (FF)
+  Destination:          PC_2 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      5.898ns (Levels of Logic = 3)
+  Clock Path Skew:      -2.419ns (1.335 - 3.754)
+  Source Clock:         sys_clk_100MHz_ext rising at 0.000ns
+  Destination Clock:    sys_clk_100MHz_ext rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: Dsig_1 to PC_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X36Y107.DQ     Tcko                  0.525   Dsig_1
+                                                       Dsig_1
+    SLICE_X43Y105.A4     net (fanout=10)       0.802   Dsig_1
+    SLICE_X43Y105.AMUX   Tilo                  0.337   led_5_OBUF
+                                                       _n0482312
+    SLICE_X69Y100.B6     net (fanout=1)        1.983   _n0482311
+    SLICE_X69Y100.B      Tilo                  0.259   _n0712_inv
+                                                       _n0482336
+    SLICE_X71Y94.B5      net (fanout=2)        0.951   _n0482_bdd01
+    SLICE_X71Y94.B       Tilo                  0.259   _n0482
+                                                       _n04821
+    SLICE_X70Y93.SR      net (fanout=4)        0.353   _n0482
+    SLICE_X70Y93.CLK     Tsrck                 0.429   PC<7>
+                                                       PC_2
+    -------------------------------------------------  ---------------------------
+    Total                                      5.898ns (1.809ns logic, 4.089ns route)
+                                                       (30.7% logic, 69.3% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_sys_clk_ext = PERIOD TIMEGRP "TM_sys_clk_ext" 10 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point M_12 (SLICE_X78Y101.CIN), 12 paths
+--------------------------------------------------------------------------------
+Slack (hold path):      0.268ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               M_2 (FF)
+  Destination:          M_12 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.653ns (Levels of Logic = 4)
+  Clock Path Skew:      0.385ns (0.385 - 0.000)
+  Source Clock:         sys_clk_100MHz_ext rising at 10.000ns
+  Destination Clock:    sys_clk_100MHz_ext rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: M_2 to M_12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X78Y98.CQ      Tcko                  0.200   M<3>
+                                                       M_2
+    SLICE_X78Y98.C5      net (fanout=2)        0.070   M<2>
+    SLICE_X78Y98.COUT    Topcyc                0.195   M<3>
+                                                       M<2>_rt
+                                                       Mcount_M_cy<3>
+    SLICE_X78Y99.CIN     net (fanout=1)        0.001   Mcount_M_cy<3>
+    SLICE_X78Y99.COUT    Tbyp                  0.032   M<7>
+                                                       Mcount_M_cy<7>
+    SLICE_X78Y100.CIN    net (fanout=1)        0.001   Mcount_M_cy<7>
+    SLICE_X78Y100.COUT   Tbyp                  0.032   M<11>
+                                                       Mcount_M_cy<11>
+    SLICE_X78Y101.CIN    net (fanout=1)        0.001   Mcount_M_cy<11>
+    SLICE_X78Y101.CLK    Tckcin      (-Th)    -0.121   M<15>
+                                                       Mcount_M_cy<15>
+                                                       M_12
+    -------------------------------------------------  ---------------------------
+    Total                                      0.653ns (0.580ns logic, 0.073ns route)
+                                                       (88.8% logic, 11.2% route)
+
+--------------------------------------------------------------------------------
+Slack (hold path):      0.292ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               M_10 (FF)
+  Destination:          M_12 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.586ns (Levels of Logic = 2)
+  Clock Path Skew:      0.294ns (0.682 - 0.388)
+  Source Clock:         sys_clk_100MHz_ext rising at 10.000ns
+  Destination Clock:    sys_clk_100MHz_ext rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: M_10 to M_12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X78Y100.CQ     Tcko                  0.200   M<11>
+                                                       M_10
+    SLICE_X78Y100.C5     net (fanout=2)        0.069   M<10>
+    SLICE_X78Y100.COUT   Topcyc                0.195   M<11>
+                                                       M<10>_rt
+                                                       Mcount_M_cy<11>
+    SLICE_X78Y101.CIN    net (fanout=1)        0.001   Mcount_M_cy<11>
+    SLICE_X78Y101.CLK    Tckcin      (-Th)    -0.121   M<15>
+                                                       Mcount_M_cy<15>
+                                                       M_12
+    -------------------------------------------------  ---------------------------
+    Total                                      0.586ns (0.516ns logic, 0.070ns route)
+                                                       (88.1% logic, 11.9% route)
+
+--------------------------------------------------------------------------------
+Slack (hold path):      0.318ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               M_8 (FF)
+  Destination:          M_12 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.612ns (Levels of Logic = 2)
+  Clock Path Skew:      0.294ns (0.682 - 0.388)
+  Source Clock:         sys_clk_100MHz_ext rising at 10.000ns
+  Destination Clock:    sys_clk_100MHz_ext rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: M_8 to M_12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X78Y100.AQ     Tcko                  0.200   M<11>
+                                                       M_8
+    SLICE_X78Y100.A6     net (fanout=2)        0.025   M<8>
+    SLICE_X78Y100.COUT   Topcya                0.265   M<11>
+                                                       M<8>_rt
+                                                       Mcount_M_cy<11>
+    SLICE_X78Y101.CIN    net (fanout=1)        0.001   Mcount_M_cy<11>
+    SLICE_X78Y101.CLK    Tckcin      (-Th)    -0.121   M<15>
+                                                       Mcount_M_cy<15>
+                                                       M_12
+    -------------------------------------------------  ---------------------------
+    Total                                      0.612ns (0.586ns logic, 0.026ns route)
+                                                       (95.8% logic, 4.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point M_20 (SLICE_X78Y103.CIN), 20 paths
+--------------------------------------------------------------------------------
+Slack (hold path):      0.273ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               M_2 (FF)
+  Destination:          M_20 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.719ns (Levels of Logic = 6)
+  Clock Path Skew:      0.446ns (0.727 - 0.281)
+  Source Clock:         sys_clk_100MHz_ext rising at 10.000ns
+  Destination Clock:    sys_clk_100MHz_ext rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: M_2 to M_20
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X78Y98.CQ      Tcko                  0.200   M<3>
+                                                       M_2
+    SLICE_X78Y98.C5      net (fanout=2)        0.070   M<2>
+    SLICE_X78Y98.COUT    Topcyc                0.195   M<3>
+                                                       M<2>_rt
+                                                       Mcount_M_cy<3>
+    SLICE_X78Y99.CIN     net (fanout=1)        0.001   Mcount_M_cy<3>
+    SLICE_X78Y99.COUT    Tbyp                  0.032   M<7>
+                                                       Mcount_M_cy<7>
+    SLICE_X78Y100.CIN    net (fanout=1)        0.001   Mcount_M_cy<7>
+    SLICE_X78Y100.COUT   Tbyp                  0.032   M<11>
+                                                       Mcount_M_cy<11>
+    SLICE_X78Y101.CIN    net (fanout=1)        0.001   Mcount_M_cy<11>
+    SLICE_X78Y101.COUT   Tbyp                  0.032   M<15>
+                                                       Mcount_M_cy<15>
+    SLICE_X78Y102.CIN    net (fanout=1)        0.001   Mcount_M_cy<15>
+    SLICE_X78Y102.COUT   Tbyp                  0.032   M<19>
+                                                       Mcount_M_cy<19>
+    SLICE_X78Y103.CIN    net (fanout=1)        0.001   Mcount_M_cy<19>
+    SLICE_X78Y103.CLK    Tckcin      (-Th)    -0.121   M<23>
+                                                       Mcount_M_cy<23>
+                                                       M_20
+    -------------------------------------------------  ---------------------------
+    Total                                      0.719ns (0.644ns logic, 0.075ns route)
+                                                       (89.6% logic, 10.4% route)
+
+--------------------------------------------------------------------------------
+Slack (hold path):      0.310ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               M_18 (FF)
+  Destination:          M_20 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.585ns (Levels of Logic = 2)
+  Clock Path Skew:      0.275ns (0.275 - 0.000)
+  Source Clock:         sys_clk_100MHz_ext rising at 10.000ns
+  Destination Clock:    sys_clk_100MHz_ext rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: M_18 to M_20
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X78Y102.CQ     Tcko                  0.200   M<19>
+                                                       M_18
+    SLICE_X78Y102.C5     net (fanout=2)        0.068   M<18>
+    SLICE_X78Y102.COUT   Topcyc                0.195   M<19>
+                                                       M<18>_rt
+                                                       Mcount_M_cy<19>
+    SLICE_X78Y103.CIN    net (fanout=1)        0.001   Mcount_M_cy<19>
+    SLICE_X78Y103.CLK    Tckcin      (-Th)    -0.121   M<23>
+                                                       Mcount_M_cy<23>
+                                                       M_20
+    -------------------------------------------------  ---------------------------
+    Total                                      0.585ns (0.516ns logic, 0.069ns route)
+                                                       (88.2% logic, 11.8% route)
+
+--------------------------------------------------------------------------------
+Slack (hold path):      0.313ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               M_10 (FF)
+  Destination:          M_20 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.652ns (Levels of Logic = 4)
+  Clock Path Skew:      0.339ns (0.727 - 0.388)
+  Source Clock:         sys_clk_100MHz_ext rising at 10.000ns
+  Destination Clock:    sys_clk_100MHz_ext rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: M_10 to M_20
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X78Y100.CQ     Tcko                  0.200   M<11>
+                                                       M_10
+    SLICE_X78Y100.C5     net (fanout=2)        0.069   M<10>
+    SLICE_X78Y100.COUT   Topcyc                0.195   M<11>
+                                                       M<10>_rt
+                                                       Mcount_M_cy<11>
+    SLICE_X78Y101.CIN    net (fanout=1)        0.001   Mcount_M_cy<11>
+    SLICE_X78Y101.COUT   Tbyp                  0.032   M<15>
+                                                       Mcount_M_cy<15>
+    SLICE_X78Y102.CIN    net (fanout=1)        0.001   Mcount_M_cy<15>
+    SLICE_X78Y102.COUT   Tbyp                  0.032   M<19>
+                                                       Mcount_M_cy<19>
+    SLICE_X78Y103.CIN    net (fanout=1)        0.001   Mcount_M_cy<19>
+    SLICE_X78Y103.CLK    Tckcin      (-Th)    -0.121   M<23>
+                                                       Mcount_M_cy<23>
+                                                       M_20
+    -------------------------------------------------  ---------------------------
+    Total                                      0.652ns (0.580ns logic, 0.072ns route)
+                                                       (89.0% logic, 11.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point M_28 (SLICE_X78Y105.CIN), 28 paths
+--------------------------------------------------------------------------------
+Slack (hold path):      0.274ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               M_2 (FF)
+  Destination:          M_28 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.864ns (Levels of Logic = 8)
+  Clock Path Skew:      0.590ns (0.871 - 0.281)
+  Source Clock:         sys_clk_100MHz_ext rising at 10.000ns
+  Destination Clock:    sys_clk_100MHz_ext rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: M_2 to M_28
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X78Y98.CQ      Tcko                  0.200   M<3>
+                                                       M_2
+    SLICE_X78Y98.C5      net (fanout=2)        0.070   M<2>
+    SLICE_X78Y98.COUT    Topcyc                0.195   M<3>
+                                                       M<2>_rt
+                                                       Mcount_M_cy<3>
+    SLICE_X78Y99.CIN     net (fanout=1)        0.001   Mcount_M_cy<3>
+    SLICE_X78Y99.COUT    Tbyp                  0.032   M<7>
+                                                       Mcount_M_cy<7>
+    SLICE_X78Y100.CIN    net (fanout=1)        0.001   Mcount_M_cy<7>
+    SLICE_X78Y100.COUT   Tbyp                  0.032   M<11>
+                                                       Mcount_M_cy<11>
+    SLICE_X78Y101.CIN    net (fanout=1)        0.001   Mcount_M_cy<11>
+    SLICE_X78Y101.COUT   Tbyp                  0.032   M<15>
+                                                       Mcount_M_cy<15>
+    SLICE_X78Y102.CIN    net (fanout=1)        0.001   Mcount_M_cy<15>
+    SLICE_X78Y102.COUT   Tbyp                  0.032   M<19>
+                                                       Mcount_M_cy<19>
+    SLICE_X78Y103.CIN    net (fanout=1)        0.001   Mcount_M_cy<19>
+    SLICE_X78Y103.COUT   Tbyp                  0.032   M<23>
+                                                       Mcount_M_cy<23>
+    SLICE_X78Y104.CIN    net (fanout=1)        0.080   Mcount_M_cy<23>
+    SLICE_X78Y104.COUT   Tbyp                  0.032   M<27>
+                                                       Mcount_M_cy<27>
+    SLICE_X78Y105.CIN    net (fanout=1)        0.001   Mcount_M_cy<27>
+    SLICE_X78Y105.CLK    Tckcin      (-Th)    -0.121   M<31>
+                                                       Mcount_M_xor<31>
+                                                       M_28
+    -------------------------------------------------  ---------------------------
+    Total                                      0.864ns (0.708ns logic, 0.156ns route)
+                                                       (81.9% logic, 18.1% route)
+
+--------------------------------------------------------------------------------
+Slack (hold path):      0.309ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               M_26 (FF)
+  Destination:          M_28 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.586ns (Levels of Logic = 2)
+  Clock Path Skew:      0.277ns (0.716 - 0.439)
+  Source Clock:         sys_clk_100MHz_ext rising at 10.000ns
+  Destination Clock:    sys_clk_100MHz_ext rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: M_26 to M_28
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X78Y104.CQ     Tcko                  0.200   M<27>
+                                                       M_26
+    SLICE_X78Y104.C5     net (fanout=2)        0.069   M<26>
+    SLICE_X78Y104.COUT   Topcyc                0.195   M<27>
+                                                       M<26>_rt
+                                                       Mcount_M_cy<27>
+    SLICE_X78Y105.CIN    net (fanout=1)        0.001   Mcount_M_cy<27>
+    SLICE_X78Y105.CLK    Tckcin      (-Th)    -0.121   M<31>
+                                                       Mcount_M_xor<31>
+                                                       M_28
+    -------------------------------------------------  ---------------------------
+    Total                                      0.586ns (0.516ns logic, 0.070ns route)
+                                                       (88.1% logic, 11.9% route)
+
+--------------------------------------------------------------------------------
+Slack (hold path):      0.311ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               M_18 (FF)
+  Destination:          M_28 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.730ns (Levels of Logic = 4)
+  Clock Path Skew:      0.419ns (0.419 - 0.000)
+  Source Clock:         sys_clk_100MHz_ext rising at 10.000ns
+  Destination Clock:    sys_clk_100MHz_ext rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: M_18 to M_28
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X78Y102.CQ     Tcko                  0.200   M<19>
+                                                       M_18
+    SLICE_X78Y102.C5     net (fanout=2)        0.068   M<18>
+    SLICE_X78Y102.COUT   Topcyc                0.195   M<19>
+                                                       M<18>_rt
+                                                       Mcount_M_cy<19>
+    SLICE_X78Y103.CIN    net (fanout=1)        0.001   Mcount_M_cy<19>
+    SLICE_X78Y103.COUT   Tbyp                  0.032   M<23>
+                                                       Mcount_M_cy<23>
+    SLICE_X78Y104.CIN    net (fanout=1)        0.080   Mcount_M_cy<23>
+    SLICE_X78Y104.COUT   Tbyp                  0.032   M<27>
+                                                       Mcount_M_cy<27>
+    SLICE_X78Y105.CIN    net (fanout=1)        0.001   Mcount_M_cy<27>
+    SLICE_X78Y105.CLK    Tckcin      (-Th)    -0.121   M<31>
+                                                       Mcount_M_xor<31>
+                                                       M_28
+    -------------------------------------------------  ---------------------------
+    Total                                      0.730ns (0.580ns logic, 0.150ns route)
+                                                       (79.5% logic, 20.5% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_sys_clk_ext = PERIOD TIMEGRP "TM_sys_clk_ext" 10 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 7.751ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 2.249ns (444.642MHz) (Tockper)
+  Physical resource: MBsig/CLK0
+  Logical resource: MBsig/CK0
+  Location pin: OLOGIC_X0Y103.CLK0
+  Clock network: sys_clk_100MHz_ext
+--------------------------------------------------------------------------------
+Slack: 7.751ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 2.249ns (444.642MHz) (Tockper)
+  Physical resource: Dsig/CLK0
+  Logical resource: Dsig/CK0
+  Location pin: OLOGIC_X0Y102.CLK0
+  Clock network: sys_clk_100MHz_ext
+--------------------------------------------------------------------------------
+Slack: 7.751ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 2.249ns (444.642MHz) (Tockper)
+  Physical resource: Psig/CLK0
+  Logical resource: Psig/CK0
+  Location pin: OLOGIC_X0Y105.CLK0
+  Clock network: sys_clk_100MHz_ext
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_clk_manager_inst_dcm_inst_clkout1 = PERIOD TIMEGRP        
+ "clk_manager_inst_dcm_inst_clkout1" TS_sys_clk HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 79775 paths analyzed, 7179 endpoints analyzed, 49 failing endpoints
+ 49 timing errors detected. (49 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  25.220ns.
+--------------------------------------------------------------------------------
+
+Paths for end point UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_0_Tx_RMON_addr_gen/Pkt_length_rmon_dl1_15 (SLICE_X37Y38.D3), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     -3.044ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_ctrl/Tx_pkt_length_rmon_15 (FF)
+  Destination:          UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_0_Tx_RMON_addr_gen/Pkt_length_rmon_dl1_15 (FF)
+  Requirement:          2.000ns
+  Data Path Delay:      1.374ns (Levels of Logic = 1)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -3.453ns (2.100 - 5.553)
+  Source Clock:         UDP_1GbE_inst/Ethernet_MAC_top/MAC_tx_clk_div rising at 8.000ns
+  Destination Clock:    clk_100mhz rising at 10.000ns
+  Clock Uncertainty:    0.217ns
+
+  Clock Uncertainty:          0.217ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.180ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_ctrl/Tx_pkt_length_rmon_15 to UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_0_Tx_RMON_addr_gen/Pkt_length_rmon_dl1_15
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X36Y39.DQ      Tcko                  0.525   UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_ctrl/Tx_pkt_length_rmon<15>
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_ctrl/Tx_pkt_length_rmon_15
+    SLICE_X37Y38.D3      net (fanout=2)        0.585   UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_ctrl/Tx_pkt_length_rmon<15>
+    SLICE_X37Y38.CLK     Tas                   0.264   UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_0_Tx_RMON_addr_gen/Pkt_length_rmon_dl1<7>
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_ctrl/Tx_pkt_length_rmon<15>_rt
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_0_Tx_RMON_addr_gen/Pkt_length_rmon_dl1_15
+    -------------------------------------------------  ---------------------------
+    Total                                      1.374ns (0.789ns logic, 0.585ns route)
+                                                       (57.4% logic, 42.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_0_Tx_RMON_addr_gen/Pkt_length_rmon_dl1_14 (SLICE_X37Y39.A2), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     -3.014ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_ctrl/Tx_pkt_length_rmon_14 (FF)
+  Destination:          UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_0_Tx_RMON_addr_gen/Pkt_length_rmon_dl1_14 (FF)
+  Requirement:          2.000ns
+  Data Path Delay:      1.342ns (Levels of Logic = 1)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -3.455ns (2.098 - 5.553)
+  Source Clock:         UDP_1GbE_inst/Ethernet_MAC_top/MAC_tx_clk_div rising at 8.000ns
+  Destination Clock:    clk_100mhz rising at 10.000ns
+  Clock Uncertainty:    0.217ns
+
+  Clock Uncertainty:          0.217ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.180ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_ctrl/Tx_pkt_length_rmon_14 to UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_0_Tx_RMON_addr_gen/Pkt_length_rmon_dl1_14
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X36Y39.CQ      Tcko                  0.525   UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_ctrl/Tx_pkt_length_rmon<15>
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_ctrl/Tx_pkt_length_rmon_14
+    SLICE_X37Y39.A2      net (fanout=2)        0.553   UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_ctrl/Tx_pkt_length_rmon<14>
+    SLICE_X37Y39.CLK     Tas                   0.264   UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_0_Tx_RMON_addr_gen/Pkt_length_rmon_dl1<11>
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_ctrl/Tx_pkt_length_rmon<14>_rt
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_0_Tx_RMON_addr_gen/Pkt_length_rmon_dl1_14
+    -------------------------------------------------  ---------------------------
+    Total                                      1.342ns (0.789ns logic, 0.553ns route)
+                                                       (58.8% logic, 41.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_0_Tx_RMON_addr_gen/Pkt_length_rmon_dl1_5 (SLICE_X37Y37.D2), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     -3.000ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_ctrl/Tx_pkt_length_rmon_5 (FF)
+  Destination:          UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_0_Tx_RMON_addr_gen/Pkt_length_rmon_dl1_5 (FF)
+  Requirement:          2.000ns
+  Data Path Delay:      1.328ns (Levels of Logic = 1)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -3.455ns (2.103 - 5.558)
+  Source Clock:         UDP_1GbE_inst/Ethernet_MAC_top/MAC_tx_clk_div rising at 8.000ns
+  Destination Clock:    clk_100mhz rising at 10.000ns
+  Clock Uncertainty:    0.217ns
+
+  Clock Uncertainty:          0.217ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.180ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_ctrl/Tx_pkt_length_rmon_5 to UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_0_Tx_RMON_addr_gen/Pkt_length_rmon_dl1_5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X36Y37.BQ      Tcko                  0.525   UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_ctrl/Tx_pkt_length_rmon<7>
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_ctrl/Tx_pkt_length_rmon_5
+    SLICE_X37Y37.D2      net (fanout=2)        0.539   UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_ctrl/Tx_pkt_length_rmon<5>
+    SLICE_X37Y37.CLK     Tas                   0.264   UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_0_Tx_RMON_addr_gen/Pkt_length_rmon_dl1<3>
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_ctrl/Tx_pkt_length_rmon<5>_rt
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_0_Tx_RMON_addr_gen/Pkt_length_rmon_dl1_5
+    -------------------------------------------------  ---------------------------
+    Total                                      1.328ns (0.789ns logic, 0.539ns route)
+                                                       (59.4% logic, 40.6% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_clk_manager_inst_dcm_inst_clkout1 = PERIOD TIMEGRP
+        "clk_manager_inst_dcm_inst_clkout1" TS_sys_clk HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_Rx_RMON_dpram/U_duram/U_RAMB16_S36_S36 (RAMB16_X2Y22.DIA11), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.268ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_RMON_CTRL/Dina_11 (FF)
+  Destination:          UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_Rx_RMON_dpram/U_duram/U_RAMB16_S36_S36 (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.272ns (Levels of Logic = 0)
+  Clock Path Skew:      0.004ns (0.075 - 0.071)
+  Source Clock:         clk_100mhz rising at 10.000ns
+  Destination Clock:    clk_100mhz rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_RMON_CTRL/Dina_11 to UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_Rx_RMON_dpram/U_duram/U_RAMB16_S36_S36
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X42Y44.DQ      Tcko                  0.200   UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_RMON_CTRL/Dina<11>
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_RMON_CTRL/Dina_11
+    RAMB16_X2Y22.DIA11   net (fanout=1)        0.125   UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_RMON_CTRL/Dina<11>
+    RAMB16_X2Y22.CLKA    Trckd_DIA   (-Th)     0.053   UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_Rx_RMON_dpram/U_duram/U_RAMB16_S36_S36
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_Rx_RMON_dpram/U_duram/U_RAMB16_S36_S36
+    -------------------------------------------------  ---------------------------
+    Total                                      0.272ns (0.147ns logic, 0.125ns route)
+                                                       (54.0% logic, 46.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_Rx_RMON_dpram/U_duram/U_RAMB16_S36_S36 (RAMB16_X2Y22.DIA17), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.270ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_RMON_CTRL/Dina_17 (FF)
+  Destination:          UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_Rx_RMON_dpram/U_duram/U_RAMB16_S36_S36 (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.272ns (Levels of Logic = 0)
+  Clock Path Skew:      0.002ns (0.075 - 0.073)
+  Source Clock:         clk_100mhz rising at 10.000ns
+  Destination Clock:    clk_100mhz rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_RMON_CTRL/Dina_17 to UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_Rx_RMON_dpram/U_duram/U_RAMB16_S36_S36
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X42Y46.BQ      Tcko                  0.200   UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_RMON_CTRL/Dina<19>
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_RMON_CTRL/Dina_17
+    RAMB16_X2Y22.DIA17   net (fanout=1)        0.125   UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_RMON_CTRL/Dina<17>
+    RAMB16_X2Y22.CLKA    Trckd_DIA   (-Th)     0.053   UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_Rx_RMON_dpram/U_duram/U_RAMB16_S36_S36
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_Rx_RMON_dpram/U_duram/U_RAMB16_S36_S36
+    -------------------------------------------------  ---------------------------
+    Total                                      0.272ns (0.147ns logic, 0.125ns route)
+                                                       (54.0% logic, 46.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_Rx_RMON_dpram/U_duram/U_RAMB16_S36_S36 (RAMB16_X2Y22.DIA14), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.295ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_RMON_CTRL/Dina_14 (FF)
+  Destination:          UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_Rx_RMON_dpram/U_duram/U_RAMB16_S36_S36 (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.298ns (Levels of Logic = 0)
+  Clock Path Skew:      0.003ns (0.075 - 0.072)
+  Source Clock:         clk_100mhz rising at 10.000ns
+  Destination Clock:    clk_100mhz rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_RMON_CTRL/Dina_14 to UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_Rx_RMON_dpram/U_duram/U_RAMB16_S36_S36
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X42Y45.CQ      Tcko                  0.200   UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_RMON_CTRL/Dina<15>
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_RMON_CTRL/Dina_14
+    RAMB16_X2Y22.DIA14   net (fanout=1)        0.151   UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_RMON_CTRL/Dina<14>
+    RAMB16_X2Y22.CLKA    Trckd_DIA   (-Th)     0.053   UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_Rx_RMON_dpram/U_duram/U_RAMB16_S36_S36
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_RMON/U_Rx_RMON_dpram/U_duram/U_RAMB16_S36_S36
+    -------------------------------------------------  ---------------------------
+    Total                                      0.298ns (0.147ns logic, 0.151ns route)
+                                                       (49.3% logic, 50.7% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_clk_manager_inst_dcm_inst_clkout1 = PERIOD TIMEGRP
+        "clk_manager_inst_dcm_inst_clkout1" TS_sys_clk HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 6.430ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKB(Fmax))
+  Physical resource: UDP_1GbE_inst/ila0_inst/U0/I_YES_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[70].u_ramb18/U_RAMB18/CLKB
+  Logical resource: UDP_1GbE_inst/ila0_inst/U0/I_YES_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[70].u_ramb18/U_RAMB18/CLKB
+  Location pin: RAMB16_X1Y66.CLKB
+  Clock network: clk_100mhz
+--------------------------------------------------------------------------------
+Slack: 6.430ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKB(Fmax))
+  Physical resource: UDP_1GbE_inst/ila0_inst/U0/I_YES_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[62].u_ramb18/U_RAMB18/CLKB
+  Logical resource: UDP_1GbE_inst/ila0_inst/U0/I_YES_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[62].u_ramb18/U_RAMB18/CLKB
+  Location pin: RAMB16_X5Y80.CLKB
+  Clock network: clk_100mhz
+--------------------------------------------------------------------------------
+Slack: 6.430ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKB(Fmax))
+  Physical resource: UDP_1GbE_inst/ila0_inst/U0/I_YES_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[54].u_ramb18/U_RAMB18/CLKB
+  Logical resource: UDP_1GbE_inst/ila0_inst/U0/I_YES_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[54].u_ramb18/U_RAMB18/CLKB
+  Location pin: RAMB16_X5Y46.CLKB
+  Clock network: clk_100mhz
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_clk_manager_inst_dcm_inst_clkout0 = PERIOD TIMEGRP        
+ "clk_manager_inst_dcm_inst_clkout0" TS_sys_clk / 1.25 HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 22887 paths analyzed, 2319 endpoints analyzed, 2 failing endpoints
+ 2 timing errors detected. (2 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   8.656ns.
+--------------------------------------------------------------------------------
+
+Paths for end point UDP_1GbE_inst/ila1_inst/U0/I_DQ.G_DW[19].U_DQ (SLICE_X53Y65.CX), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     -0.164ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_FF/Tx_mac_wa (FF)
+  Destination:          UDP_1GbE_inst/ila1_inst/U0/I_DQ.G_DW[19].U_DQ (FF)
+  Requirement:          2.000ns
+  Data Path Delay:      1.614ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.333ns (2.186 - 2.519)
+  Source Clock:         clk_100mhz rising at 30.000ns
+  Destination Clock:    clk_125mhz rising at 32.000ns
+  Clock Uncertainty:    0.217ns
+
+  Clock Uncertainty:          0.217ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.180ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_FF/Tx_mac_wa to UDP_1GbE_inst/ila1_inst/U0/I_DQ.G_DW[19].U_DQ
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X56Y58.CQ      Tcko                  0.525   UDP_1GbE_inst/Tx_mac_wa
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_FF/Tx_mac_wa
+    SLICE_X53Y65.CX      net (fanout=10)       0.975   UDP_1GbE_inst/Tx_mac_wa
+    SLICE_X53Y65.CLK     Tdick                 0.114   UDP_1GbE_inst/ila1_inst/U0/iDATA<19>
+                                                       UDP_1GbE_inst/ila1_inst/U0/I_DQ.G_DW[19].U_DQ
+    -------------------------------------------------  ---------------------------
+    Total                                      1.614ns (0.639ns logic, 0.975ns route)
+                                                       (39.6% logic, 60.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point UDP_1GbE_inst/ila1_inst/U0/I_DQ.G_DW[20].U_DQ (SLICE_X26Y73.AX), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     -0.161ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_rx/U_MAC_rx_FF/Rx_mac_ra (FF)
+  Destination:          UDP_1GbE_inst/ila1_inst/U0/I_DQ.G_DW[20].U_DQ (FF)
+  Requirement:          2.000ns
+  Data Path Delay:      1.512ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.432ns (2.178 - 2.610)
+  Source Clock:         clk_100mhz rising at 30.000ns
+  Destination Clock:    clk_125mhz rising at 32.000ns
+  Clock Uncertainty:    0.217ns
+
+  Clock Uncertainty:          0.217ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.180ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_rx/U_MAC_rx_FF/Rx_mac_ra to UDP_1GbE_inst/ila1_inst/U0/I_DQ.G_DW[20].U_DQ
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y64.CQ      Tcko                  0.430   UDP_1GbE_inst/Rx_mac_ra
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_rx/U_MAC_rx_FF/Rx_mac_ra
+    SLICE_X26Y73.AX      net (fanout=29)       0.997   UDP_1GbE_inst/Rx_mac_ra
+    SLICE_X26Y73.CLK     Tdick                 0.085   UDP_1GbE_inst/ila1_inst/U0/iDATA<23>
+                                                       UDP_1GbE_inst/ila1_inst/U0/I_DQ.G_DW[20].U_DQ
+    -------------------------------------------------  ---------------------------
+    Total                                      1.512ns (0.515ns logic, 0.997ns route)
+                                                       (34.1% logic, 65.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point UDP_1GbE_inst/ila1_inst/U0/I_DQ.G_DW[25].U_DQ (SLICE_X29Y78.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     0.329ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_rx/U_MAC_rx_FF/Rx_mac_pa (FF)
+  Destination:          UDP_1GbE_inst/ila1_inst/U0/I_DQ.G_DW[25].U_DQ (FF)
+  Requirement:          2.000ns
+  Data Path Delay:      1.036ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.418ns (2.185 - 2.603)
+  Source Clock:         clk_100mhz rising at 30.000ns
+  Destination Clock:    clk_125mhz rising at 32.000ns
+  Clock Uncertainty:    0.217ns
+
+  Clock Uncertainty:          0.217ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.180ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_rx/U_MAC_rx_FF/Rx_mac_pa to UDP_1GbE_inst/ila1_inst/U0/I_DQ.G_DW[25].U_DQ
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X29Y76.CQ      Tcko                  0.430   UDP_1GbE_inst/Rx_mac_pa
+                                                       UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_rx/U_MAC_rx_FF/Rx_mac_pa
+    SLICE_X29Y78.BX      net (fanout=7)        0.492   UDP_1GbE_inst/Rx_mac_pa
+    SLICE_X29Y78.CLK     Tdick                 0.114   UDP_1GbE_inst/ila1_inst/U0/iDATA<28>
+                                                       UDP_1GbE_inst/ila1_inst/U0/I_DQ.G_DW[25].U_DQ
+    -------------------------------------------------  ---------------------------
+    Total                                      1.036ns (0.544ns logic, 0.492ns route)
+                                                       (52.5% logic, 47.5% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_clk_manager_inst_dcm_inst_clkout0 = PERIOD TIMEGRP
+        "clk_manager_inst_dcm_inst_clkout0" TS_sys_clk / 1.25 HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point UDP_1GbE_inst/ila1_inst/U0/I_YES_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[16].I_SRLT_NE_0.DLY9/SRL16E (SLICE_X30Y70.AI), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.244ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               UDP_1GbE_inst/ila1_inst/U0/I_DQ.G_DW[16].U_DQ (FF)
+  Destination:          UDP_1GbE_inst/ila1_inst/U0/I_YES_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[16].I_SRLT_NE_0.DLY9/SRL16E (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.246ns (Levels of Logic = 0)
+  Clock Path Skew:      0.002ns (0.033 - 0.031)
+  Source Clock:         clk_125mhz rising at 8.000ns
+  Destination Clock:    clk_125mhz rising at 8.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: UDP_1GbE_inst/ila1_inst/U0/I_DQ.G_DW[16].U_DQ to UDP_1GbE_inst/ila1_inst/U0/I_YES_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[16].I_SRLT_NE_0.DLY9/SRL16E
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X31Y70.AQ      Tcko                  0.198   UDP_1GbE_inst/ila1_inst/U0/iDATA<16>
+                                                       UDP_1GbE_inst/ila1_inst/U0/I_DQ.G_DW[16].U_DQ
+    SLICE_X30Y70.AI      net (fanout=1)        0.018   UDP_1GbE_inst/ila1_inst/U0/iDATA<16>
+    SLICE_X30Y70.CLK     Tdh         (-Th)    -0.030   UDP_1GbE_inst/ila1_inst/U0/I_YES_D.U_ILA/iDATA<16>
+                                                       UDP_1GbE_inst/ila1_inst/U0/I_YES_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[16].I_SRLT_NE_0.DLY9/SRL16E
+    -------------------------------------------------  ---------------------------
+    Total                                      0.246ns (0.228ns logic, 0.018ns route)
+                                                       (92.7% logic, 7.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point UDP_1GbE_inst/ila1_inst/U0/I_YES_D.U_ILA/U_RST/U_ARM_XFER/U_RFDRE (SLICE_X36Y114.CE), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.260ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               UDP_1GbE_inst/ila1_inst/U0/I_YES_D.U_ILA/U_RST/U_ARM_XFER/U_DOUT (FF)
+  Destination:          UDP_1GbE_inst/ila1_inst/U0/I_YES_D.U_ILA/U_RST/U_ARM_XFER/U_RFDRE (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.264ns (Levels of Logic = 0)
+  Clock Path Skew:      0.004ns (0.043 - 0.039)
+  Source Clock:         clk_125mhz rising at 8.000ns
+  Destination Clock:    clk_125mhz rising at 8.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: UDP_1GbE_inst/ila1_inst/U0/I_YES_D.U_ILA/U_RST/U_ARM_XFER/U_DOUT to UDP_1GbE_inst/ila1_inst/U0/I_YES_D.U_ILA/U_RST/U_ARM_XFER/U_RFDRE
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X36Y115.AQ     Tcko                  0.234   UDP_1GbE_inst/ila1_inst/U0/I_YES_D.U_ILA/U_RST/U_ARM_XFER/iDOUT
+                                                       UDP_1GbE_inst/ila1_inst/U0/I_YES_D.U_ILA/U_RST/U_ARM_XFER/U_DOUT
+    SLICE_X36Y114.CE     net (fanout=2)        0.122   UDP_1GbE_inst/ila1_inst/U0/I_YES_D.U_ILA/U_RST/U_ARM_XFER/iDOUT
+    SLICE_X36Y114.CLK    Tckce       (-Th)     0.092   UDP_1GbE_inst/ila1_inst/U0/I_YES_D.U_ILA/U_RST/U_ARM_XFER/iDOUT_dly<0>
+                                                       UDP_1GbE_inst/ila1_inst/U0/I_YES_D.U_ILA/U_RST/U_ARM_XFER/U_RFDRE
+    -------------------------------------------------  ---------------------------
+    Total                                      0.264ns (0.142ns logic, 0.122ns route)
+                                                       (53.8% logic, 46.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point UDP_1GbE_inst/ila1_inst/U0/I_YES_D.U_ILA/U_STAT/U_DSL1/U_DOUT (SLICE_X28Y111.SR), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.282ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               UDP_1GbE_inst/ila1_inst/U0/I_YES_D.U_ILA/U_STAT/U_DSL1/U_DOUT1 (FF)
+  Destination:          UDP_1GbE_inst/ila1_inst/U0/I_YES_D.U_ILA/U_STAT/U_DSL1/U_DOUT (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.343ns (Levels of Logic = 0)
+  Clock Path Skew:      0.061ns (0.659 - 0.598)
+  Source Clock:         clk_125mhz rising at 8.000ns
+  Destination Clock:    clk_125mhz rising at 8.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: UDP_1GbE_inst/ila1_inst/U0/I_YES_D.U_ILA/U_STAT/U_DSL1/U_DOUT1 to UDP_1GbE_inst/ila1_inst/U0/I_YES_D.U_ILA/U_STAT/U_DSL1/U_DOUT
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y112.BQ     Tcko                  0.200   UDP_1GbE_inst/ila1_inst/U0/I_YES_D.U_ILA/U_STAT/U_DSL1/iDIN<1>
+                                                       UDP_1GbE_inst/ila1_inst/U0/I_YES_D.U_ILA/U_STAT/U_DSL1/U_DOUT1
+    SLICE_X28Y111.SR     net (fanout=1)        0.118   UDP_1GbE_inst/ila1_inst/U0/I_YES_D.U_ILA/U_STAT/U_DSL1/iDIN<1>
+    SLICE_X28Y111.CLK    Tcksr       (-Th)    -0.025   UDP_1GbE_inst/ila1_inst/U0/I_YES_D.U_ILA/U_STAT/DSTAT_en_dly1
+                                                       UDP_1GbE_inst/ila1_inst/U0/I_YES_D.U_ILA/U_STAT/U_DSL1/U_DOUT
+    -------------------------------------------------  ---------------------------
+    Total                                      0.343ns (0.225ns logic, 0.118ns route)
+                                                       (65.6% logic, 34.4% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_clk_manager_inst_dcm_inst_clkout0 = PERIOD TIMEGRP
+        "clk_manager_inst_dcm_inst_clkout0" TS_sys_clk / 1.25 HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 4.430ns (period - min period limit)
+  Period: 8.000ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKB(Fmax))
+  Physical resource: UDP_1GbE_inst/ila1_inst/U0/I_YES_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[2].u_ramb18/U_RAMB18/CLKB
+  Logical resource: UDP_1GbE_inst/ila1_inst/U0/I_YES_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[2].u_ramb18/U_RAMB18/CLKB
+  Location pin: RAMB16_X1Y40.CLKB
+  Clock network: clk_125mhz
+--------------------------------------------------------------------------------
+Slack: 4.430ns (period - min period limit)
+  Period: 8.000ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKB(Fmax))
+  Physical resource: UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_FF/U_duram/U_RAMB16_S36_S36/CLKB
+  Logical resource: UDP_1GbE_inst/Ethernet_MAC_top/U_MAC_tx/U_MAC_tx_FF/U_duram/U_RAMB16_S36_S36/CLKB
+  Location pin: RAMB16_X3Y24.CLKB
+  Clock network: UDP_1GbE_inst/Ethernet_MAC_top/MAC_tx_clk_div
+--------------------------------------------------------------------------------
+Slack: 4.430ns (period - min period limit)
+  Period: 8.000ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKB(Fmax))
+  Physical resource: UDP_1GbE_inst/ila1_inst/U0/I_YES_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[0].u_ramb18/U_RAMB18/CLKB
+  Logical resource: UDP_1GbE_inst/ila1_inst/U0/I_YES_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[0].u_ramb18/U_RAMB18/CLKB
+  Location pin: RAMB16_X1Y42.CLKB
+  Clock network: clk_125mhz
+--------------------------------------------------------------------------------
+
+
+Derived Constraint Report
+Derived Constraints for TS_sys_clk
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|                               |   Period    |       Actual Period       |      Timing Errors        |      Paths Analyzed       |
+|           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
+|                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|TS_sys_clk                     |     10.000ns|      9.540ns|     25.220ns|            8|           51|         2971|       102662|
+| TS_clk_manager_inst_dcm_inst_c|     10.000ns|     25.220ns|          N/A|           49|            0|        79775|            0|
+| lkout1                        |             |             |             |             |             |             |             |
+| TS_clk_manager_inst_dcm_inst_c|      8.000ns|      8.656ns|          N/A|            2|            0|        22887|            0|
+| lkout0                        |             |             |             |             |             |             |             |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+3 constraints not met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock GIGE_RX_CLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+GIGE_RX_CLK    |    7.644|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock sys_clk_N
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+sys_clk_N      |   10.386|         |    4.646|    7.370|
+sys_clk_P      |   10.386|         |    4.646|    7.370|
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock sys_clk_P
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+sys_clk_N      |   10.386|         |    4.646|    7.370|
+sys_clk_P      |   10.386|         |    4.646|    7.370|
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock sys_clk_ext
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+sys_clk_ext    |    9.085|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 59  Score: 120827  (Setup/Max: 97853, Hold: 22974)
+
+Constraints cover 124761 paths, 0 nets, and 13984 connections
+
+Design statistics:
+   Minimum period:  25.220ns{1}   (Maximum frequency:  39.651MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Thu Feb 11 16:17:11 2016 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 635 MB
+
+
+

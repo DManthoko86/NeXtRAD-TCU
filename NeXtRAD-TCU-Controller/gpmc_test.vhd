@@ -58,6 +58,9 @@ port
    sys_clk_N	 	  : in std_logic;
 	sys_clk_ext		  :in std_logic;
 	
+	 -- BCD pins
+	bcd					: out std_logic_vector(31 downto 0);
+	
 	-------------
 	-- Ethernet ports
 	-------------
@@ -93,6 +96,7 @@ architecture rtl of gpmc_test_top is
 
     type ram_type is array (255 downto 0) of std_logic_vector(15 downto 0);
 	 type word32_type is array (1 downto 0) of std_logic_vector(15 downto 0);
+	 --type word48_type is array (2 downto 0) of std_logic_vector(15 downto 0);
 	 type word64_type is array (3 downto 0) of std_logic_vector(15 downto 0);
 
 ------------------------------------------------------------------------------------
@@ -123,6 +127,7 @@ architecture rtl of gpmc_test_top is
 	 constant ID      : std_logic_vector(7 downto 0) := "01010001";
     signal reg_bank	: ram_type := (others => "1111111111111111");
 	 signal led_reg	: std_logic_vector(15 downto 0) := "0000000000000000";
+	 signal bcd_int	: word32_type := (x"0000",x"0000");
 	 signal M_reg		: word32_type := (x"0000",x"f000");
 	 signal M_reg_cmp	: std_logic_vector(31 downto 0);
 	 signal N_reg		: std_logic_vector(15 downto 0) := x"0002";
@@ -162,7 +167,7 @@ architecture rtl of gpmc_test_top is
 	
 	-- Transmit settings to REX = 00;
 	-- Ask REX for status msg	 = 01;
-	signal eth_msg_type	:	std_logic_vector(1 downto 0) := "00";
+--	signal eth_msg_type	:	std_logic_vector(1 downto 0) := "00";
 	
 	signal eth_in_len		:	std_logic_vector(15 downto 0);
 	signal eth_in_type	:	std_logic_vector(15 downto 0);
@@ -493,7 +498,7 @@ begin
 	 	elsif (gpmc_n_we = '0') then
 		  case conv_integer(reg_bank_address) is
 				  when 1 => triggers <= gpmc_data_i;
---				  when 2 => fmc0_la_o <= gpmc_data_i;
+				  when 2 => bcd_int(conv_integer(reg_file_address)) <= gpmc_data_i;
 				  when 3 => reg_bank(conv_integer(reg_file_address)) <= gpmc_data_i;
 				  when 4 => M_reg(conv_integer(reg_file_address)) <= gpmc_data_i;
 				  when 5 => N_reg <= gpmc_data_i;
@@ -514,6 +519,8 @@ led_reg(5) <= nextload;
 --led_reg(6) <= when M = M_reg
 led_reg(7) <= gpioIn(1);
 
+bcd(15 downto 0) <= bcd_int(0);
+bcd(31 downto 16) <= bcd_int(1);
 
 -- Remember to uncomment this
 -- It includes a new status bit that indicates when an experiment is happening
@@ -524,8 +531,11 @@ M_reg_cmp(31 downto 16) <= M_reg(1);
 M_reg_cmp(15 downto 0) <=  M_reg(0);
 
 gpio(2) <= MBsig;		-- Indicates when Main Bang offset has been reached
+gpio(8) <= MBsig;
 gpio(3) <= Dsig;		-- Indicates when Digitisation offset has been reached
+gpio(9) <= Dsig;
 gpio(4) <= Psig;		-- Indicates when Next PRI offset has been reached
+gpio(10) <= Psig;
 gpio(5) <= nextload;
 
 gpio(7) <= gpioIn(1);
@@ -533,7 +543,7 @@ gpio(7) <= gpioIn(1);
 -- gpioIn(0) <= sys_clk_100MHz;
 -- gpioIn(1) <= '0';
 gpio(6) <= '1';
-gpio(11 downto 8) <= (others => '0');
+gpio(11) <= '0';
 -- gpio(12)		--	X band HPA
 -- gpio(13)		-- L band HPA
 -- gpio(14)		-- L band polarisation
@@ -631,7 +641,7 @@ begin
 		-- The experiment commences when triggered by the ready signal above, as long as it isnt the end of the experiment and as long as it is still "soft on" (kept on by the triggers register).
 		if(ready = '1' and status_reg(0) = '0' and triggers(0) = '1') then
 		
-			eth_msg_type <= "00";
+--			eth_msg_type <= "00";
 			sys_rst_i <= '0';		-- turn ethernet on
 
 			if ((MBsig and Dsig and Psig) = '1') then
@@ -682,7 +692,7 @@ begin
 					MBsig <= '0';
 					MBcounter <= MBcounter + 1;
 					-- send Ethernet packet at the very start
-					if(MBcounter = 0) then
+					if(MBcounter <= 2) then
 						udp_send_packet <= '1';
 					else
 						udp_send_packet <= '0';
@@ -737,16 +747,16 @@ begin
 		-- 1) sets eth_msg_type to '01' which is to send a 'retrieve status' frame.
 		--		sets REX_status_confirmed to '1' indicating that REX_status(0) has been acknowledged
 		-- 2) 
-		elsif(triggers(1) = '1' and udp_receive_packet = "00") then
-			eth_msg_type <= "01";
-			udp_send_packet <= '1';
-			REX_status_confirmed <= '1';
-			
-		elsif(udp_receive_packet = "11") then
-			REX_status_confirmed <= '0';
-		
-		elsif(triggers(1) = '1') then
-			udp_send_packet <= '0';
+--		elsif(triggers(1) = '1' and udp_receive_packet = "00") then
+--			eth_msg_type <= "01";
+--			udp_send_packet <= '1';
+--			REX_status_confirmed <= '1';
+--			
+--		elsif(udp_receive_packet = "11") then
+--			REX_status_confirmed <= '0';
+--		
+--		elsif(triggers(1) = '1') then
+--			udp_send_packet <= '0';
 			
 		
 		else

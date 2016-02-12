@@ -1,0 +1,58 @@
+Release 14.7 ngdbuild P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild -intstyle
+ise -dd _ngo -sd pcores/rtl/spartan6 -nt timestamp -uc
+pcores/rtl/ip/UDP_1GbE_if.ucf -p xc6slx150t-fgg676-2 gpmc_test_top.ngc
+gpmc_test_top.ngd
+
+Reading NGO file
+"/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.ngc" ...
+Loading design module "pcores/rtl/spartan6/ila1.ngc"...
+Loading design module "pcores/rtl/spartan6/ila0.ngc"...
+Loading design module "pcores/rtl/spartan6/icon.ngc"...
+Loading design module "pcores/rtl/spartan6/vio.ngc"...
+Gathering constraint information from source properties...
+Done.
+
+Annotating constraints to design from ucf file "pcores/rtl/ip/UDP_1GbE_if.ucf"
+...
+Resolving constraint associations...
+Checking Constraint Associations...
+INFO:ConstraintSystem:178 - TNM 'TM_sys_clk', used in period specification
+   'TS_sys_clk', was traced into PLL_ADV instance PLL_ADV. The following new TNM
+   groups and period specifications were generated at the PLL_ADV output(s): 
+   CLKOUT1: <TIMESPEC TS_clk_manager_inst_dcm_inst_clkout1 = PERIOD
+   "clk_manager_inst_dcm_inst_clkout1" TS_sys_clk HIGH 50%>
+
+INFO:ConstraintSystem:178 - TNM 'TM_sys_clk', used in period specification
+   'TS_sys_clk', was traced into PLL_ADV instance PLL_ADV. The following new TNM
+   groups and period specifications were generated at the PLL_ADV output(s): 
+   CLKOUT0: <TIMESPEC TS_clk_manager_inst_dcm_inst_clkout0 = PERIOD
+   "clk_manager_inst_dcm_inst_clkout0" TS_sys_clk / 1.25 HIGH 50%>
+
+Done...
+
+Checking expanded design ...
+WARNING:NgdBuild:443 - SFF primitive
+   'UDP_1GbE_inst/vio_inst/U0/I_VIO/reset_f_edge/I_H2L.U_DOUT' has unconnected
+   output pin
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   1
+
+Total memory usage is 482688 kilobytes
+
+Writing NGD file "gpmc_test_top.ngd" ...
+Total REAL time to NGDBUILD completion:  8 sec
+Total CPU time to NGDBUILD completion:   6 sec
+
+Writing NGDBUILD log file "gpmc_test_top.bld"...
