@@ -20,6 +20,9 @@
 
 \urlstyle{same}
 
+%needed in order to make use of subfigures - figures stacked on top of one another or placed side by side
+\usepackage{subcaption}
+
 \begin{document}
 
 %\begin{titlepage}
@@ -124,7 +127,7 @@ With the modified TCU, reading and writing from the n, m and reg\textunderscore 
 	\begin{figure}
 		\centering
 		\includegraphics[width=13cm]{reg_pulses}
-		\caption{Visual depiction of how the parameters are setup using the echo command}
+		\caption{Visual depiction of how to order the parameters seen in Table \ref{table:1}}
 		\label{fig:reg_pulses}
 	\end{figure}
 
@@ -137,7 +140,7 @@ The original developer catered for the future improvement of the controller and 
 The parameters seen in table \ref{table:1} are set up by writing to the reg\textunderscore pulses register. If you wanted to set up a pulse that triggers every 1 ms (1Khz), has a main bang and digitisation offset of 500ns, a band frequency of 1300 MHz and operating at L-band, you would write the following command. 
 
 
-	%display an example of the od command inside a box
+	%display an example of the echo command inside a box
 	\begin{flushleft}
 		\fbox{\begin{minipage}{30em}
 			echo -e -n "\textbackslash x32\textbackslash x00\textbackslash x32\textbackslash x00\textbackslash x01\textbackslash x00\textbackslash x14\textbackslash x05\textbackslash x01\textbackslash x00\textbackslash x3b\textbackslash x86" $>$ /proc/$<$PID$>$/hw/ioreg/reg\textunderscore pulses
@@ -167,7 +170,6 @@ Where
 
 Since MB = D = 50 and we want a PRF of 1kHz, we get a value of 99899 for the PRI. Converting the value to hexadecimal we get x0001 863B. Then you would write \textbackslash x01\textbackslash x00 to PRI upper two bytes and \textbackslash x3b\textbackslash x86 to PRI lower two bytes.
 
-
 \section{Experimental setup}
 
 	\begin{figure}[h]
@@ -177,10 +179,12 @@ Since MB = D = 50 and we want a PRF of 1kHz, we get a value of 99899 for the PRI
 		\label{fig:exp_setup}
 	\end{figure}
 	
+\begin{flushleft}
 The experimental setup used to test the modified controller can be seen in figure \ref{fig:exp_setup}. A signal generator operating at 100MHz with an amplitude of +550mV was used as the input clock. This clock signal was passed through a diode then fed into the rhino. An oscilloscope was used to measure the Main bang offset and Digitisation signals coming out of the rhino. 
+\end{flushleft}
 
 \begin{flushleft}
-Mention stuff about Xilinx IDe, computer specs, operating system and cabling used
+A computer running the 64 bit version of xubuntu 16.04 LTS; which is a linux distribution based on ubuntu; was used to modify the VHDL code. Xilinx IDE verison 14.7 was used to edit the original TCU  project which can be found \href{https://github.com/Skippy01/NeXtRAD-TCU/tree/master/NeXtRAD-TCU-Controller}{here}.
 \end{flushleft}
 	
 	
@@ -190,14 +194,87 @@ Mention stuff about Xilinx IDe, computer specs, operating system and cabling use
 
 Testing of the modified synchronization controller began with using the internal clock of the Rhino board. Using the internal clock, 1kHz, 2kHz, 3kHz and 4kHz signals were produced. 
 
-	\begin{figure}
+	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=13cm]{1khz_mb_offset_500_ns}
 		\caption{1khz signal produced using the internal clock of the rhino}
 		\label{fig:1khz_in_500_offset}
 	\end{figure}
 	
-Figure \ref{fig:1khz_in_500_offset} shows the output of the main bang and the digitisation signals measured from the Rhino board. A time division of 1.0 ms was used to display the output.
+\begin{flushleft}
+Figure \ref{fig:1khz_in_500_offset} shows the output of the main bang and the digitisation signals measured from the Rhino board. A time division of 1.0 ms was used to display the output. Observing the yellow signal, it can seen that a 1kHz signal is indeed being produced by the Rhino board.
+\end{flushleft}
+
+\begin{flushleft}
+	\begin{figure}[t]
+		\centering
+		\includegraphics[width=13cm]{1khz_mb_offset_500_ns_length_of_offset}
+		\caption{Zoomed in image of Figure \ref{fig:1khz_in_500_offset}}
+		\label{fig:1khz_in_500_offset_zoom}
+	\end{figure}
+\end{flushleft}	
+	
+	
+\begin{flushleft}
+Figure \ref{fig:1khz_in_500_offset_zoom} shows a zoomed in image of Figure \ref{fig:1khz_in_500_offset}. The yellow signal depicts the main bang signal and the green signal depicts the digitization signal. The yellow signal goes high after 500ns and the green signal triggers 500ns after the yellow signal. These results are as desired. 
+\end{flushleft}
+
+\begin{flushleft}
+To change the main bang offset and the digitization offset to 1000ns without changing the other parameters, the following command was used:
+\end{flushleft}
+
+	%display the echo command used to produce a signal with 1000ns offset
+	\begin{flushleft}
+		\fbox{\begin{minipage}{30em}
+			echo -e -n "\textbackslash x64\textbackslash x00\textbackslash x64\textbackslash x00\textbackslash x01\textbackslash x00\textbackslash x14\textbackslash x05\textbackslash x01\textbackslash x00\textbackslash x3b\textbackslash x86" $>$ /proc/$<$PID$>$/hw/ioreg/reg\textunderscore pulses
+		\end{minipage}}
+	\end{flushleft}
+	
+	%image showing that the main bang and digitization offset is indeed 1000ns
+	\begin{flushleft}
+	\begin{figure}[t]
+		\centering
+		\includegraphics[width=13cm, height=8cm]{1khz_mb_offset_1000_ns_length_of_offset}
+		\caption{Picture of the main bang signal and digitization with 1000ns offsets}
+		\label{fig:1khz_in_1000_offset}
+	\end{figure}
+\end{flushleft}	
+
+%explaining what is seen in the 1000ns image
+\begin{flushleft}
+Figure \ref{fig:1khz_in_1000_offset} shows a picture of the main bang and digitization signals with 1000ns offsets. Using the 500ns time division on the horizontal axis, it can be seen that it takes two time divisions for the main bang signal(yellow signal seen at the top of figure \ref{fig:1khz_in_1000_offset}) to go high. This equates to 1000ns, which is the desired result. Similarly for the digitization signal, we see that it also takes 2 time divisions to trigger, thus meeting our desired result. 
+\end{flushleft}
+
+\begin{flushleft}
+To show that the main bang offset and digitization offset can be set to different values, the main bang offset was set to 1650 ns and the digitization offset was set to 2950ns. The following command was used to set these values:
+
+	%display the echo command used to produce a signal mb offset of 1650 ns 
+	%and digitization offset of 2950ns
+	\begin{flushleft}
+		\fbox{\begin{minipage}{30em}
+			echo -e -n "\textbackslash xa5\textbackslash x00\textbackslash x27\textbackslash x01\textbackslash x01\textbackslash x00\textbackslash x14\textbackslash x05\textbackslash x01\textbackslash x00\textbackslash x3b\textbackslash x86" $>$ /proc/$<$PID$>$/hw/ioreg/reg\textunderscore pulses
+		\end{minipage}}
+	\end{flushleft}
+		
+\end{flushleft}
+
+	\begin{figure}[t]
+		%\centering
+   		\begin{subfigure}[t]{13.5cm}
+   			\includegraphics[width=13cm,height=8.5cm]{1khz_mb_1650ns_mb_offset}
+   			\caption{}
+   			\label{fig:Ng1} 
+		\end{subfigure}
+
+		\begin{subfigure}[t]{13.5cm}
+   			\includegraphics[width=13cm,height=8.5cm]{1khz_mb_2950ns_d_offset}
+   			\caption{}
+   		\label{fig:Ng2}
+		\end{subfigure}
+
+	\caption{(a) Main bang and digitization signal with the measurement of the main offset shown in the markers box toward the bottom of the image. (b) Same as figure \ref{fig:Ng1} but with the measurement of the digitization offset shown in the  markers box.}
+	\end{figure}
+	
 
 \subsection{Using an External 100MHz Clock Signal}
 
