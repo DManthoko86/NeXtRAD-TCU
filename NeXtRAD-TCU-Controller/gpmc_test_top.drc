@@ -1,7 +1,7 @@
 Release 14.7 Drc P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Thu Feb 11 16:17:16 2016
+Mon Mar 27 12:36:25 2017
 
 drc -z gpmc_test_top.ncd gpmc_test_top.pcf
 
@@ -38,6 +38,9 @@ WARNING:PhysDesignRules:367 - The signal
    <UDP_1GbE_inst/vio_inst/U0/I_VIO/UPDATE<7>> is incomplete. The signal does
    not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
+   <UDP_1GbE_inst/vio_inst/U0/I_VIO/reset_f_edge/iDOUT<1>> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
    <UDP_1GbE_inst/vio_inst/U0/I_VIO/UPDATE<0>> is incomplete. The signal does
    not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
@@ -49,9 +52,6 @@ WARNING:PhysDesignRules:367 - The signal
 WARNING:PhysDesignRules:367 - The signal
    <UDP_1GbE_inst/vio_inst/U0/I_VIO/UPDATE<3>> is incomplete. The signal does
    not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <UDP_1GbE_inst/vio_inst/U0/I_VIO/reset_f_edge/iDOUT<1>> is incomplete. The
-   signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:2410 - This design is using one or more 9K Block RAMs
    (RAMB8BWER).  9K Block RAM initialization data, both user defined and
    default, may be incorrect and should not be used.  For more information,

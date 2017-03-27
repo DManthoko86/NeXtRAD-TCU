@@ -56,7 +56,7 @@ port
    led              : out std_logic_vector(7 downto 0);
    sys_clk_P		  : in std_logic;
    sys_clk_N	 	  : in std_logic;
-	sys_clk_ext		  :in std_logic;
+	sys_clk_ext		  : in std_logic;
 	
 	 -- BCD pins
 	bcd					: out std_logic_vector(31 downto 0);
@@ -128,9 +128,14 @@ architecture rtl of gpmc_test_top is
     signal reg_bank	: ram_type := (others => "1111111111111111");
 	 signal led_reg	: std_logic_vector(15 downto 0) := "0000000000000000";
 	 signal bcd_int	: word32_type := (x"0000",x"0000");
-	 signal M_reg		: word32_type := (x"0000",x"f000");
+	 signal M_reg		: word32_type := (x"f000",x"f000");
 	 signal M_reg_cmp	: std_logic_vector(31 downto 0);
 	 signal N_reg		: std_logic_vector(15 downto 0) := x"0002";
+	 
+-- Dominic's Debug signals
+--	signal reg_32_bit : word32_type := (x"1200",x"0045");
+--	signal reg_read	: word32_type := (x"0000",x"0000");
+--	signal PRI 			: word32_type := (x"1234",x"0045");
 	 
 -- Used for processing (Skippy)
 	-- indicates that experiment is ready to start.
@@ -150,8 +155,12 @@ architecture rtl of gpmc_test_top is
 	signal MBcounter		:	integer range 0 to 65535 := 0;
 	signal D					:	integer range 0 to 65535 := 0;
 	signal Dcounter		:	integer range 0 to 65535 := 0;
-	signal P					:	integer range 0 to 65535 := 0;
-	signal Pcounter		:	integer range 0 to 65535 := 0;
+	--signal P					:	integer range 0 to 65535 := 0;
+	--signal Pcounter		:	integer range 0 to 65535 := 0;
+	-- 32 bit versions of P and P counter
+	signal P					:	std_logic_vector(31 downto 0) := x"00000000";
+	signal Pcounter		:	std_logic_vector(31 downto 0) := x"00000000";
+	signal one				:  std_logic_vector(31 downto 0) := x"00000001";
 	
 	signal triggers 		: std_logic_vector(15 downto 0) := x"0000";
 	signal status_reg 	: std_logic_vector(15 downto 0) := x"0000";
@@ -476,6 +485,8 @@ gpmc_busy_1 <= '0';
 
 -- Interface between the ARM processor and the FPGA
 process (gpmc_clk_i_b,gpmc_n_cs,gpmc_n_oe,gpmc_n_we,gpmc_n_adv_ale,gpmc_d,gpmc_a)
+--variable temp: std_logic := 0;
+
 begin
   if (gpmc_n_cs /= "1111111")  then             -- CS 1
     if gpmc_clk_i_b'event and gpmc_clk_i_b = '1' then  
@@ -484,6 +495,7 @@ begin
           gpmc_address <= gpmc_a & gpmc_d;   -- Address of 16 bit word
 		--Second cycle of the bus is read or write
 		--Check for read
+		--Write data on the output port of gpmc for the ARM to read
       elsif (gpmc_n_oe = '0') then
 		 	case conv_integer(reg_bank_address) is
 			     when 0 => gpmc_data_o <= status_reg;
@@ -492,9 +504,12 @@ begin
 				  when 3 => gpmc_data_o <= reg_bank(conv_integer(reg_file_address));
 			     when 4 => gpmc_data_o <= M_reg(conv_integer(reg_file_address));
 				  when 5 => gpmc_data_o <= N_reg;
+				  --when 6 => gpmc_data_o <= PRI(conv_integer(reg_file_address));
+				  --when 7 => gpmc_data_o <= reg_read(conv_integer(reg_file_address));
 				  when others => gpmc_data_o <= (others => '0');
 		   end case;
       --Check for write
+		--Read data from the input port
 	 	elsif (gpmc_n_we = '0') then
 		  case conv_integer(reg_bank_address) is
 				  when 1 => triggers <= gpmc_data_i;
@@ -502,7 +517,10 @@ begin
 				  when 3 => reg_bank(conv_integer(reg_file_address)) <= gpmc_data_i;
 				  when 4 => M_reg(conv_integer(reg_file_address)) <= gpmc_data_i;
 				  when 5 => N_reg <= gpmc_data_i;
-				  when others => null;
+				  --when 6 => 
+				--	reg_32_bit(conv_integer(reg_file_address)) <= gpmc_data_i;
+				--reg_read <= reg_32_bit;
+ 				  when others => null;
 			end case;
 		end if;
      end if; 
@@ -517,6 +535,7 @@ led_reg(3) <= Dsig;
 led_reg(4) <= Psig;
 led_reg(5) <= nextload;
 --led_reg(6) <= when M = M_reg
+led_reg(6) <= '1';
 led_reg(7) <= gpioIn(1);
 
 bcd(15 downto 0) <= bcd_int(0);
@@ -572,7 +591,10 @@ begin
 		dataout <= reg_bank(PC) & reg_bank(PC+1) & reg_bank(PC+2) & reg_bank(PC+3) & reg_bank(PC+4) & reg_bank(PC+5);
 		MB <= conv_integer(reg_bank(PC));
 		D <= conv_integer(reg_bank(PC+1));
-		P <= conv_integer(reg_bank(PC+2));
+		--P <= conv_integer(reg_bank(PC+2));
+		P <= reg_bank(PC+2) & reg_bank(PC+5);
+		--PRI(1) <= P(31 downto 16);
+		--PRI(0) <= P(15 downto 0);
 		pol_mode <= reg_bank(PC+4)(10 downto 8);
 
 
@@ -641,14 +663,15 @@ begin
 		-- The experiment commences when triggered by the ready signal above, as long as it isnt the end of the experiment and as long as it is still "soft on" (kept on by the triggers register).
 		if(ready = '1' and status_reg(0) = '0' and triggers(0) = '1') then
 		
---			eth_msg_type <= "00";
+		--eth_msg_type <= "00";
 			sys_rst_i <= '0';		-- turn ethernet on
 
 			if ((MBsig and Dsig and Psig) = '1') then
 				-- reset all counters at the end of Interval
 				MBcounter <= 0;
 				Dcounter <= 0;
-				Pcounter <= 0;
+				--Pcounter <= 0;
+				Pcounter <= x"00000000";
 				MBsig <= '0';
 				Dsig <= '0';
 				Psig <= '0';
@@ -669,7 +692,7 @@ begin
 				if(Pcounter = P) then
 					Psig <= '1';
 				else
-					Pcounter <= Pcounter + 1;
+					Pcounter <= Pcounter + one;
 					Psig <= '0';
 				end if;
 				
@@ -717,7 +740,8 @@ begin
 			--	set counters to zero
 			MBcounter <= 0;
 			Dcounter <= 0;
-			Pcounter <= 0;
+			--Pcounter <= 0;
+			Pcounter <= x"00000000";
 			
 			-- turn amplifiers off
 			gpio(13) <= '0';

@@ -6,7 +6,7 @@ Loading device for application Rf_Device from file '6slx150t.nph' in environment
 speed -2
 Opened constraints file gpmc_test_top.pcf.
 
-Thu Feb 11 16:17:16 2016
+Mon Mar 27 12:36:25 2017
 
 /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/bitgen -intstyle ise -w -g DebugBitstream:No -g Binary:yes -g CRC:Enable -g Reset_on_err:No -g ConfigRate:2 -g ProgPin:PullUp -g TckPin:PullUp -g TdiPin:PullUp -g TdoPin:PullUp -g TmsPin:PullUp -g UnusedPin:PullDown -g UserID:0xFFFFFFFF -g ExtMasterCclk_en:No -g SPI_buswidth:1 -g TIMER_CFG:0xFFFF -g multipin_wakeup:No -g StartUpClk:CClk -g DONE_cycle:4 -g GTS_cycle:5 -g GWE_cycle:6 -g LCK_cycle:NoWait -g Security:None -g DonePipe:Yes -g DriveDone:No -g Encrypt:No -g en_sw_gsr:No -g drive_awake:No -g sw_clk:Startupclk -g sw_gwe_cycle:5 -g sw_gts_cycle:4 gpmc_test_top.ncd 
 
@@ -167,6 +167,9 @@ WARNING:PhysDesignRules:367 - The signal
    <UDP_1GbE_inst/vio_inst/U0/I_VIO/UPDATE<7>> is incomplete. The signal does
    not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
+   <UDP_1GbE_inst/vio_inst/U0/I_VIO/reset_f_edge/iDOUT<1>> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
    <UDP_1GbE_inst/vio_inst/U0/I_VIO/UPDATE<0>> is incomplete. The signal does
    not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
@@ -178,15 +181,17 @@ WARNING:PhysDesignRules:367 - The signal
 WARNING:PhysDesignRules:367 - The signal
    <UDP_1GbE_inst/vio_inst/U0/I_VIO/UPDATE<3>> is incomplete. The signal does
    not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <UDP_1GbE_inst/vio_inst/U0/I_VIO/reset_f_edge/iDOUT<1>> is incomplete. The
-   signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:2410 - This design is using one or more 9K Block RAMs
    (RAMB8BWER).  9K Block RAM initialization data, both user defined and
    default, may be incorrect and should not be used.  For more information,
    please reference Xilinx Answer Record 39999.
 DRC detected 0 errors and 17 warnings.  Please see the previously displayed
 individual error or warning messages for more details.
+INFO:Security:56 - Part 'xc6slx150t' is not a WebPack part.
+WARNING:Security:42 - Your software subscription period has lapsed. Your current
+version of Xilinx tools will continue to function, but you no longer qualify for
+Xilinx software updates or new releases.
+
 Creating bit map...
 Saving bit stream in "gpmc_test_top.bit".
 Saving bit stream in "gpmc_test_top.bin".

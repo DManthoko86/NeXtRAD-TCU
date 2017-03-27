@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.ncd
-OUTFILE=/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.bit
+INFILE=/home/fpgaadmin/Documents/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.ncd
+OUTFILE=/home/fpgaadmin/Documents/NeXtRAD-TCU/NeXtRAD-TCU-Controller/gpmc_test_top.bit
 FAMILY=Spartan6
 PART=xc6slx150t-2fgg676
-WORKINGDIR=/home/skippy/Git/NeXtRAD-TCU/NeXtRAD-TCU-Controller
+WORKINGDIR=/home/fpgaadmin/Documents/NeXtRAD-TCU/NeXtRAD-TCU-Controller
 LICENSE=ISE
-USER_INFO=178739136_178739138_210621019_760
+USER_INFO=178739136_178739138_210553786_049

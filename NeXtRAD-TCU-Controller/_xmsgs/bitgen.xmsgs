@@ -41,6 +41,9 @@
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">UDP_1GbE_inst/vio_inst/U0/I_VIO/UPDATE&lt;7&gt;</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">UDP_1GbE_inst/vio_inst/U0/I_VIO/reset_f_edge/iDOUT&lt;1&gt;</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">UDP_1GbE_inst/vio_inst/U0/I_VIO/UPDATE&lt;0&gt;</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
@@ -51,9 +54,6 @@
 </msg>
 
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">UDP_1GbE_inst/vio_inst/U0/I_VIO/UPDATE&lt;3&gt;</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">UDP_1GbE_inst/vio_inst/U0/I_VIO/reset_f_edge/iDOUT&lt;1&gt;</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
 <msg type="warning" file="PhysDesignRules" num="2410" delta="old" >This design is using one or more 9K Block RAMs (RAMB8BWER).  9K Block RAM initialization data, both user defined and default, may be incorrect and should not be used.  For more information, please reference Xilinx Answer Record 39999.

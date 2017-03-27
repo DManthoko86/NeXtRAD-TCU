@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Thu Feb 11 16:00:36 2016
+// Written by: Map P.20131013 on Mon Mar 27 12:33:22 2017
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -128,18 +128,18 @@ TIMEGRP TM_sys_clk_ext = BEL "gpio_13" BEL "MB_0" BEL "MB_1" BEL "MB_2" BEL
         "MB_3" BEL "MB_4" BEL "MB_5" BEL "MB_6" BEL "MB_7" BEL "MB_8" BEL
         "MB_9" BEL "MB_10" BEL "MB_11" BEL "MB_12" BEL "MB_13" BEL "MB_14" BEL
         "MB_15" BEL "pol_mode_0" BEL "pol_mode_1" BEL "pol_mode_2" BEL "pol_8"
-        BEL "x_band_freq_0" BEL "x_band_freq_1" BEL "x_band_freq_2" BEL
-        "x_band_freq_3" BEL "x_band_freq_4" BEL "x_band_freq_5" BEL
-        "x_band_freq_6" BEL "x_band_freq_7" BEL "x_band_freq_8" BEL
-        "x_band_freq_9" BEL "x_band_freq_10" BEL "x_band_freq_11" BEL
-        "x_band_freq_12" BEL "x_band_freq_13" BEL "x_band_freq_14" BEL
-        "x_band_freq_15" BEL "l_band_freq_0" BEL "l_band_freq_1" BEL
-        "l_band_freq_2" BEL "l_band_freq_3" BEL "l_band_freq_4" BEL
-        "l_band_freq_5" BEL "l_band_freq_6" BEL "l_band_freq_7" BEL
-        "l_band_freq_8" BEL "l_band_freq_9" BEL "l_band_freq_10" BEL
-        "l_band_freq_11" BEL "l_band_freq_12" BEL "l_band_freq_13" BEL
-        "l_band_freq_14" BEL "l_band_freq_15" BEL "gpio_12" BEL "gpio_15" BEL
-        "gpio_14" BEL "MBcounter_0" BEL "MBcounter_1" BEL "MBcounter_2" BEL
+        BEL "l_band_freq_0" BEL "l_band_freq_1" BEL "l_band_freq_2" BEL
+        "l_band_freq_3" BEL "l_band_freq_4" BEL "l_band_freq_5" BEL
+        "l_band_freq_6" BEL "l_band_freq_7" BEL "l_band_freq_8" BEL
+        "l_band_freq_9" BEL "l_band_freq_10" BEL "l_band_freq_11" BEL
+        "l_band_freq_12" BEL "l_band_freq_13" BEL "l_band_freq_14" BEL
+        "l_band_freq_15" BEL "x_band_freq_0" BEL "x_band_freq_1" BEL
+        "x_band_freq_2" BEL "x_band_freq_3" BEL "x_band_freq_4" BEL
+        "x_band_freq_5" BEL "x_band_freq_6" BEL "x_band_freq_7" BEL
+        "x_band_freq_8" BEL "x_band_freq_9" BEL "x_band_freq_10" BEL
+        "x_band_freq_11" BEL "x_band_freq_12" BEL "x_band_freq_13" BEL
+        "x_band_freq_14" BEL "x_band_freq_15" BEL "gpio_12" BEL "gpio_14" BEL
+        "gpio_15" BEL "MBcounter_0" BEL "MBcounter_1" BEL "MBcounter_2" BEL
         "MBcounter_3" BEL "MBcounter_4" BEL "MBcounter_5" BEL "MBcounter_6"
         BEL "MBcounter_7" BEL "MBcounter_8" BEL "MBcounter_9" BEL
         "MBcounter_10" BEL "MBcounter_11" BEL "MBcounter_12" BEL
@@ -148,18 +148,23 @@ TIMEGRP TM_sys_clk_ext = BEL "gpio_13" BEL "MB_0" BEL "MB_1" BEL "MB_2" BEL
         "M_8" BEL "M_9" BEL "M_10" BEL "M_11" BEL "M_12" BEL "M_13" BEL "M_14"
         BEL "M_15" BEL "M_16" BEL "M_17" BEL "M_18" BEL "M_19" BEL "M_20" BEL
         "M_21" BEL "M_22" BEL "M_23" BEL "M_24" BEL "M_25" BEL "M_26" BEL
-        "M_27" BEL "M_28" BEL "M_29" BEL "M_30" BEL "M_31" BEL "Pcounter_0"
-        BEL "Pcounter_1" BEL "Pcounter_2" BEL "Pcounter_3" BEL "Pcounter_4"
-        BEL "Pcounter_5" BEL "Pcounter_6" BEL "Pcounter_7" BEL "Pcounter_8"
-        BEL "Pcounter_9" BEL "Pcounter_10" BEL "Pcounter_11" BEL "Pcounter_12"
-        BEL "Pcounter_13" BEL "Pcounter_14" BEL "Pcounter_15" BEL "Dcounter_0"
+        "M_27" BEL "M_28" BEL "M_29" BEL "M_30" BEL "M_31" BEL "Dcounter_0"
         BEL "Dcounter_1" BEL "Dcounter_2" BEL "Dcounter_3" BEL "Dcounter_4"
         BEL "Dcounter_5" BEL "Dcounter_6" BEL "Dcounter_7" BEL "Dcounter_8"
         BEL "Dcounter_9" BEL "Dcounter_10" BEL "Dcounter_11" BEL "Dcounter_12"
-        BEL "Dcounter_13" BEL "Dcounter_14" BEL "Dcounter_15" BEL "PC_1" BEL
-        "PC_2" BEL "PC_3" BEL "PC_4" BEL "PC_5" BEL "PC_6" BEL "PC_7" BEL
-        "ready" BEL "status_reg_0" BEL "MBsig" BEL "Psig" BEL "Dsig" BEL
-        "udp_send_packet" BEL "Psig_1" BEL "Dsig_1" BEL "MBsig_1";
+        BEL "Dcounter_13" BEL "Dcounter_14" BEL "Dcounter_15" BEL "Pcounter_0"
+        BEL "Pcounter_1" BEL "Pcounter_2" BEL "Pcounter_3" BEL "Pcounter_4"
+        BEL "Pcounter_5" BEL "Pcounter_6" BEL "Pcounter_7" BEL "Pcounter_8"
+        BEL "Pcounter_9" BEL "Pcounter_10" BEL "Pcounter_11" BEL "Pcounter_12"
+        BEL "Pcounter_13" BEL "Pcounter_14" BEL "Pcounter_15" BEL
+        "Pcounter_16" BEL "Pcounter_17" BEL "Pcounter_18" BEL "Pcounter_19"
+        BEL "Pcounter_20" BEL "Pcounter_21" BEL "Pcounter_22" BEL
+        "Pcounter_23" BEL "Pcounter_24" BEL "Pcounter_25" BEL "Pcounter_26"
+        BEL "Pcounter_27" BEL "Pcounter_28" BEL "Pcounter_29" BEL
+        "Pcounter_30" BEL "Pcounter_31" BEL "PC_1" BEL "PC_2" BEL "PC_3" BEL
+        "PC_4" BEL "PC_5" BEL "PC_6" BEL "PC_7" BEL "ready" BEL "MBsig" BEL
+        "Dsig" BEL "Psig" BEL "status_reg_0" BEL "udp_send_packet" BEL
+        "Psig_1" BEL "Dsig_1" BEL "MBsig_1";
 PIN clk_manager_inst/dcm_inst/pll_base_inst/PLL_ADV_pins<2> = BEL
         "clk_manager_inst/dcm_inst/pll_base_inst/PLL_ADV" PINNAME CLKIN1;
 TIMEGRP TM_sys_clk = BEL "udp_tx_pkt_data_8" BEL "udp_tx_pkt_data_16" BEL
@@ -1817,8 +1822,8 @@ TIMEGRP clk_manager_inst_dcm_inst_clkout1 = BEL
         "UDP_1GbE_inst/counter_rx_28" BEL "UDP_1GbE_inst/counter_rx_29" BEL
         "UDP_1GbE_inst/counter_rx_30" BEL "UDP_1GbE_inst/counter_rx_31" BEL
         "UDP_1GbE_inst/counter_ethernet_rec_0_1" BEL
-        "UDP_1GbE_inst/counter_ethernet_rec_1_1" BEL
         "UDP_1GbE_inst/counter_ethernet_rec_3_1" BEL
+        "UDP_1GbE_inst/counter_ethernet_rec_1_1" BEL
         "UDP_1GbE_inst/counter_ethernet_rec_2_1" BEL
         "UDP_1GbE_inst/Ethernet_MAC_top/U_eth_miim/outctrl/MdoEn" BEL
         "UDP_1GbE_inst/Ethernet_MAC_top/U_eth_miim/outctrl/Mdo" PIN
@@ -4962,8 +4967,8 @@ TIMEGRP clk_manager_inst_dcm_inst_clkout1_0 = BEL
         "UDP_1GbE_inst/counter_rx_28" BEL "UDP_1GbE_inst/counter_rx_29" BEL
         "UDP_1GbE_inst/counter_rx_30" BEL "UDP_1GbE_inst/counter_rx_31" BEL
         "UDP_1GbE_inst/counter_ethernet_rec_0_1" BEL
-        "UDP_1GbE_inst/counter_ethernet_rec_1_1" BEL
         "UDP_1GbE_inst/counter_ethernet_rec_3_1" BEL
+        "UDP_1GbE_inst/counter_ethernet_rec_1_1" BEL
         "UDP_1GbE_inst/counter_ethernet_rec_2_1" BEL
         "UDP_1GbE_inst/Ethernet_MAC_top/U_eth_miim/outctrl/MdoEn" BEL
         "UDP_1GbE_inst/Ethernet_MAC_top/U_eth_miim/outctrl/Mdo" PIN
