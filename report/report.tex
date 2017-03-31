@@ -176,21 +176,21 @@ Testing of the modified synchronization controller began with using the internal
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=13cm]{1khz_mb_offset_500_ns}
-		\caption{1khz signal produced using the internal clock of the rhino}
-		\label{fig:1khz_in_500_offset}
+		\caption{1kHz signal produced using the internal clock of the rhino}
+		\label{fig:1kHz_in_500_offset}
 	\end{figure}
 	
-Figure \ref{fig:1khz_in_500_offset} shows the output of the main bang and the digitisation signals measured from the Rhino board. A time division of 1.0 ms was used to display the output. Observing the yellow signal, it can seen that a 1kHz signal is indeed being produced by the Rhino board.
+Figure \ref{fig:1kHz_in_500_offset} shows the output of the main bang and the digitisation signals measured from the Rhino board. A time division of 1.0 ms was used to display the output. Observing the yellow signal, it can seen that a 1kHz signal is indeed being produced by the Rhino board.
 
 	\begin{figure}[t]
 		\centering
 		\includegraphics[width=13cm]{1khz_mb_offset_500_ns_length_of_offset}
-		\caption{Zoomed in image of Figure \ref{fig:1khz_in_500_offset}}
-		\label{fig:1khz_in_500_offset_zoom}
+		\caption{Zoomed in image of Figure \ref{fig:1kHz_in_500_offset}}
+		\label{fig:1kHz_in_500_offset_zoom}
 	\end{figure}
 		
 	
-Figure \ref{fig:1khz_in_500_offset_zoom} shows a zoomed in image of Figure \ref{fig:1khz_in_500_offset}. The yellow signal depicts the main bang signal and the green signal depicts the digitization signal. The yellow signal goes high after 500ns and the green signal triggers 500ns after the yellow signal. These results are as desired. 
+Figure \ref{fig:1kHz_in_500_offset_zoom} shows a zoomed in image of Figure \ref{fig:1kHz_in_500_offset}. The yellow signal depicts the main bang signal and the green signal depicts the digitization signal. The yellow signal goes high after 500ns and the green signal triggers 500ns after the yellow signal. These results are as desired. 
 
 To change the main bang offset and the digitization offset to 1000ns without changing the other parameters, the following command was used:
 
@@ -205,12 +205,12 @@ To change the main bang offset and the digitization offset to 1000ns without cha
 		\centering
 		\includegraphics[width=13cm, height=8cm]{1khz_mb_offset_1000_ns_length_of_offset}
 		\caption{Picture of the main bang signal and digitization with 1000ns offsets}
-		\label{fig:1khz_in_1000_offset}
+		\label{fig:1kHz_in_1000_offset}
 	\end{figure}
 	
 
 %explaining what is seen in the 1000ns image
-Figure \ref{fig:1khz_in_1000_offset} shows a picture of the main bang and digitization signals with 1000ns offsets. Using the 500ns time division on the horizontal axis, it can be seen that it takes two time divisions for the main bang signal(yellow signal seen at the top of figure \ref{fig:1khz_in_1000_offset}) to go high. This equates to 1000ns, which is the desired result. Similarly for the digitization signal, we see that it also takes 2 time divisions to trigger, thus meeting our desired result. 
+Figure \ref{fig:1kHz_in_1000_offset} shows a picture of the main bang and digitization signals with 1000ns offsets. Using the 500ns time division on the horizontal axis, it can be seen that it takes two time divisions for the main bang signal(yellow signal seen at the top of figure \ref{fig:1kHz_in_1000_offset}) to go high. This equates to 1000ns, which is the desired result. Similarly for the digitization signal, we see that it also takes 2 time divisions to trigger, thus meeting our desired result. 
 
 To show that the main bang offset and digitization offset can be set to different values, the main bang offset was set to 1650 ns and the digitization offset was set to 2950ns. The following command was used to set these values:
 
@@ -245,48 +245,63 @@ Figure \ref{fig:variable_offsets} shows the plots of the main bang signal and th
 A main bang offset of 1650ns is equivalent to \( 1.65 \mu \). The value of delta seen in figure \ref{fig:var_offsets_1650} is thus approximately equal to the value that was set using the echo command. For the digitization offset, we set a value of 2950ns (\( 2.95 \mu \)). The delta value seen in figure \ref{fig:var_offsets_2950} is also approximately equal to the value that was set. This proves that the main bang and the digitization offsets can be set to two different values. 
 
 
-	%image showing the 2khz signal using the internal clock
+	%image showing the 2kHz signal using the internal clock
 	%\begin{flushleft}
 	\begin{figure}[t]
 		\centering
 		\includegraphics[width=13cm, height=8cm]{2khz_mb_offset_500_ns}
-		\caption{Picture showing a 2khz signal produced using the internal clock of the Rhino board}
-		\label{fig:2khz_sig_int}
+		\caption{Picture showing a 2kHz signal produced using the internal clock of the Rhino board}
+		\label{fig:2kHz_sig_int}
 	\end{figure}
 	%\end{flushleft}	
 	
-	%image showing the 3khz signal using the internal clock
+	%image showing the 3kHz signal using the internal clock
 	%\begin{flushleft}
 	\begin{figure}[t]
 		\centering
 		\includegraphics[width=13cm, height=8cm]{3khz_mb_offset_500_ns}
-		\caption{Picture showing a 3khz signal produced using the internal clock of the Rhino board}
-		\label{fig:3khz_sig_int}
+		\caption{Picture showing a 3kHz signal produced using the internal clock of the Rhino board}
+		\label{fig:3kHz_sig_int}
 	\end{figure}
 	%\end{flushleft}
 	
-	%image showing the 4khz signal using the internal clock
+	%image showing the 4kHz signal using the internal clock
 	%\begin{flushleft}
 	\begin{figure}[t]
 		\centering
-		\includegraphics[width=13cm, height=8cm]{3khz_mb_offset_500_ns}
-		\caption{Picture showing a 3khz signal produced using the internal clock of the Rhino board}
-		\label{fig:4khz_sig_int}
+		\includegraphics[width=13cm, height=8cm]{4khz_mb_offset_500_ns}
+		\caption{Picture showing a 4kHz signal produced using the internal clock of the Rhino board}
+		\label{fig:4kHz_sig_int}
 	\end{figure}
 	%\end{flushleft}		
 
 
-Figures \ref{fig:2khz_sig_int}, \ref{fig:3khz_sig_int} and \ref{fig:4khz_sig_int} show pictures of the output produced when a signal with either a 2khz, 3khz or 4khz frequency is set using the echo command. Each of the plots was set using a 500ns offset for the main bang and digitization offsets, using a band frequency of 1300 Mhz, operating at L-band. The only that changes when switching between frequency is the PRI that is set. 
+Figures \ref{fig:2kHz_sig_int}, \ref{fig:3kHz_sig_int} and \ref{fig:4kHz_sig_int} show pictures of the output produced when a signal with either a 2kHz, 3kHz or 4kHz frequency is set using the echo command. Each of the plots was set using a 500ns offset for the main bang and digitization offsets, using a band frequency of 1300 Mhz, operating at L-band. The only that changes when switching between frequency is the PRI that is set. 
 
 
-To produce a 2khz signal, we would need a PRI of 49899 (calculated using the equation for PRI found in section \ref{syn_control_setup}). The following command was used to set the parameters for the 2khz signal:
+To produce a 2kHz signal, we would need a PRI of 49899 (calculated using the equation for PRI found in section \ref{syn_control_setup}). The following command was used to set the parameters for the 2kHz signal:
 	
-	%echo command used to set the 2khz signal
+	%echo command used to set the 2kHz signal
 		\fbox{\begin{minipage}{30em}
 			echo -e -n "\textbackslash x32\textbackslash x00\textbackslash x32\textbackslash x00\textbackslash x00\textbackslash x00\textbackslash x14\textbackslash x05\textbackslash x01\textbackslash x00\textbackslash xeb\textbackslash xc2" $>$ /proc/$<$PID$>$/hw/ioreg/reg\textunderscore pulses
 		\end{minipage}}
+		
+To produce the 3kHz and 4kHz signals, the same command as above was used, the only difference being that a new PRI value was calculated and this new value plugged into the appropriate position in the command.
+
+Observing figure \ref{fig:2kHz_sig_int}, we see that a 2kHz signal is being produced. A 1.00ms time division is being used and in 1 time division, the signal goes high twice. This equates to the signal going high every 2ms which is equivalent to 2kHz. 
+
+
+Observing figure \ref{fig:3kHz_sig_int}, which has a time division of \( 100\mu s\), we see that a 3kHz is being produced. The main bang signal (yellow signal) goes high at about 3.3 time divisions. When you multiply the number of time divisions with the value of 1 time division, we get \(330\mu s\). This is equivalent to 3z, which is exactly what we wanted. From figure \ref{fig:4kHz_sig_int} we can see that a 4kHz signal is being produced. A time division of \(500\mu s\) is being used. Thus 1 time division is equal to 2kHz. In this picture, we see that the yellow signal goes high twice for every time division. Thus, we have twice the frequency observed in a single time division. i.e. a 4khz signal is being produced.
+
 
 \subsection{Using an External 100MHz Clock Signal}
+
+Initial testing was done by making use of the internal 100MHz clock of the rhino board as mentioned in the previous section. Since the final set-up would be run using an external 100MHz clock, tests were conducted to ensure the updated synchronization controller would be able to operate correctly using an external clock.
+
+%dont have plot of 1khz clock being produced by the external clock, but mentioned that it was observed that it looked exatcly the same as the one made
+%using the internal clock.
+%Add a plot of the 500ns offsets, 100ns offset and the variable offset using the internal clock. Then mention that the same plot were produced for the other signals.
+
 
 
 \section{Conclusions}
