@@ -7,7 +7,7 @@
 
 %package needed in order to use images
 \usepackage{graphicx}
-\graphicspath{{images/}{images/tcu/}{images/tcu_external_clock}}
+\graphicspath{{images/}{images/tcu/}{images/tcu_external_clock/}}
 
 %hyperlinks
 \usepackage{hyperref}
@@ -122,7 +122,7 @@ With the modified TCU, reading and writing from the n, m and reg\textunderscore 
 The original developer catered for the future improvement of the controller and had 16 bits of unused bits available for use. This free space was made use of in order to increase the register size of the PRI from 16- to 32-bits. In table \ref{table:1}, the various parameters required to set up a pulse are shown. Figure \ref{fig:reg_pulses} shows how the parameters seen in table \ref{table:1} would be setup using the echo command.
 
 
-The parameters seen in table \ref{table:1} are set up by writing to the reg\textunderscore pulses register. If you wanted to set up a pulse that triggers every 1 ms (1Khz), has a main bang and digitisation offset of 500ns, a band frequency of 1300 MHz and operating at L-band, you would write the following command. 
+The parameters seen in table \ref{table:1} are set up by writing to the reg\textunderscore pulses register. If you wanted to set up a signal that triggers every 1 ms (1Khz), has a main bang and digitisation offset of 500ns, a band frequency of 1300 MHz and operating at L-band, you would write the following command. 
 
 
 	%display an example of the echo command inside a box
@@ -301,8 +301,20 @@ Initial testing was done by making use of the internal 100MHz clock of the rhino
 %dont have plot of 1khz clock being produced by the external clock, but mentioned that it was observed that it looked exatcly the same as the one made
 %using the internal clock.
 %Add a plot of the 500ns offsets, 100ns offset and the variable offset using the internal clock. Then mention that the same plot were produced for the other signals.
+The same commands used during the internal clock tests will also be used for the internal clock tests. The command used to setup up a a signal that triggers every 1 ms (1Khz), has a main bang and digitisation offset of 500ns, a band frequency of 1300 MHz and operating at L-band is shown below. 
 
+%display an example of the echo command inside a box
+	\fbox{\begin{minipage}{30em}
+			echo -e -n "\textbackslash x32\textbackslash x00\textbackslash x32\textbackslash x00\textbackslash x01\textbackslash x00\textbackslash x14\textbackslash x05\textbackslash x01\textbackslash x00\textbackslash x3b\textbackslash x86" $>$ /proc/$<$PID$>$/hw/ioreg/reg\textunderscore pulses
+	\end{minipage}}
 
+	%image showing the output of 1khz clock
+	\begin{figure}
+		\centering
+		\includegraphics[width=13cm]{reg_pulses}
+		\caption{Visual depiction of how to order the parameters seen in Table \ref{table:1}}
+		\label{fig:1khz_sig_ext}
+	\end{figure}
 
 \section{Conclusions}
 
