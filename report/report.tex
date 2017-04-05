@@ -192,7 +192,7 @@ Figure \ref{fig:1kHz_in_500_offset} shows the output of the main bang and the di
 	
 Figure \ref{fig:1kHz_in_500_offset_zoom} shows a zoomed in image of Figure \ref{fig:1kHz_in_500_offset}. The yellow signal depicts the main bang signal and the green signal depicts the digitization signal. The yellow signal goes high after 500ns and the green signal triggers 500ns after the yellow signal. These results are as desired. 
 
-To change the main bang offset and the digitization offset to 1000ns without changing the other parameters, the following command was used:
+To change the main bang offset and the digitization offset to \hypertarget{1000ns_offset}{1000ns} without changing the other parameters, the following command was used:
 
 
 	%display the echo command used to produce a signal with 1000ns offset
@@ -238,6 +238,8 @@ To show that the main bang offset and digitization offset can be set to differen
 	\caption{(a) Main bang and digitization signal with the measurement of the main offset shown in the markers box toward the bottom of the image. (b) Same as figure \ref{fig:var_offsets_1650} but with the measurement of the digitization offset shown in the  markers box.}
 	\label{fig:variable_offsets}
 	\end{figure}
+
+\clearpage
 	
 Figure \ref{fig:variable_offsets} shows the plots of the main bang signal and the digitization signal together with the measurements. Making use of cursors on the oscillscope, which allow you to measure a value on the horizontal and vertical axis, the offsets were measured. In the markers tab seen in figure \ref{fig:var_offsets_1650}, there is a delta value. From this plot, we see that \( \Delta = 1.6555556 \mu \). Observing the delta seen in figure \ref{fig:var_offsets_2950}, we see that \( \Delta = 2.9541483 \mu \). 
 
@@ -288,10 +290,10 @@ To produce a 2kHz signal, we would need a PRI of 49899 (calculated using the equ
 		
 To produce the 3kHz and 4kHz signals, the same command as above was used, the only difference being that a new PRI value was calculated and this new value plugged into the appropriate position in the command.
 
-Observing figure \ref{fig:2kHz_sig_int}, we see that a 2kHz signal is being produced. A 1.00ms time division is being used and in 1 time division, the signal goes high twice. This equates to the signal going high every 2ms which is equivalent to 2kHz. 
+Observing figure \ref{fig:2kHz_sig_int}, we see that a 2kHz signal was being produced. A 1.00ms time division was being used and in 1 time division, the signal goes high twice. This equates to the signal going high every 2ms which is equivalent to 2kHz. 
 
 
-Observing figure \ref{fig:3kHz_sig_int}, which has a time division of \( 100\mu s\), we see that a 3kHz is being produced. The main bang signal (yellow signal) goes high at about 3.3 time divisions. When you multiply the number of time divisions with the value of 1 time division, we get \(330\mu s\). This is equivalent to 3z, which is exactly what we wanted. From figure \ref{fig:4kHz_sig_int} we can see that a 4kHz signal is being produced. A time division of \(500\mu s\) is being used. Thus 1 time division is equal to 2kHz. In this picture, we see that the yellow signal goes high twice for every time division. Thus, we have twice the frequency observed in a single time division. i.e. a 4khz signal is being produced.
+Observing figure \ref{fig:3kHz_sig_int}, which has a time division of \( 100\mu s\), we see that a 3kHz is being produced. The main bang signal (yellow signal) goes high at about 3.3 time divisions. When you multiply the number of time divisions with the value of 1 time division, we get \(330\mu s\). This is equivalent to 3kHz, which is exactly what we wanted. From figure \ref{fig:4kHz_sig_int} we can see that a 4kHz signal is being produced. A time division of \(500\mu s\) is being used. Thus 1 time division is equal to 2kHz. In this picture, we see that the yellow signal went high twice for every time division. Thus, we have twice the frequency observed in a single time division. i.e. a 4khz signal is being produced.
 
 
 \subsection{Using an External 100MHz Clock Signal}
@@ -301,7 +303,7 @@ Initial testing was done by making use of the internal 100MHz clock of the rhino
 %dont have plot of 1khz clock being produced by the external clock, but mentioned that it was observed that it looked exatcly the same as the one made
 %using the internal clock.
 %Add a plot of the 500ns offsets, 100ns offset and the variable offset using the internal clock. Then mention that the same plot were produced for the other signals.
-The same commands used during the internal clock tests will also be used for the internal clock tests. The command used to setup up a a signal that triggers every 1 ms (1Khz), has a main bang and digitisation offset of 500ns, a band frequency of 1300 MHz and operating at L-band is shown below. 
+The same commands used during the internal clock tests were used for the internal clock tests. The command used to setup up a signal that triggers every 1 ms (1Khz), has a main bang and digitisation offset of 500ns, a band frequency of 1300 MHz and operating at L-band is shown below. 
 
 %display an example of the echo command inside a box
 	\fbox{\begin{minipage}{30em}
@@ -309,15 +311,35 @@ The same commands used during the internal clock tests will also be used for the
 	\end{minipage}}
 
 	%image showing the output of 1khz clock
-	\begin{figure}
+	\begin{figure}[t]
 		\centering
-		\includegraphics[width=13cm]{reg_pulses}
-		\caption{Visual depiction of how to order the parameters seen in Table \ref{table:1}}
+		\includegraphics[width=13cm]{1khz_ext_mb_500ns}
+		\caption{Picture showing a 1khz main bang signal(yellow) and the associated digitization signal, both with an offset of 500ns}
 		\label{fig:1khz_sig_ext}
 	\end{figure}
 
+Figure \ref{fig:1khz_sig_ext} shows the output produced by using the above command. A 500ns time division was used to display the output. The yellow signal (bottom signal) represents the main bang signal and the green signal represents the digitization signal. As can be seen in the image, it took a single time division for the main bang signal to trigger high. The digitization signal took a further 500ns to do the same. We set the main bang and digitization offsets to 500ns and figure \ref{fig:1khz_sig_ext} proves that these values are correctly set up. The output seen in figure \ref{fig:1khz_sig_ext} is also in agreement with the output seen in figure \ref{fig:1kHz_in_500_offset_zoom}. 
+
+	%figure showing the output when a 1000ns offset was set
+	\begin{figure}[t]
+		\centering
+		\includegraphics[width=13cm]{1khz_ext_mb_d_offset_1000ns}
+		\caption{Image showing a 1khz main bang signal(yellow) and the associated digitization signal(green), both with an offset of 1000ns}
+		\label{fig:1khz_ext_sig_1000ns_offset}
+	\end{figure}
+
+To change the main bang offset and the digitization, the same command used in previous section was used. It can be found \hyperlink{1000ns_offset}{here}. The output produced after making the change can be seen in figure \ref{fig:1khz_ext_sig_1000ns_offset}. A time division of 500ns was used to display the image. Observing the yellow (main bang) signal, we see that it took 2 time divisions for the signal to trigger high. This means that it took 1000ns in total. A similar observation was made about the green (Digitization) signal.
+
+
+%change all the wording in the results section to past tense
+%change all the image captions to use the word "image" instead of picture. Also change the sentences to reflect this change.
+
 \section{Conclusions}
 
+stuff
+
 \section{Recommendations}
+
+more stuff
 
 \end{document}
