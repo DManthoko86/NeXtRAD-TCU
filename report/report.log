@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.22)  5 APR 2017 21:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.22)  6 APR 2017 13:59
 entering extended mode
 **./report.tex
 (report.tex
@@ -510,20 +510,20 @@ Package caption Info: hyperref package is loaded.
 ) (report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
 
 (C:\Users\Dominic\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -561,7 +561,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 147.
 )
-Package hyperref Info: Link coloring ON on input line 29.
+Package hyperref Info: Link coloring ON on input line 30.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -571,9 +571,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count107
 )
-LaTeX Info: Redefining \ref on input line 29.
-LaTeX Info: Redefining \pageref on input line 29.
-LaTeX Info: Redefining \nameref on input line 29.
+LaTeX Info: Redefining \ref on input line 30.
+LaTeX Info: Redefining \pageref on input line 30.
+LaTeX Info: Redefining \nameref on input line 30.
 
 (report.out) (report.out)
 \@outlinefile=\write3
@@ -582,11 +582,11 @@ LaTeX Info: Redefining \nameref on input line 29.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 34.
+(Font)              <14.4> on input line 35.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 34.
+(Font)              <7> on input line 35.
 
-Underfull \hbox (badness 2181) in paragraph at lines 45--45
+Underfull \hbox (badness 2181) in paragraph at lines 46--46
 []\OT1/cmr/bx/n/14.4 Background of the NeX-tRad Syn-chro-niza-tion
  []
 
@@ -594,31 +594,31 @@ Underfull \hbox (badness 2181) in paragraph at lines 45--45
 
 {C:/Users/Dominic/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 59.
+(Font)              <12> on input line 60.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 59.
+(Font)              <8> on input line 60.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 59.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 68.
+(Font)              <6> on input line 60.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 69.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 68.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 69.
 
 <images/reg_pulses.png, id=65, 1327.96124pt x 460.72125pt>
 File: images/reg_pulses.png Graphic file (type png)
 
 <use images/reg_pulses.png>
-Package pdftex.def Info: images/reg_pulses.png used on input line 115.
+Package pdftex.def Info: images/reg_pulses.png used on input line 116.
 (pdftex.def)             Requested size: 369.88582pt x 128.32619pt.
  [2] [3 <./images/reg_pulses.png>]
 <images/experimental_setup.png, id=88, 4175.6pt x 1606.0pt>
 File: images/experimental_setup.png Graphic file (type png)
 
 <use images/experimental_setup.png>
-Package pdftex.def Info: images/experimental_setup.png used on input line 158.
+Package pdftex.def Info: images/experimental_setup.png used on input line 159.
 (pdftex.def)             Requested size: 369.88582pt x 142.25475pt.
  [4 <./images/experimental_setup.png>]
 <images/tcu/1khz_mb_offset_500_ns.png, id=97, 772.38562pt x 579.66562pt>
@@ -626,7 +626,7 @@ File: images/tcu/1khz_mb_offset_500_ns.png Graphic file (type png)
 
 <use images/tcu/1khz_mb_offset_500_ns.png>
 Package pdftex.def Info: images/tcu/1khz_mb_offset_500_ns.png used on input lin
-e 178.
+e 179.
 (pdftex.def)             Requested size: 369.88582pt x 277.59065pt.
 
 <images/tcu/1khz_mb_offset_500_ns_length_of_offset.png, id=99, 772.38562pt x 57
@@ -635,7 +635,7 @@ File: images/tcu/1khz_mb_offset_500_ns_length_of_offset.png Graphic file (type
 png)
  <use images/tcu/1khz_mb_offset_500_ns_length_of_offset.png>
 Package pdftex.def Info: images/tcu/1khz_mb_offset_500_ns_length_of_offset.png 
-used on input line 187.
+used on input line 188.
 (pdftex.def)             Requested size: 369.88582pt x 277.59065pt.
  [5 <./images/tcu/1khz_mb_offset_500_ns.png>]
 <images/tcu/1khz_mb_offset_1000_ns_length_of_offset.png, id=111, 772.38562pt x 
@@ -644,7 +644,7 @@ File: images/tcu/1khz_mb_offset_1000_ns_length_of_offset.png Graphic file (type
  png)
  <use images/tcu/1khz_mb_offset_1000_ns_length_of_offset.png>
 Package pdftex.def Info: images/tcu/1khz_mb_offset_1000_ns_length_of_offset.png
- used on input line 206.
+ used on input line 207.
 (pdftex.def)             Requested size: 369.88052pt x 227.61655pt.
 
 <images/tcu/1khz_mb_1650ns_mb_offset.png, id=114, 772.38562pt x 579.66562pt>
@@ -652,7 +652,7 @@ File: images/tcu/1khz_mb_1650ns_mb_offset.png Graphic file (type png)
 
 <use images/tcu/1khz_mb_1650ns_mb_offset.png>
 Package pdftex.def Info: images/tcu/1khz_mb_1650ns_mb_offset.png used on input 
-line 227.
+line 228.
 (pdftex.def)             Requested size: 369.88052pt x 241.84811pt.
 
 <images/tcu/1khz_mb_2950ns_d_offset.png, id=115, 772.38562pt x 579.66562pt>
@@ -660,7 +660,7 @@ File: images/tcu/1khz_mb_2950ns_d_offset.png Graphic file (type png)
 
 <use images/tcu/1khz_mb_2950ns_d_offset.png>
 Package pdftex.def Info: images/tcu/1khz_mb_2950ns_d_offset.png used on input l
-ine 233.
+ine 234.
 (pdftex.def)             Requested size: 369.88052pt x 241.84811pt.
  [6 <./images/tcu/1khz_mb_offset_500_ns_length_of_offset.png>] [7 <./images/tcu
 /1khz_mb_offset_1000_ns_length_of_offset.png>] [8 <./images/tcu/1khz_mb_1650ns_
@@ -670,7 +670,7 @@ File: images/tcu/2khz_mb_offset_500_ns.png Graphic file (type png)
 
 <use images/tcu/2khz_mb_offset_500_ns.png>
 Package pdftex.def Info: images/tcu/2khz_mb_offset_500_ns.png used on input lin
-e 254.
+e 255.
 (pdftex.def)             Requested size: 369.88052pt x 227.61655pt.
 
 <images/tcu/3khz_mb_offset_500_ns.png, id=145, 772.38562pt x 579.66562pt>
@@ -678,7 +678,7 @@ File: images/tcu/3khz_mb_offset_500_ns.png Graphic file (type png)
 
 <use images/tcu/3khz_mb_offset_500_ns.png>
 Package pdftex.def Info: images/tcu/3khz_mb_offset_500_ns.png used on input lin
-e 264.
+e 265.
 (pdftex.def)             Requested size: 369.88052pt x 227.61655pt.
 
 <images/tcu/4khz_mb_offset_500_ns.png, id=146, 772.38562pt x 579.66562pt>
@@ -686,7 +686,7 @@ File: images/tcu/4khz_mb_offset_500_ns.png Graphic file (type png)
 
 <use images/tcu/4khz_mb_offset_500_ns.png>
 Package pdftex.def Info: images/tcu/4khz_mb_offset_500_ns.png used on input lin
-e 274.
+e 275.
 (pdftex.def)             Requested size: 369.88052pt x 227.61655pt.
  [9
 
@@ -697,7 +697,7 @@ _ns.png>]
 File: images/tcu_external_clock/1khz_ext_mb_500ns.png Graphic file (type png)
  <use images/tcu_external_clock/1khz_ext_mb_500ns.png>
 Package pdftex.def Info: images/tcu_external_clock/1khz_ext_mb_500ns.png used o
-n input line 316.
+n input line 317.
 (pdftex.def)             Requested size: 369.88582pt x 277.59065pt.
  [11 <./images/tcu/4khz_mb_offset_500_ns.png>]
 <images/tcu_external_clock/1khz_ext_mb_d_offset_1000ns.png, id=177, 772.38562pt
@@ -707,23 +707,24 @@ ype png)
 
 <use images/tcu_external_clock/1khz_ext_mb_d_offset_1000ns.png>
 Package pdftex.def Info: images/tcu_external_clock/1khz_ext_mb_d_offset_1000ns.
-png used on input line 326.
+png used on input line 327.
 (pdftex.def)             Requested size: 369.88582pt x 277.59065pt.
- [12 <./images/tcu_external_clock/1khz_ext_mb_500ns.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 341.
- [13 <./images/tcu_external_clock/1khz_ext_mb_d_offset_1000ns.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 341.
+ [12 <./images/tcu_external_clock/1khz_ext_mb_500ns.png>] [13 <./images/tcu_ext
+ernal_clock/1khz_ext_mb_d_offset_1000ns.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 367.
+ [14]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 367.
  (report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 341.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 341.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 367.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 367.
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: E9D8958A7BFE8957EA87CD34420F0E48;958.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 341.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 367.
  ) 
 Here is how much of TeX's memory you used:
- 6652 strings out of 493333
- 101934 string characters out of 3139188
- 189303 words of memory out of 3000000
+ 6653 strings out of 493333
+ 101941 string characters out of 3139188
+ 189309 words of memory out of 3000000
  10084 multiletter control sequences out of 15000+200000
  8801 words of font info for 31 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -736,9 +737,9 @@ ts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
 sfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
 cmsy10.pfb>
-Output written on report.pdf (13 pages, 10732110 bytes).
+Output written on report.pdf (14 pages, 10733874 bytes).
 PDF statistics:
- 231 PDF objects out of 1000 (max. 8388607)
- 40 named destinations out of 1000 (max. 500000)
+ 235 PDF objects out of 1000 (max. 8388607)
+ 41 named destinations out of 1000 (max. 500000)
  165 words of extra memory for PDF output out of 10000 (max. 10000000)
 
