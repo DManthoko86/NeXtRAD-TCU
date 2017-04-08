@@ -40,17 +40,14 @@
 
 \section{Introduction}
 
-\subsection{Subject and Motivation of Report}
 The author was requested to make modifications to the NeXtRad Synchronization Controller developed by Johann Burger. In particular, the register size of the Synchronization Controller needed to be increased from 16 bits to 32 bits. 
 
-\subsection{Background of the NeXtRad Synchronization Controller}
-
-
-\subsection{Methodology}
 
 \section{The Synchronization Controller}
 \subsection{Modifications Made to the Original Synchronization Controller}
 It is highly recommended that you read the document about the \href{https://docs.google.com/document/d/1E-mxDRlNcjSsjckUj8SuQOPBRs8Zv4AUUxXzLDHU3zc/edit?usp=sharing}{Timing Control Unit(TCU)}. This document specifies how to set up the synchronization controller, the commands used to operate it and so forth. In this section, only the parts that were modified will be mentioned.
+
+%describe what I actually changed in the orignal program
 
 \subsection{Setting up the Synchronization Controller} \label{syn_control_setup}
 All the available registers can be accessed in the proc directory:
@@ -111,7 +108,7 @@ With the modified TCU, reading and writing from the n, m and reg\textunderscore 
 \label{table:1}
 \end{table}
 
-	\begin{figure}
+	\begin{figure}[b]
 		\centering
 		\includegraphics[width=13cm]{reg_pulses}
 		\caption{Visual depiction of how to order the parameters seen in Table \ref{table:1}}
@@ -133,7 +130,9 @@ The parameters seen in table \ref{table:1} are set up by writing to the reg\text
 
 
 %how to get the hex values for the main bang offset and the digitization offset
-The Rhino operates using a 100MHz clock, which is 10ns cycles. For the main bang and digitization offset, we divide the desired offset by 10ns to get the number of cycles. Since we want an offset of 500ns for both of them, the number of cycles is equal to 50 (x0032 in hexadecimal). The value must be in little endian thus we set these to \textbackslash x32\textbackslash x00. 
+The Rhino operates using a 100MHz clock, which is equivalent to 10ns cycles. The order of bits are swaped when using the gpmc interface between the ARM chip and FPGA, thus the developer needs to swap the byte order i.e. provid the desired parameters in little endian
+
+For the main bang and digitization offset, we divide the desired offset by 10ns to get the number of cycles. Since we want an offset of 500ns for both of them, the number of cycles is equal to 50 (x0032 in hexadecimal). The value must be in little endian thus we set these to \textbackslash x32\textbackslash x00.
 
 
 %how to get the hex values for the PRI offset
@@ -150,7 +149,7 @@ Where
   		\item D is the digitization offset in cycles
 	\end{itemize}
 
-Since MB = D = 50 and we want a PRF of 1kHz, we get a value of 99899 for the PRI. Converting the value to hexadecimal we get x0001 863B. Then you would write \textbackslash x01\textbackslash x00 to PRI upper two bytes and \textbackslash x3b\textbackslash x86 to PRI lower two bytes.
+Since MB = D = 50 and we want a PRF of 1kHz, we get a value of 99899 for the PRI. Converting the value to hexadecimal we get x0001 863B. Remembering that we need to provide parameters in little endian, then you would write \textbackslash x01\textbackslash x00 to PRI upper two bytes and \textbackslash x3b\textbackslash x86 to PRI lower two bytes.
 
 \section{Experimental setup}
 
@@ -354,16 +353,51 @@ And to produce the 4kHz signal, this command was used:
 		echo -e -n "\textbackslash x32\textbackslash x00\textbackslash x32\textbackslash x00\textbackslash x00\textbackslash x00\textbackslash x14\textbackslash x05\textbackslash x01\textbackslash x00\textbackslash x43\textbackslash x61" $>$ /proc/$<$PID$>$/hw/ioreg/reg\textunderscore pulses
 	\end{minipage}}
 
-Similar to what was done for the internal clock tests, each of the signals was set using a 500ns offset for the main bang and digitization offsets, using a band frequency of 1300 Mhz, operating at L-band. The only that changes when switching between frequency is the PRI that is set. The only difference being the value that was specified for the signal.
+Similar to what was done for the internal clock tests, each of the signals was set using a 500ns offset for the main bang and digitization offsets, using a band frequency of 1300 Mhz, operating at L-band. The only that changes when switching between frequency is the PRI that is set. The only difference being that the value that was specified for the signal.
 
 %when explaing the output, display an image and expain some stuff, then display another image and show some stuff and so forth
 
+	%figure showing the output of a 2Khz signal using an external clock 
+	\begin{figure}[t]
+		\centering
+		\includegraphics[width=13cm]{2khz_ext_500ns}
+		\caption{Image showing a 2kHz main bang signal (green) and the digitization signal (yellow)}
+		\label{fig:2khz_ext_sig}
+	\end{figure}
+
+Figure \ref{fig:2khz_ext_sig} shows an image of the output produced when a 2kHz signal was set. A 1ms time division was used to display the output. Observing the green signal, which represents the main bang signal, we see that the signal goes high twice in a single time division. This means that we have twice the frequency represented by a single time division. In this, it means that the a 2kHz signal is being produced by the main bang signal output of the rhino board. This is what was expected.
+
+	%figure showing the output of a 3Khz and 4kHz signals using an external clock 
+	\begin{figure}[t]
+		%\centering
+		\begin{subfigure}{13.5cm}
+			\includegraphics[width=13cm,height=8.5cm]{3khz_ext_500ns}
+			\caption{}
+			\label{fig:3khz_ext_sig} 
+		\end{subfigure}
+		
+		\begin{subfigure}{13.5cm}
+			\includegraphics[width=13cm,height=8.5cm]{4khz_ext_500ns}
+			\caption{}
+			\label{fig:4khz_ext_sig}
+		\end{subfigure}
+		
+		\caption{(a) Main bang and digitization signal produced when the rhino was set up to produce a main bang signal of 3kHz. (b) Same as (a) but for the case when a 4kHz signal was set up}
+		\label{fig:3_4_khz_ext_sig}
+	\end{figure}
+
+Figure \ref{fig:3_4_khz_ext_sig} shows images of the output produced when a 3kHz and 4kHz signals were set up using the aforementioned commands. A 1ms time division was used to display the output. From figure \ref{fig:3khz_ext_sig}, we see that the main bang signal goes high about 3 times in a single time division. The time interval between each trigger high level is evenly spaced. This means that the frequency of the main bang signal is indeed 3kHz. Similarly, in figure \ref{fig:4khz_ext_sig}, we see that the main bang signal goes high about 4 times in a single time division. This means that the frequency of the main bang signal in the second figure is 4kHz.
 
 \section{Conclusions}
+
+%mention how after making the modifications to the original coce, I was able to show that various signals were able to be produced
+%and that the offsets can be changed to any desired value
 
 stuff
 
 \section{Recommendations}
+
+%mention that the CLI c code and the gui need to be updated to reflect the changes that I made to my code
 
 more stuff
 
