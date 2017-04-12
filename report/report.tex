@@ -27,6 +27,35 @@
 \setlength{\parindent}{0em}
 \setlength{\parskip}{1em}
 
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{blue},
+	numberstyle=\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=4
+}
+
+\lstset{style=mystyle}
+
 \begin{document}
 
 %\begin{titlepage}
@@ -48,6 +77,8 @@ The author was requested to make modifications to the NeXtRad Synchronization Co
 It is highly recommended that you read the document about the \href{https://docs.google.com/document/d/1E-mxDRlNcjSsjckUj8SuQOPBRs8Zv4AUUxXzLDHU3zc/edit?usp=sharing}{Timing Control Unit(TCU)}. This document specifies how to set up the synchronization controller, the commands used to operate it and so forth. In this section, only the parts that were modified will be mentioned.
 
 %describe what I actually changed in the orignal program
+
+\lstinputlisting[language=VHDL, caption=Just some code ey]{docs/update.vhd}
 
 \subsection{Setting up the Synchronization Controller} \label{syn_control_setup}
 All the available registers can be accessed in the proc directory:
