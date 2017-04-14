@@ -27,6 +27,7 @@
 \setlength{\parindent}{0em}
 \setlength{\parskip}{1em}
 
+%used to specify the look of the code snippet
 \usepackage{listings}
 \usepackage{color}
 
@@ -77,8 +78,16 @@ The author was requested to make modifications to the NeXtRad Synchronization Co
 It is highly recommended that you read the document about the \href{https://docs.google.com/document/d/1E-mxDRlNcjSsjckUj8SuQOPBRs8Zv4AUUxXzLDHU3zc/edit?usp=sharing}{Timing Control Unit(TCU)}. This document specifies how to set up the synchronization controller, the commands used to operate it and so forth. In this section, only the parts that were modified will be mentioned.
 
 %describe what I actually changed in the orignal program
+Listing 1 below shows a snippet of some lines of code from \href{https://github.com/DManthoko86/NeXtRAD-TCU/blob/master/NeXtRAD-TCU-Controller/gpmc_test.vhd}{gpmc\textunderscore test.vhdl}. 
+It contains the vhdl description of the TCU and was modified to meet the new specifications.
 
-\lstinputlisting[language=VHDL, caption=Just some code ey]{docs/update.vhd}
+%used to display the code found in docs/update.vhdl
+\lstinputlisting[language=VHDL, caption=snippet of the VHDL code used to specify the TCU controller, firstline=4]{docs/update.vhd}
+
+Lines 2 and 3 show the previous versions of the P and Pcounter variables. The P variable represents the PRI offset and Pcounter is a counter that counts up to the set value for P. 
+As can be seen, these variables were originally 16 bit integer values. Lines 6 and 8 show the P and Pcounter variables as 32 bit std\textunderscore logic\textunderscore vector's.
+
+In order to read in the P value as 32 bits, two 16 bit values needed to be concatenated as down on line 13. The values needed to set up the TCU such as the main bang offset, digitization offset etc., are kept in a register called reg\textunderscore bank. Register positions 2 and 5 are used for the PRI offset.
 
 \subsection{Setting up the Synchronization Controller} \label{syn_control_setup}
 All the available registers can be accessed in the proc directory:
@@ -424,12 +433,14 @@ Figure \ref{fig:3_4_khz_ext_sig} shows images of the output produced when a 3kHz
 %mention how after making the modifications to the original coce, I was able to show that various signals were able to be produced
 %and that the offsets can be changed to any desired value
 
-stuff
+Modifying the PRI register size from 16 bits to 32 bits has not affected the rest of the functionality of the TCU controller. As observed in the results section, a user would be to set the main bang offset, digitization offset and other parameters to their desired values and the rhino would produce behaviour which closely approximates the set values for these parameters.
+
+Additionally, it was proven that the rhino was capable of accepting a 32 bit value for the PRI offset and able to produce a main bang signal of some specified frequency.
 
 \section{Recommendations}
 
 %mention that the CLI c code and the gui need to be updated to reflect the changes that I made to my code
 
-more stuff
+The CLI(Command line Interface) program and the gui for the TCU need to be updated to so that they can handle 32 bit values for the PRI offset.
 
 \end{document}
