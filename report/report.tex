@@ -170,7 +170,7 @@ The parameters seen in table \ref{table:1} are set up by writing to the reg\text
 
 
 %how to get the hex values for the main bang offset and the digitization offset
-The Rhino operates using a 100MHz clock, which is equivalent to 10ns cycles. The order of bits are swaped when using the gpmc interface between the ARM chip and FPGA, thus the developer needs to swap the byte order i.e. provid the desired parameters in little endian
+The Rhino operates using a 100MHz clock, which is equivalent to 10ns cycles. The order of bits are swaped when using the gpmc interface between the ARM chip and FPGA, thus the developer needs to swap the byte order i.e. provide the desired parameters in little endian
 
 For the main bang and digitization offset, we divide the desired offset by 10ns to get the number of cycles. Since we want an offset of 500ns for both of them, the number of cycles is equal to 50 (x0032 in hexadecimal). The value must be in little endian thus we set these to \textbackslash x32\textbackslash x00.
 
